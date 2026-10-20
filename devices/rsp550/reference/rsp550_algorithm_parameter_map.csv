@@ -1,0 +1,684 @@
+﻿Algorithm ID,Algorithm Name,Parameter,Data Offset(s),Start Offset Decimal,Width (bytes),Decode Rule,Notes,Source URL
+1,Multi Phaser,Phasing Mode,0x14,20,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+1,Multi Phaser,Phasing Rate,0x19,25,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+1,Multi Phaser,Phasing Depth,0x1A,26,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+1,Multi Phaser,Manual,0x1B,27,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+1,Multi Phaser,Resonance,0x1C,28,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+1,Multi Phaser,Step Rate,0x1D,29,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+1,Multi Phaser,Modulation Phase,0x1E,30,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+1,Multi Phaser,Tremolo Depth,0x1F,31,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+1,Multi Phaser,Total Level,0x45,69,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+2,Stereo Flanger,Flange Mode,0x14,20,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+2,Stereo Flanger,Flange Rate,0x16,22,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+2,Stereo Flanger,Flange Depth,0x17,23,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+2,Stereo Flanger,Flange Manual,0x18,24,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+2,Stereo Flanger,Resonance Mode,0x19,25,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+2,Stereo Flanger,Resonance,0x1A,26,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+2,Stereo Flanger,Modulation Phase,0x1B,27,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+2,Stereo Flanger,Mix Level,0x1C,28,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+2,Stereo Flanger,Tremolo Depth,0x1D,29,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+2,Stereo Flanger,Direct Mix,0x1E,30,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+2,Stereo Flanger,Total Level,0x45,69,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+3,Simple Delay,Delay Time,0x14–0x15,20,2,2 bytes: LSB + 128 × MSB,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+3,Simple Delay,Feedback,0x1A,26,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+3,Simple Delay,Mix Level,0x1F,31,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+3,Simple Delay,Direct Level,0x20,32,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+3,Simple Delay,Total Level,0x45,69,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+4,Vocoder,Gate Threshold,0x14,20,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+4,Vocoder,Mic Mix Level,0x15,21,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+4,Vocoder,Hiss Mix Level,0x16,22,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+4,Vocoder,Voice Character (200 Hz),0x17,23,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+4,Vocoder,Voice Character (320 Hz),0x18,24,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+4,Vocoder,Voice Character (500 Hz),0x19,25,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+4,Vocoder,Voice Character (800 Hz),0x1A,26,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+4,Vocoder,Voice Character (1 kHz),0x1B,27,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+4,Vocoder,Voice Character (1.8 kHz),0x1C,28,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+4,Vocoder,Voice Character (2.7 kHz),0x1D,29,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+4,Vocoder,Voice Character (4.4 kHz),0x1E,30,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+4,Vocoder,Total Level,0x45,69,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+5,Stereo Delay,Delay Time,0x18–0x19,24,2,2 bytes: LSB + 128 × MSB,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+5,Stereo Delay,Feedback,0x1A,26,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+5,Stereo Delay,Cross Feedback,0x1B,27,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+5,Stereo Delay,HF Damp Frequency,0x1C,28,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+5,Stereo Delay,HF Damp Level,0x1D,29,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+5,Stereo Delay,Feedback Filter,0x1E,30,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+5,Stereo Delay,Delay Mix Level,0x1F,31,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+5,Stereo Delay,Delay Direct Level,0x20,32,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+5,Stereo Delay,Modulation LFO Waveform,0x21,33,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+5,Stereo Delay,Modulation Rate,0x22,34,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+5,Stereo Delay,Modulation Depth,0x23,35,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+5,Stereo Delay,L/R Polarity,0x24,36,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+5,Stereo Delay,EQ High Level,0x25,37,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+5,Stereo Delay,EQ Mid Frequency,0x26,38,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+5,Stereo Delay,EQ Mid Level,0x27,39,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+5,Stereo Delay,EQ Low Level,0x28,40,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+5,Stereo Delay,EQ Total Level,0x29,41,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+5,Stereo Delay,Total Level,0x45,69,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+6,Multi 3,EQ High Level,0x18,24,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+6,Multi 3,EQ Mid Frequency,0x19,25,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+6,Multi 3,EQ Mid Level,0x1A,26,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+6,Multi 3,EQ Low Level,0x1B,27,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+6,Multi 3,EQ Total Level,0x1C,28,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+6,Multi 3,Flanger Rate,0x1D,29,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+6,Multi 3,Flanger Depth,0x1E,30,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+6,Multi 3,Flanger Manual,0x1F,31,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+6,Multi 3,Flanger Resonance,0x20,32,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+6,Multi 3,Flanger Modulation Phase,0x21,33,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+6,Multi 3,Flanger Mix Level,0x22,34,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+6,Multi 3,Flanger Tremolo Depth,0x23,35,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+6,Multi 3,Delay Time,0x30–0x31,48,2,2 bytes: LSB + 128 × MSB,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+6,Multi 3,Delay Feedback,0x32,50,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+6,Multi 3,Delay HF Damp Frequency,0x33,51,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+6,Multi 3,Delay HF Damp Level,0x34,52,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+6,Multi 3,Delay Mix Level,0x35,53,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+6,Multi 3,Delay Direct Level,0x36,54,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+6,Multi 3,Reverb Time,0x37–0x38,55,2,2 bytes: LSB + 128 × MSB,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+6,Multi 3,Reverb Pre-Delay,0x39–0x3A,57,2,2 bytes: LSB + 128 × MSB,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+6,Multi 3,Reverb Filter LPF,0x3B,59,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+6,Multi 3,Reverb Filter HPF,0x3C,60,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+6,Multi 3,Reverb HF Damp Frequency,0x3D,61,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+6,Multi 3,Reverb HF Damp Level,0x3E,62,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+6,Multi 3,Reverb Level,0x40,64,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+6,Multi 3,Reverb Direct Level,0x41,65,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+6,Multi 3,Total Level,0x45,69,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+7,Multi 1,EQ High Level,0x18,24,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+7,Multi 1,EQ Mid Frequency,0x19,25,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+7,Multi 1,EQ Mid Level,0x1A,26,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+7,Multi 1,EQ Low Level,0x1B,27,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+7,Multi 1,EQ Total Level,0x1C,28,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+7,Multi 1,Chorus LFO Waveform,0x1D,29,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+7,Multi 1,Chorus Pre-Delay,0x1E,30,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+7,Multi 1,Chorus Rate,0x1F,31,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+7,Multi 1,Chorus Depth,0x20,32,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+7,Multi 1,Chorus Mix Level,0x21,33,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+7,Multi 1,Chorus Cross Mix,0x22,34,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+7,Multi 1,Chorus Direct Level,0x23,35,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+7,Multi 1,Delay Time,0x30–0x31,48,2,2 bytes: LSB + 128 × MSB,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+7,Multi 1,Delay Feedback,0x32,50,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+7,Multi 1,Delay HF Damp Frequency,0x33,51,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+7,Multi 1,Delay HF Damp Level,0x34,52,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+7,Multi 1,Delay Mix Level,0x35,53,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+7,Multi 1,Delay Direct Level,0x36,54,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+7,Multi 1,Reverb Time,0x37–0x38,55,2,2 bytes: LSB + 128 × MSB,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+7,Multi 1,Reverb Pre-Delay,0x39–0x3A,57,2,2 bytes: LSB + 128 × MSB,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+7,Multi 1,Reverb Filter LPF,0x3B,59,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+7,Multi 1,Reverb Filter HPF,0x3C,60,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+7,Multi 1,Reverb HF Damp Frequency,0x3D,61,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+7,Multi 1,Reverb HF Damp Level,0x3E,62,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+7,Multi 1,Reverb Level,0x40,64,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+7,Multi 1,Reverb Direct Level,0x41,65,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+7,Multi 1,Total Level,0x45,69,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+8,Multi 2,EQ High Level,0x18,24,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+8,Multi 2,EQ Mid Frequency,0x19,25,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+8,Multi 2,EQ Mid Level,0x1A,26,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+8,Multi 2,EQ Low Level,0x1B,27,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+8,Multi 2,EQ Total Level,0x1C,28,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+8,Multi 2,Pitch Shifter 1 Shift Mode,0x1D,29,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+8,Multi 2,Pitch Shifter 1 Chromatic,0x1E,30,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+8,Multi 2,Pitch Shifter 1 Fine,0x1F,31,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+8,Multi 2,Pitch Shifter 1 Mix Level,0x20,32,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+8,Multi 2,Pitch Shifter 1 Pan,0x21,33,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+8,Multi 2,Pitch Shifter 2 Shift Mode,0x22,34,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+8,Multi 2,Pitch Shifter 2 Chromatic,0x23,35,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+8,Multi 2,Pitch Shifter 2 Fine,0x24,36,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+8,Multi 2,Pitch Shifter 2 Mix Level,0x25,37,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+8,Multi 2,Pitch Shifter 2 Pan,0x26,38,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+8,Multi 2,Delay Input Select,0x2F,47,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+8,Multi 2,Delay Time,0x30–0x31,48,2,2 bytes: LSB + 128 × MSB,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+8,Multi 2,Delay Feedback,0x32,50,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+8,Multi 2,Delay HF Damp Frequency,0x33,51,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+8,Multi 2,Delay HF Damp Level,0x34,52,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+8,Multi 2,Delay Mix Level,0x35,53,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+8,Multi 2,Delay Direct Level,0x36,54,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+8,Multi 2,Reverb Time,0x37–0x38,55,2,2 bytes: LSB + 128 × MSB,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+8,Multi 2,Reverb Pre-Delay,0x39–0x3A,57,2,2 bytes: LSB + 128 × MSB,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+8,Multi 2,Reverb Filter LPF,0x3B,59,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+8,Multi 2,Reverb Filter HPF,0x3C,60,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+8,Multi 2,Reverb HF Damp Frequency,0x3D,61,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+8,Multi 2,Reverb HF Damp Level,0x3E,62,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+8,Multi 2,Reverb Level,0x40,64,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+8,Multi 2,Reverb Direct Level,0x41,65,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+8,Multi 2,Total Level,0x45,69,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+9,Multi 4,Phaser Mode,0x14,20,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+9,Multi 4,Phaser Rate,0x19,25,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+9,Multi 4,Phaser Depth,0x1A,26,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+9,Multi 4,Phaser Manual,0x1B,27,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+9,Multi 4,Phaser Resonance,0x1C,28,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+9,Multi 4,Phaser Step Rate,0x1D,29,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+9,Multi 4,Phaser Modulation Phase,0x1E,30,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+9,Multi 4,Phaser Tremolo Depth,0x1F,31,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+9,Multi 4,Chorus Rate,0x24,36,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+9,Multi 4,Chorus Depth,0x25,37,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+9,Multi 4,Chorus Mix Level,0x26,38,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+9,Multi 4,Pan Rate,0x27,39,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+9,Multi 4,Pan Depth,0x28,40,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+9,Multi 4,Delay Time,0x30–0x31,48,2,2 bytes: LSB + 128 × MSB,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+9,Multi 4,Delay Feedback,0x32,50,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+9,Multi 4,Delay Mix Level,0x35,53,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+9,Multi 4,Delay Direct Level,0x36,54,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+9,Multi 4,Reverb Time,0x37–0x38,55,2,2 bytes: LSB + 128 × MSB,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+9,Multi 4,Reverb Pre-Delay,0x39–0x3A,57,2,2 bytes: LSB + 128 × MSB,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+9,Multi 4,Reverb Level,0x40,64,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+9,Multi 4,Reverb Direct Level,0x41,65,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+9,Multi 4,Total Level,0x45,69,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+10,Dynamic Phaser,Phasing Mode,0x14,20,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+10,Dynamic Phaser,Sensitivity,0x15,21,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+10,Dynamic Phaser,LFO Rate Max,0x16,22,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+10,Dynamic Phaser,Control Range,0x17,23,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+10,Dynamic Phaser,Phasing Depth,0x1A,26,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+10,Dynamic Phaser,Manual,0x1B,27,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+10,Dynamic Phaser,Resonance,0x1C,28,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+10,Dynamic Phaser,Step Rate,0x1D,29,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+10,Dynamic Phaser,Modulation Phase,0x1E,30,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+10,Dynamic Phaser,Tremolo Depth,0x1F,31,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+10,Dynamic Phaser,Total Level,0x45,69,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+11,Penta Chorus,Chorus Mode,0x14,20,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+11,Penta Chorus,LFO Waveform,0x15,21,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+11,Penta Chorus,Pre-Delay,0x16,22,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+11,Penta Chorus,Chorus Rate,0x17,23,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+11,Penta Chorus,Chorus Depth,0x18,24,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+11,Penta Chorus,Chorus Tone,0x19,25,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+11,Penta Chorus,Chorus Level,0x1A,26,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+11,Penta Chorus,Direct Level,0x1B,27,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+11,Penta Chorus,Total Level,0x45,69,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+12,Space Chorus,Space Mode,0x14,20,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+12,Space Chorus,Direct Mix,0x15,21,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+12,Space Chorus,Total Level,0x45,69,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+13,Stereo Chorus,EQ High Level,0x16,22,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+13,Stereo Chorus,EQ Mid Frequency,0x17,23,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+13,Stereo Chorus,EQ Mid Level,0x18,24,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+13,Stereo Chorus,EQ Low Level,0x19,25,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+13,Stereo Chorus,EQ Total Level,0x1A,26,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+13,Stereo Chorus,Chorus Mode,0x1B,27,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+13,Stereo Chorus,Chorus LFO Waveform,0x1C,28,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+13,Stereo Chorus,Chorus Pre-Delay,0x1D,29,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+13,Stereo Chorus,Chorus Rate,0x1E,30,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+13,Stereo Chorus,Chorus Depth,0x1F,31,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+13,Stereo Chorus,Chorus Mix Level,0x20,32,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+13,Stereo Chorus,Chorus Direct Level,0x21,33,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+13,Stereo Chorus,Total Level,0x45,69,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+14,4 Band Chorus,Low Band LFO Waveform,0x18,24,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+14,4 Band Chorus,Low Band Pre-Delay,0x19,25,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+14,4 Band Chorus,Low Band Rate,0x1A,26,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+14,4 Band Chorus,Low Band Depth,0x1B,27,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+14,4 Band Chorus,Low Band Pan,0x1C,28,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+14,4 Band Chorus,Low Band Mix Level,0x1D,29,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+14,4 Band Chorus,Low-Mid Band LFO Waveform,0x1E,30,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+14,4 Band Chorus,Low-Mid Band Pre-Delay,0x1F,31,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+14,4 Band Chorus,Low-Mid Band Rate,0x20,32,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+14,4 Band Chorus,Low-Mid Band Depth,0x21,33,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+14,4 Band Chorus,Low-Mid Band Pan,0x22,34,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+14,4 Band Chorus,Low-Mid Band Mix Level,0x23,35,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+14,4 Band Chorus,High-Mid Band LFO Waveform,0x24,36,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+14,4 Band Chorus,High-Mid Band Pre-Delay,0x25,37,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+14,4 Band Chorus,High-Mid Band Rate,0x26,38,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+14,4 Band Chorus,High-Mid Band Depth,0x27,39,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+14,4 Band Chorus,High-Mid Band Pan,0x28,40,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+14,4 Band Chorus,High-Mid Band Mix Level,0x29,41,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+14,4 Band Chorus,High Band LFO Waveform,0x2A,42,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+14,4 Band Chorus,High Band Pre-Delay,0x2B,43,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+14,4 Band Chorus,High Band Rate,0x2C,44,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+14,4 Band Chorus,High Band Depth,0x2D,45,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+14,4 Band Chorus,High Band Pan,0x2E,46,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+14,4 Band Chorus,High Band Mix Level,0x2F,47,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+14,4 Band Chorus,Crossover Frequency,0x43,67,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+14,4 Band Chorus,Direct Level,0x44,68,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+14,4 Band Chorus,Total Level,0x45,69,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+15,Ambience,EQ High Level,0x17,23,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+15,Ambience,EQ Mid Frequency,0x18,24,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+15,Ambience,EQ Mid Level,0x19,25,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+15,Ambience,EQ Low Level,0x1A,26,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+15,Ambience,EQ Total Level,0x1B,27,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+15,Ambience,Edge Sensitivity,0x1C,28,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+15,Ambience,Edge Release Time,0x1D,29,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+15,Ambience,Edge Mix Level,0x1E,30,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+15,Ambience,Ambience Pre-Delay,0x1F–0x20,31,2,2 bytes: LSB + 128 × MSB,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+15,Ambience,Ambience Early Reflection Level,0x21,33,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+15,Ambience,Ambience Mix Level,0x22,34,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+15,Ambience,Ambience Direct Level,0x23,35,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+15,Ambience,Total Level,0x45,69,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+16,Gate Reverb,EQ High Level,0x16,22,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+16,Gate Reverb,EQ Mid Frequency,0x17,23,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+16,Gate Reverb,EQ Mid Level,0x18,24,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+16,Gate Reverb,EQ Low Level,0x19,25,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+16,Gate Reverb,EQ Total Level,0x1A,26,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+16,Gate Reverb,Gate Mode,0x1B,27,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+16,Gate Reverb,Gate Time,0x1C–0x1D,28,2,2 bytes: LSB + 128 × MSB,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+16,Gate Reverb,Pre-Delay,0x1E–0x1F,30,2,2 bytes: LSB + 128 × MSB,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+16,Gate Reverb,Density,0x20,32,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+16,Gate Reverb,Thickness,0x21,33,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+16,Gate Reverb,Accent Delay,0x22–0x23,34,2,2 bytes: LSB + 128 × MSB,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+16,Gate Reverb,Accent Level,0x24,36,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+16,Gate Reverb,Reverb Level,0x25,37,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+16,Gate Reverb,Direct Level,0x26,38,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+16,Gate Reverb,Total Level,0x45,69,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+17,Reverse Gate,EQ High Level,0x16,22,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+17,Reverse Gate,EQ Mid Frequency,0x17,23,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+17,Reverse Gate,EQ Mid Level,0x18,24,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+17,Reverse Gate,EQ Low Level,0x19,25,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+17,Reverse Gate,EQ Total Level,0x1A,26,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+17,Reverse Gate,Gate Mode,0x1B,27,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+17,Reverse Gate,Gate Time,0x1C–0x1D,28,2,2 bytes: LSB + 128 × MSB,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+17,Reverse Gate,Pre-Delay,0x1E–0x1F,30,2,2 bytes: LSB + 128 × MSB,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+17,Reverse Gate,Density,0x20,32,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+17,Reverse Gate,Thickness,0x21,33,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+17,Reverse Gate,Accent Delay,0x22–0x23,34,2,2 bytes: LSB + 128 × MSB,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+17,Reverse Gate,Accent Level,0x24,36,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+17,Reverse Gate,Reverb Level,0x25,37,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+17,Reverse Gate,Direct Level,0x26,38,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+17,Reverse Gate,Total Level,0x45,69,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+18,2 Band Chorus,Low Band LFO Waveform,0x18,24,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+18,2 Band Chorus,Low Band Pre-Delay,0x19,25,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+18,2 Band Chorus,Low Band Rate,0x1A,26,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+18,2 Band Chorus,Low Band Depth,0x1B,27,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+18,2 Band Chorus,Low Band Mix Level,0x1C,28,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+18,2 Band Chorus,High Band LFO Waveform,0x1D,29,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+18,2 Band Chorus,High Band Pre-Delay,0x1E,30,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+18,2 Band Chorus,High Band Rate,0x1F,31,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+18,2 Band Chorus,High Band Depth,0x20,32,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+18,2 Band Chorus,High Band Mix Level,0x21,33,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+18,2 Band Chorus,Crossover Frequency,0x43,67,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+18,2 Band Chorus,Direct Level,0x44,68,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+18,2 Band Chorus,Total Level,0x45,69,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+19,Ensemble,Ensemble Mode,0x14,20,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+19,Ensemble,Total Level,0x45,69,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+20,2 Band Pitch Shifter,Low 1 Chromatic,0x18,24,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+20,2 Band Pitch Shifter,Low 1 Fine,0x19,25,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+20,2 Band Pitch Shifter,Low 1 Pre-Delay,0x1A–0x1B,26,2,2 bytes: LSB + 128 × MSB,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+20,2 Band Pitch Shifter,Low 1 Mix Level,0x1C,28,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+20,2 Band Pitch Shifter,Low 1 Pan,0x1D,29,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+20,2 Band Pitch Shifter,Low 2 Chromatic,0x1E,30,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+20,2 Band Pitch Shifter,Low 2 Fine,0x1F,31,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+20,2 Band Pitch Shifter,Low 2 Pre-Delay,0x20–0x21,32,2,2 bytes: LSB + 128 × MSB,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+20,2 Band Pitch Shifter,Low 2 Mix Level,0x22,34,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+20,2 Band Pitch Shifter,Low 2 Pan,0x23,35,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+20,2 Band Pitch Shifter,High 1 Chromatic,0x24,36,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+20,2 Band Pitch Shifter,High 1 Fine,0x25,37,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+20,2 Band Pitch Shifter,High 1 Pre-Delay,0x26–0x27,38,2,2 bytes: LSB + 128 × MSB,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+20,2 Band Pitch Shifter,High 1 Mix Level,0x28,40,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+20,2 Band Pitch Shifter,High 1 Pan,0x29,41,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+20,2 Band Pitch Shifter,High 2 Chromatic,0x2A,42,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+20,2 Band Pitch Shifter,High 2 Fine,0x2B,43,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+20,2 Band Pitch Shifter,High 2 Pre-Delay,0x2C–0x2D,44,2,2 bytes: LSB + 128 × MSB,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+20,2 Band Pitch Shifter,High 2 Mix Level,0x2E,46,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+20,2 Band Pitch Shifter,High 2 Pan,0x2F,47,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+20,2 Band Pitch Shifter,Crossover Frequency,0x43,67,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+20,2 Band Pitch Shifter,Direct Level,0x44,68,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+20,2 Band Pitch Shifter,Total Level,0x45,69,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+21,Stereo Pitch Shifter,Pitch Shifter 1 Shift Mode,0x16,22,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+21,Stereo Pitch Shifter,Pitch Shifter 1 Chromatic,0x17,23,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+21,Stereo Pitch Shifter,Pitch Shifter 1 Fine,0x18,24,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+21,Stereo Pitch Shifter,Pitch Shifter 1 Pre-Delay,0x19–0x1A,25,2,2 bytes: LSB + 128 × MSB,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+21,Stereo Pitch Shifter,Pitch Shifter 1 Feedback,0x1B,27,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+21,Stereo Pitch Shifter,Pitch Shifter 1 Mix Level,0x1C,28,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+21,Stereo Pitch Shifter,Pitch Shifter 1 Pan,0x1D,29,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+21,Stereo Pitch Shifter,Pitch Shifter 2 Shift Mode,0x1E,30,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+21,Stereo Pitch Shifter,Pitch Shifter 2 Chromatic,0x1F,31,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+21,Stereo Pitch Shifter,Pitch Shifter 2 Fine,0x20,32,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+21,Stereo Pitch Shifter,Pitch Shifter 2 Pre-Delay,0x21–0x22,33,2,2 bytes: LSB + 128 × MSB,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+21,Stereo Pitch Shifter,Pitch Shifter 2 Feedback,0x23,35,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+21,Stereo Pitch Shifter,Pitch Shifter 2 Mix Level,0x24,36,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+21,Stereo Pitch Shifter,Pitch Shifter 2 Pan,0x25,37,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+21,Stereo Pitch Shifter,Direct Level,0x44,68,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+21,Stereo Pitch Shifter,Total Level,0x45,69,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+22,Quad Pitch Shifter,Pitch Shifter 1 Shift Mode,0x18,24,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+22,Quad Pitch Shifter,Pitch Shifter 1 Chromatic,0x19,25,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+22,Quad Pitch Shifter,Pitch Shifter 1 Fine,0x1A,26,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+22,Quad Pitch Shifter,Pitch Shifter 1 Pre-Delay,0x1B–0x1C,27,2,2 bytes: LSB + 128 × MSB,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+22,Quad Pitch Shifter,Pitch Shifter 1 Mix Level,0x1D,29,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+22,Quad Pitch Shifter,Pitch Shifter 1 Pan,0x1E,30,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+22,Quad Pitch Shifter,Pitch Shifter 2 Shift Mode,0x1F,31,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+22,Quad Pitch Shifter,Pitch Shifter 2 Chromatic,0x20,32,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+22,Quad Pitch Shifter,Pitch Shifter 2 Fine,0x21,33,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+22,Quad Pitch Shifter,Pitch Shifter 2 Pre-Delay,0x22–0x23,34,2,2 bytes: LSB + 128 × MSB,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+22,Quad Pitch Shifter,Pitch Shifter 2 Mix Level,0x24,36,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+22,Quad Pitch Shifter,Pitch Shifter 2 Pan,0x25,37,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+22,Quad Pitch Shifter,Pitch Shifter 3 Shift Mode,0x26,38,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+22,Quad Pitch Shifter,Pitch Shifter 3 Chromatic,0x27,39,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+22,Quad Pitch Shifter,Pitch Shifter 3 Fine,0x28,40,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+22,Quad Pitch Shifter,Pitch Shifter 3 Pre-Delay,0x29–0x2A,41,2,2 bytes: LSB + 128 × MSB,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+22,Quad Pitch Shifter,Pitch Shifter 3 Mix Level,0x2B,43,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+22,Quad Pitch Shifter,Pitch Shifter 3 Pan,0x2C,44,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+22,Quad Pitch Shifter,Pitch Shifter 4 Shift Mode,0x2D,45,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+22,Quad Pitch Shifter,Pitch Shifter 4 Chromatic,0x2E,46,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+22,Quad Pitch Shifter,Pitch Shifter 4 Fine,0x2F,47,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+22,Quad Pitch Shifter,Pitch Shifter 4 Pre-Delay,0x30–0x31,48,2,2 bytes: LSB + 128 × MSB,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+22,Quad Pitch Shifter,Pitch Shifter 4 Mix Level,0x32,50,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+22,Quad Pitch Shifter,Pitch Shifter 4 Pan,0x33,51,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+22,Quad Pitch Shifter,Feedback,0x34,52,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+22,Quad Pitch Shifter,Direct Level,0x44,68,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+22,Quad Pitch Shifter,Total Level,0x45,69,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+23,Rotary 2,Rotary Speed Select,0x18,24,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+23,Rotary 2,Horn Speed Fast,0x19,25,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+23,Rotary 2,Rotor Speed Fast,0x1A,26,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+23,Rotary 2,Horn Speed Slow,0x1B,27,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+23,Rotary 2,Rotor Speed Slow,0x1C,28,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+23,Rotary 2,Rise Time Horn,0x1D,29,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+23,Rotary 2,Rise Time Rotor,0x1E,30,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+23,Rotary 2,Fall Time Horn,0x1F,31,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+23,Rotary 2,Fall Time Rotor,0x20,32,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+23,Rotary 2,Mix Balance,0x21,33,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+23,Rotary 2,Overdrive Gain,0x22,34,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+23,Rotary 2,Overdrive Drive,0x23,35,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+23,Rotary 2,Overdrive Level,0x24,36,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+23,Rotary 2,Total Level,0x45,69,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+24,Hall 1,EQ High Level,0x17,23,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+24,Hall 1,EQ Mid Frequency,0x18,24,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+24,Hall 1,EQ Mid Level,0x19,25,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+24,Hall 1,EQ Low Level,0x1A,26,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+24,Hall 1,EQ Total Level,0x1B,27,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+24,Hall 1,Gate Threshold Level,0x1C,28,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+24,Hall 1,Gate Hold Time,0x1D,29,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+24,Hall 1,Gate Attack Time,0x1E,30,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+24,Hall 1,Gate Release Time,0x1F,31,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+24,Hall 1,Gate Leftover,0x20,32,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+24,Hall 1,Reverb Time,0x21–0x22,33,2,2 bytes: LSB + 128 × MSB,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+24,Hall 1,Reverb Pre-Delay,0x23–0x24,35,2,2 bytes: LSB + 128 × MSB,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+24,Hall 1,HF Damp Frequency,0x25,37,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+24,Hall 1,HF Damp Level,0x26,38,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+24,Hall 1,Diffusion,0x27,39,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+24,Hall 1,Early Reflection Pre-Delay,0x28–0x29,40,2,2 bytes: LSB + 128 × MSB,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+24,Hall 1,Early Reflection Level,0x2A,42,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+24,Hall 1,Reverb Level,0x2B,43,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+24,Hall 1,Direct Level,0x2C,44,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+24,Hall 1,Total Level,0x45,69,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+25,Hall 2,EQ High Level,0x17,23,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+25,Hall 2,EQ Mid Frequency,0x18,24,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+25,Hall 2,EQ Mid Level,0x19,25,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+25,Hall 2,EQ Low Level,0x1A,26,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+25,Hall 2,EQ Total Level,0x1B,27,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+25,Hall 2,Reverb Time,0x21–0x22,33,2,2 bytes: LSB + 128 × MSB,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+25,Hall 2,Reverb Pre-Delay,0x23–0x24,35,2,2 bytes: LSB + 128 × MSB,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+25,Hall 2,HF Damp Frequency,0x25,37,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+25,Hall 2,HF Damp Level,0x26,38,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+25,Hall 2,Diffusion,0x27,39,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+25,Hall 2,Reverb Level,0x28,40,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+25,Hall 2,Direct Level,0x29,41,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+25,Hall 2,Total Level,0x45,69,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+26,Hall 3,EQ High Level,0x17,23,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+26,Hall 3,EQ Mid Frequency,0x18,24,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+26,Hall 3,EQ Mid Level,0x19,25,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+26,Hall 3,EQ Low Level,0x1A,26,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+26,Hall 3,EQ Total Level,0x1B,27,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+26,Hall 3,Gate Threshold Level,0x1C,28,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+26,Hall 3,Gate Hold Time,0x1D,29,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+26,Hall 3,Gate Attack Time,0x1E,30,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+26,Hall 3,Gate Release Time,0x1F,31,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+26,Hall 3,Gate Leftover,0x20,32,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+26,Hall 3,Reverb Time,0x21–0x22,33,2,2 bytes: LSB + 128 × MSB,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+26,Hall 3,Reverb Pre-Delay,0x23–0x24,35,2,2 bytes: LSB + 128 × MSB,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+26,Hall 3,HF Damp Frequency,0x25,37,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+26,Hall 3,HF Damp Level,0x26,38,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+26,Hall 3,Diffusion,0x27,39,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+26,Hall 3,Early Reflection Pre-Delay,0x28–0x29,40,2,2 bytes: LSB + 128 × MSB,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+26,Hall 3,Early Reflection Level,0x2A,42,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+26,Hall 3,Reverb Level,0x2B,43,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+26,Hall 3,Direct Level,0x2C,44,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+26,Hall 3,Total Level,0x45,69,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+27,Room 1,EQ High Level,0x17,23,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+27,Room 1,EQ Mid Frequency,0x18,24,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+27,Room 1,EQ Mid Level,0x19,25,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+27,Room 1,EQ Low Level,0x1A,26,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+27,Room 1,EQ Total Level,0x1B,27,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+27,Room 1,Gate Threshold Level,0x1C,28,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+27,Room 1,Gate Hold Time,0x1D,29,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+27,Room 1,Gate Attack Time,0x1E,30,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+27,Room 1,Gate Release Time,0x1F,31,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+27,Room 1,Gate Leftover,0x20,32,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+27,Room 1,Reverb Time,0x21–0x22,33,2,2 bytes: LSB + 128 × MSB,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+27,Room 1,Reverb Pre-Delay,0x23–0x24,35,2,2 bytes: LSB + 128 × MSB,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+27,Room 1,HF Damp Frequency,0x25,37,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+27,Room 1,HF Damp Level,0x26,38,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+27,Room 1,Diffusion,0x27,39,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+27,Room 1,Early Reflection Pre-Delay,0x28–0x29,40,2,2 bytes: LSB + 128 × MSB,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+27,Room 1,Early Reflection Level,0x2A,42,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+27,Room 1,Reverb Level,0x2B,43,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+27,Room 1,Direct Level,0x2C,44,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+27,Room 1,Total Level,0x45,69,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+28,Room 2,EQ High Level,0x17,23,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+28,Room 2,EQ Mid Frequency,0x18,24,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+28,Room 2,EQ Mid Level,0x19,25,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+28,Room 2,EQ Low Level,0x1A,26,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+28,Room 2,EQ Total Level,0x1B,27,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+28,Room 2,Reverb Time,0x21–0x22,33,2,2 bytes: LSB + 128 × MSB,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+28,Room 2,Reverb Pre-Delay,0x23–0x24,35,2,2 bytes: LSB + 128 × MSB,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+28,Room 2,HF Damp Frequency,0x25,37,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+28,Room 2,HF Damp Level,0x26,38,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+28,Room 2,Diffusion,0x27,39,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+28,Room 2,Reverb Level,0x28,40,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+28,Room 2,Direct Level,0x29,41,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+28,Room 2,Total Level,0x45,69,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+29,Plate 1,EQ High Level,0x17,23,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+29,Plate 1,EQ Mid Frequency,0x18,24,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+29,Plate 1,EQ Mid Level,0x19,25,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+29,Plate 1,EQ Low Level,0x1A,26,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+29,Plate 1,EQ Total Level,0x1B,27,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+29,Plate 1,Gate Threshold Level,0x1C,28,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+29,Plate 1,Gate Hold Time,0x1D,29,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+29,Plate 1,Gate Attack Time,0x1E,30,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+29,Plate 1,Gate Release Time,0x1F,31,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+29,Plate 1,Gate Leftover,0x20,32,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+29,Plate 1,Reverb Time,0x21–0x22,33,2,2 bytes: LSB + 128 × MSB,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+29,Plate 1,Reverb Pre-Delay,0x23–0x24,35,2,2 bytes: LSB + 128 × MSB,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+29,Plate 1,HF Damp Frequency,0x25,37,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+29,Plate 1,HF Damp Level,0x26,38,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+29,Plate 1,Diffusion,0x27,39,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+29,Plate 1,Reverb Level,0x28,40,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+29,Plate 1,Direct Level,0x2C,44,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+29,Plate 1,Total Level,0x45,69,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+30,Plate 2,EQ High Level,0x17,23,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+30,Plate 2,EQ Mid Frequency,0x18,24,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+30,Plate 2,EQ Mid Level,0x19,25,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+30,Plate 2,EQ Low Level,0x1A,26,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+30,Plate 2,EQ Total Level,0x1B,27,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+30,Plate 2,Reverb Time,0x21–0x22,33,2,2 bytes: LSB + 128 × MSB,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+30,Plate 2,Reverb Pre-Delay,0x23–0x24,35,2,2 bytes: LSB + 128 × MSB,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+30,Plate 2,HF Damp Frequency,0x25,37,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+30,Plate 2,HF Damp Level,0x26,38,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+30,Plate 2,Diffusion,0x27,39,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+30,Plate 2,Reverb Level,0x28,40,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+30,Plate 2,Direct Level,0x2C,44,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+30,Plate 2,Total Level,0x45,69,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+31,8 Tap Delay,Tap 1 Delay Time,0x14–0x15,20,2,2 bytes: LSB + 128 × MSB,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+31,8 Tap Delay,Tap 1 Feedback,0x16,22,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+31,8 Tap Delay,Tap 1 Pan,0x17,23,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+31,8 Tap Delay,Tap 1 Mix Level,0x18,24,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+31,8 Tap Delay,Tap 2 Delay Time,0x19–0x1A,25,2,2 bytes: LSB + 128 × MSB,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+31,8 Tap Delay,Tap 2 Feedback,0x1B,27,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+31,8 Tap Delay,Tap 2 Pan,0x1C,28,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+31,8 Tap Delay,Tap 2 Mix Level,0x1D,29,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+31,8 Tap Delay,Tap 3 Delay Time,0x1E–0x1F,30,2,2 bytes: LSB + 128 × MSB,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+31,8 Tap Delay,Tap 3 Feedback,0x20,32,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+31,8 Tap Delay,Tap 3 Pan,0x21,33,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+31,8 Tap Delay,Tap 3 Mix Level,0x22,34,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+31,8 Tap Delay,Tap 4 Delay Time,0x23–0x24,35,2,2 bytes: LSB + 128 × MSB,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+31,8 Tap Delay,Tap 4 Feedback,0x25,37,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+31,8 Tap Delay,Tap 4 Pan,0x26,38,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+31,8 Tap Delay,Tap 4 Mix Level,0x27,39,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+31,8 Tap Delay,Tap 5 Delay Time,0x28–0x29,40,2,2 bytes: LSB + 128 × MSB,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+31,8 Tap Delay,Tap 5 Feedback,0x2A,42,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+31,8 Tap Delay,Tap 5 Pan,0x2B,43,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+31,8 Tap Delay,Tap 5 Mix Level,0x2C,44,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+31,8 Tap Delay,Tap 6 Delay Time,0x2D–0x2E,45,2,2 bytes: LSB + 128 × MSB,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+31,8 Tap Delay,Tap 6 Feedback,0x2F,47,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+31,8 Tap Delay,Tap 6 Pan,0x30,48,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+31,8 Tap Delay,Tap 6 Mix Level,0x31,49,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+31,8 Tap Delay,Tap 7 Delay Time,0x32–0x33,50,2,2 bytes: LSB + 128 × MSB,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+31,8 Tap Delay,Tap 7 Feedback,0x34,52,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+31,8 Tap Delay,Tap 7 Pan,0x35,53,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+31,8 Tap Delay,Tap 7 Mix Level,0x36,54,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+31,8 Tap Delay,Tap 8 Delay Time,0x37–0x38,55,2,2 bytes: LSB + 128 × MSB,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+31,8 Tap Delay,Tap 8 Feedback,0x39,57,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+31,8 Tap Delay,Tap 8 Pan,0x3A,58,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+31,8 Tap Delay,Tap 8 Mix Level,0x3B,59,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+31,8 Tap Delay,EQ High Level,0x3C,60,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+31,8 Tap Delay,EQ Mid Frequency,0x3D,61,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+31,8 Tap Delay,EQ Mid Level,0x3E,62,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+31,8 Tap Delay,EQ Low Level,0x3F,63,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+31,8 Tap Delay,EQ Total Level,0x40,64,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+31,8 Tap Delay,Direct Level,0x44,68,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+31,8 Tap Delay,Total Level,0x45,69,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+32,4 Tap Delay,Tap 1 Delay Time,0x14–0x15,20,2,2 bytes: LSB + 128 × MSB,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+32,4 Tap Delay,Tap 1 Mix Level,0x16,22,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+32,4 Tap Delay,Tap 1 LFO Waveform,0x17,23,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+32,4 Tap Delay,Tap 1 Pan Rate,0x18,24,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+32,4 Tap Delay,Tap 1 Pan Depth,0x19,25,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+32,4 Tap Delay,Tap 2 Delay Time,0x1A–0x1B,26,2,2 bytes: LSB + 128 × MSB,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+32,4 Tap Delay,Tap 2 Mix Level,0x1C,28,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+32,4 Tap Delay,Tap 2 LFO Waveform,0x1D,29,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+32,4 Tap Delay,Tap 2 Pan Rate,0x1E,30,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+32,4 Tap Delay,Tap 2 Pan Depth,0x1F,31,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+32,4 Tap Delay,Tap 3 Delay Time,0x20–0x21,32,2,2 bytes: LSB + 128 × MSB,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+32,4 Tap Delay,Tap 3 Mix Level,0x22,34,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+32,4 Tap Delay,Tap 3 LFO Waveform,0x23,35,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+32,4 Tap Delay,Tap 3 Pan Rate,0x24,36,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+32,4 Tap Delay,Tap 3 Pan Depth,0x25,37,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+32,4 Tap Delay,Tap 4 Delay Time,0x26–0x27,38,2,2 bytes: LSB + 128 × MSB,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+32,4 Tap Delay,Tap 4 Mix Level,0x28,40,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+32,4 Tap Delay,Tap 4 LFO Waveform,0x29,41,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+32,4 Tap Delay,Tap 4 Pan Rate,0x2A,42,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+32,4 Tap Delay,Tap 4 Pan Depth,0x2B,43,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+32,4 Tap Delay,Feedback Position,0x2C–0x2D,44,2,2 bytes: LSB + 128 × MSB,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+32,4 Tap Delay,Feedback,0x2E,46,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+32,4 Tap Delay,Feedback HF Damp Frequency,0x2F,47,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+32,4 Tap Delay,Feedback HF Damp Level,0x30,48,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+32,4 Tap Delay,Feedback Filter,0x31,49,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+32,4 Tap Delay,EQ High Level,0x3C,60,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+32,4 Tap Delay,EQ Mid Frequency,0x3D,61,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+32,4 Tap Delay,EQ Mid Level,0x3E,62,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+32,4 Tap Delay,EQ Low Level,0x3F,63,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+32,4 Tap Delay,EQ Total Level,0x40,64,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+32,4 Tap Delay,Direct Level,0x44,68,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+32,4 Tap Delay,Total Level,0x45,69,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+33,Tempo Delay,Delay Tempo,0x17–0x18,23,2,2 bytes: LSB + 128 × MSB,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+33,Tempo Delay,Delay Interval,0x19,25,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+33,Tempo Delay,Delay Feedback,0x1A,26,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+33,Tempo Delay,HF Damp Frequency,0x1C,28,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+33,Tempo Delay,HF Damp Level,0x1D,29,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+33,Tempo Delay,Feedback Filter,0x1E,30,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+33,Tempo Delay,Separation,0x1F,31,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+33,Tempo Delay,Delay Mix Level,0x20,32,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+33,Tempo Delay,Delay Direct Level,0x21,33,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+33,Tempo Delay,Modulation LFO Waveform,0x23,35,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+33,Tempo Delay,Modulation Rate,0x24,36,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+33,Tempo Delay,Modulation Depth,0x25,37,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+33,Tempo Delay,EQ High Level,0x28,40,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+33,Tempo Delay,EQ Mid Frequency,0x29,41,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+33,Tempo Delay,EQ Mid Level,0x2A,42,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+33,Tempo Delay,EQ Low Level,0x2B,43,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+33,Tempo Delay,EQ Total Level,0x2C,44,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+33,Tempo Delay,Total Level,0x45,69,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+34,Enhancer,Left Channel Frequency,0x15,21,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+34,Enhancer,Left Channel Mix Balance,0x17,23,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+34,Enhancer,Right Channel Frequency,0x18,24,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+34,Enhancer,Right Channel Mix Balance,0x19,25,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+34,Enhancer,Total Level,0x45,69,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+35,Multi 5,Vibrato Rate,0x18,24,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+35,Multi 5,Vibrato Depth,0x19,25,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+35,Multi 5,Vibrato Rise Time,0x1A,26,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+35,Multi 5,Vibrato Fall Time,0x1B,27,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+35,Multi 5,Vibrato Pan Mode,0x1C,28,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+35,Multi 5,Vibrato Pan Waveform,0x1D,29,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+35,Multi 5,Vibrato Pan Rate,0x1E,30,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+35,Multi 5,Vibrato Pan Depth,0x1F,31,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+35,Multi 5,Delay Time,0x30–0x31,48,2,2 bytes: LSB + 128 × MSB,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+35,Multi 5,Delay Feedback,0x32,50,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+35,Multi 5,Delay HF Damp Frequency,0x33,51,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+35,Multi 5,Delay HF Damp Level,0x34,52,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+35,Multi 5,Delay Mix Level,0x35,53,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+35,Multi 5,Delay Direct Level,0x36,54,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+35,Multi 5,Reverb Time,0x37–0x38,55,2,2 bytes: LSB + 128 × MSB,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+35,Multi 5,Reverb Pre-Delay,0x39–0x3A,57,2,2 bytes: LSB + 128 × MSB,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+35,Multi 5,Reverb Filter LPF,0x3B,59,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+35,Multi 5,Reverb Filter HPF,0x3C,60,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+35,Multi 5,Reverb HF Damp Frequency,0x3D,61,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+35,Multi 5,Reverb HF Damp Level,0x3E,62,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+35,Multi 5,Reverb Level,0x40,64,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+35,Multi 5,Reverb Direct Level,0x41,65,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+35,Multi 5,Total Level,0x45,69,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+36,Modulation Reverb,EQ High Level,0x1E,30,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+36,Modulation Reverb,EQ Mid Frequency,0x1F,31,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+36,Modulation Reverb,EQ Mid Level,0x20,32,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+36,Modulation Reverb,EQ Low Level,0x21,33,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+36,Modulation Reverb,EQ Total Level,0x22,34,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+36,Modulation Reverb,Modulation LFO Waveform,0x23,35,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+36,Modulation Reverb,Modulation Rate,0x24,36,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+36,Modulation Reverb,Modulation Depth,0x25,37,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+36,Modulation Reverb,Reverb Time,0x37–0x38,55,2,2 bytes: LSB + 128 × MSB,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+36,Modulation Reverb,Reverb Pre-Delay,0x39–0x3A,57,2,2 bytes: LSB + 128 × MSB,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+36,Modulation Reverb,Reverb Filter LPF,0x3B,59,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+36,Modulation Reverb,Reverb Filter HPF,0x3C,60,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+36,Modulation Reverb,Reverb HF Damp Frequency,0x3D,61,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+36,Modulation Reverb,Reverb HF Damp Level,0x3E,62,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+36,Modulation Reverb,Reverb Level,0x40,64,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+36,Modulation Reverb,Reverb Cross Mix,0x41,65,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+36,Modulation Reverb,Reverb Direct Level,0x42,66,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+36,Modulation Reverb,Total Level,0x45,69,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+37,Reverb/Reverb/Delay,Reverb 1 Input Select,0x18,24,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+37,Reverb/Reverb/Delay,Reverb 1 Time,0x19–0x1A,25,2,2 bytes: LSB + 128 × MSB,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+37,Reverb/Reverb/Delay,Reverb 1 Pre-Delay,0x1B–0x1C,27,2,2 bytes: LSB + 128 × MSB,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+37,Reverb/Reverb/Delay,Reverb 1 Filter LPF,0x1D,29,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+37,Reverb/Reverb/Delay,Reverb 1 Filter HPF,0x1E,30,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+37,Reverb/Reverb/Delay,Reverb 1 HF Damp Frequency,0x1F,31,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+37,Reverb/Reverb/Delay,Reverb 1 HF Damp Level,0x20,32,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+37,Reverb/Reverb/Delay,Reverb 1 Mix Level,0x21,33,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+37,Reverb/Reverb/Delay,Delay Input Select,0x27,39,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+37,Reverb/Reverb/Delay,Delay Time,0x30–0x31,48,2,2 bytes: LSB + 128 × MSB,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+37,Reverb/Reverb/Delay,Delay Feedback,0x32,50,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+37,Reverb/Reverb/Delay,Delay HF Damp Frequency,0x33,51,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+37,Reverb/Reverb/Delay,Delay HF Damp Level,0x34,52,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+37,Reverb/Reverb/Delay,Delay Mix Level,0x35,53,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+37,Reverb/Reverb/Delay,Delay Direct Level,0x36,54,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+37,Reverb/Reverb/Delay,Reverb 2 Time,0x37–0x38,55,2,2 bytes: LSB + 128 × MSB,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+37,Reverb/Reverb/Delay,Reverb 2 Pre-Delay,0x39–0x3A,57,2,2 bytes: LSB + 128 × MSB,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+37,Reverb/Reverb/Delay,Reverb 2 Filter LPF,0x3B,59,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+37,Reverb/Reverb/Delay,Reverb 2 Filter HPF,0x3C,60,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+37,Reverb/Reverb/Delay,Reverb 2 HF Damp Frequency,0x3D,61,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+37,Reverb/Reverb/Delay,Reverb 2 HF Damp Level,0x3E,62,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+37,Reverb/Reverb/Delay,Reverb 2 Level,0x40,64,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+37,Reverb/Reverb/Delay,Reverb Cross Mix,0x41,65,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+37,Reverb/Reverb/Delay,Reverb 2 Direct Level,0x42,66,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+37,Reverb/Reverb/Delay,Total Level,0x45,69,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+38,Modulation Delay/Reverb,Delay EQ High Level,0x18,24,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+38,Modulation Delay/Reverb,Delay EQ Mid Frequency,0x19,25,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+38,Modulation Delay/Reverb,Delay EQ Mid Level,0x1A,26,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+38,Modulation Delay/Reverb,Delay EQ Low Level,0x1B,27,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+38,Modulation Delay/Reverb,Delay EQ Total Level,0x1C,28,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+38,Modulation Delay/Reverb,Reverb EQ High Level,0x1D,29,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+38,Modulation Delay/Reverb,Reverb EQ Mid Frequency,0x1E,30,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+38,Modulation Delay/Reverb,Reverb EQ Mid Level,0x1F,31,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+38,Modulation Delay/Reverb,Reverb EQ Low Level,0x20,32,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+38,Modulation Delay/Reverb,Reverb EQ Total Level,0x21,33,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+38,Modulation Delay/Reverb,Delay Modulation LFO Waveform,0x22,34,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+38,Modulation Delay/Reverb,Delay Modulation Rate,0x23,35,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+38,Modulation Delay/Reverb,Delay Modulation Depth,0x24,36,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+38,Modulation Delay/Reverb,Delay Input Select,0x28,40,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+38,Modulation Delay/Reverb,Delay Time,0x30–0x31,48,2,2 bytes: LSB + 128 × MSB,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+38,Modulation Delay/Reverb,Delay Feedback,0x32,50,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+38,Modulation Delay/Reverb,Delay HF Damp Frequency,0x33,51,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+38,Modulation Delay/Reverb,Delay HF Damp Level,0x34,52,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+38,Modulation Delay/Reverb,Delay Mix Level,0x35,53,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+38,Modulation Delay/Reverb,Delay Direct Level,0x36,54,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+38,Modulation Delay/Reverb,Reverb Time,0x37–0x38,55,2,2 bytes: LSB + 128 × MSB,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+38,Modulation Delay/Reverb,Reverb Pre-Delay,0x39–0x3A,57,2,2 bytes: LSB + 128 × MSB,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+38,Modulation Delay/Reverb,Reverb Filter LPF,0x3B,59,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+38,Modulation Delay/Reverb,Reverb Filter HPF,0x3C,60,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+38,Modulation Delay/Reverb,Reverb HF Damp Frequency,0x3D,61,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+38,Modulation Delay/Reverb,Reverb HF Damp Level,0x3E,62,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+38,Modulation Delay/Reverb,Reverb Level,0x40,64,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+38,Modulation Delay/Reverb,Reverb Direct Level,0x41,65,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+38,Modulation Delay/Reverb,Total Level,0x45,69,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+39,Rotary 1,Rotary Speed Select,0x18,24,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+39,Rotary 1,Horn Speed Fast,0x19,25,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+39,Rotary 1,Rotor Speed Fast,0x1A,26,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+39,Rotary 1,Horn Speed Slow,0x1B,27,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+39,Rotary 1,Rotor Speed Slow,0x1C,28,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+39,Rotary 1,Rise Time Horn,0x1D,29,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+39,Rotary 1,Rise Time Rotor,0x1E,30,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+39,Rotary 1,Fall Time Horn,0x1F,31,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+39,Rotary 1,Fall Time Rotor,0x20,32,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+39,Rotary 1,Mix Balance,0x21,33,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+39,Rotary 1,Overdrive Gain,0x22,34,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+39,Rotary 1,Overdrive Drive,0x23,35,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+39,Rotary 1,Overdrive Level,0x24,36,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+39,Rotary 1,Total Level,0x45,69,1,1 byte: raw 7-bit count,Manual address-table label; scale/enum conversion not applied,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf

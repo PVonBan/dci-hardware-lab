@@ -1,0 +1,14 @@
+﻿Topic,Rule,Confidence / limitation,Source
+SysEx message structure,106 bytes per DT1 message; payload starts at message offset 8 and is 96 bytes (payload offsets 0x00–0x5F).,Verified against all 160 messages in the supplied dump.,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+Two-byte values,Encoded count = LSB + (MSB × 128).,Verified decoder rule; unit scaling depends on the specific parameter.,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+Parameter ranges,Minimum/maximum are documented raw encoded counts for the selected algorithm and parameter.,A valid raw range does not imply linear physical units.,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+Milliseconds,Converted to ms only where the parameter range and unit are explicitly documented as milliseconds and raw counts align.,Treat display as a direct count; hardware read-back is recommended before large batch edits.,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+Tempo Delay,Raw tempo parameter displayed as BPM (documented range 46–280).,Documented physical unit and range.,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+Reverb Time,Values remain raw code 1–247; no seconds conversion is applied.,The conversion curve is nonlinear / not established by the manual's parameter table.,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+Fine pitch,"Tentative display = raw count − 50, covering the documented −50 to +50 Fine range.",Inferred affine mapping; validate a test patch against hardware/software read-back before batch use.,https://cdn.roland.com/assets/media/pdf/RSP-550_PA.pdf
+LFO waveform,Raw code 0 = Tri (triangle); 1 = Sin (sine).,Text conversion follows the documented enumeration.,https://cdn.roland.com/assets/media/pdf/RSP-550_PA.pdf
+Rotary Speed Select,Raw code 0 = Slow; 1 = Fast.,Text conversion follows the documented enumeration.,https://cdn.roland.com/assets/media/pdf/RSP-550_PA.pdf
+Direct Mix / Flange / Resonance / Polarity,Only selector values with documented text ordering are converted to labels.,Other mode/filter/damping selectors remain raw codes.,https://cdn.roland.com/assets/media/pdf/RSP-550_PA.pdf
+EQ / filters / damping,Keep the raw count plus the documented range or selector index.,"No guessed conversion to dB, frequency, or a label where the code table is unavailable.",https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+"Level, depth, rate, balance",Keep raw counts with documented ranges. Do not assume every 0–100 field means percentage.,The front-panel display or parameter guide may use a scale that is not identical to percent.,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
+Editing safety,"Named edits accept raw encoded counts, enforce known raw ranges, write a distinct output file, and recalculate checksums.",Always test the output on a copy and reload/read back the patch before applying many changes.,https://cdn.roland.com/assets/media/pdf/RSP-550_OM.pdf
