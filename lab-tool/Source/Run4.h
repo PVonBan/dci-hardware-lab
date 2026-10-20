@@ -8,6 +8,9 @@
 // Batch Z (run 9) plays programs by program change after C: repeat references at the end of the session, so drift
 // can be measured. A capture that clips is recorded again at once with the stimulus 10 dB lower ("-m10"); a second
 // recording of the same program and kind never overwrites the first ("-rep2").
+// Run 10: kind "wav:<name>" plays <plan dir>/stim/<name>.wav (the reference-lab battery, made by make_run10.py) at
+// that file's own sample rate; the interface is switched to that rate for the capture (and back to 48 kHz after).
+// A rate the interface refuses is logged and the line skipped. Markers come from <name>.txt next to the WAV.
 // plan.txt: batch <tab> program <tab> kind <tab> description. Kinds:
 //   filelo / file2lo / file3lo  listening material 10 dB below "file": ab-source.wav / ab-source2.wav /
 //           ab-source3.wav from the lab folder (or a synthetic phrase)
@@ -296,6 +299,22 @@ static Stim4 makeStim4 (const String& kind, double fs, int ch)
     return s;
 }
 
+static bool loadWavStim (const File& f, Stim4& s, double& rate)
+{
+    AudioFormatManager fm; fm.registerBasicFormats();
+    std::unique_ptr<AudioFormatReader> r (fm.createReaderFor (f));
+    if (r == nullptr || r->lengthInSamples <= 0) return false;
+    rate = r->sampleRate; const int n = (int) r->lengthInSamples;
+    AudioBuffer<float> b ((int) jmax (2u, r->numChannels), n);
+    r->read (&b, 0, n, 0, true, true);
+    s.L.assign (b.getReadPointer (0), b.getReadPointer (0) + n);
+    const int rc = r->numChannels > 1 ? 1 : 0;
+    s.R.assign (b.getReadPointer (rc), b.getReadPointer (rc) + n);
+    const File m = f.withFileExtension ("txt");
+    if (m.existsAsFile()) { s.markers.addLines (m.loadFileAsString()); s.markers.removeEmptyStrings(); }
+    return true;
+}
+
 static int runRun4 (int argc, char** argv)
 {
     if (argc < 13) { out ("usage: rsplab run4 <labdir> <backup.syx> <plan.txt> <restore.syx> <testsA.syx> <testsB.syx> <testsC.syx> o1 o2 i1 i2"); return 1; }
@@ -310,6 +329,7 @@ static int runRun4 (int argc, char** argv)
     const String runName = argc > 13 ? String (CharPointer_UTF8 (argv[13])) : String ("run4");   // capture sub-folder
     const File capDir = lab.getChildFile ("capture").getChildFile (runName); capDir.createDirectory();
     const double fs = 48000.0;
+    const File planDir = File { String (CharPointer_UTF8 (argv[4])) }.getParentDirectory();
     auto waitReturn = [] (const String& what) { out (">>> " + what + " Then press Return here."); std::string s; std::getline (std::cin, s); };
     out ("RSP-550 lab " + runName + ", " + Time::getCurrentTime().toString (true, true) + ": " + String (plan.size()) + " recordings (batches A, B, C, Z)");
 
@@ -384,6 +404,22 @@ static int runRun4 (int argc, char** argv)
         mo->sendMessageNow (MidiMessage::pitchWheel (dev + 1, 8192));
         mo->sendMessageNow (MidiMessage::allNotesOff (dev + 1));
     };
+    double curRate = fs;
+    auto setRate = [&] (double want) -> bool
+    {
+        if (std::abs (curRate - want) < 1.0) return true;
+        auto s = adm.getAudioDeviceSetup(); s.sampleRate = want;
+        const auto err = adm.setAudioDeviceSetup (s, true);
+        auto* d = adm.getCurrentAudioDevice();
+        if (err.isNotEmpty() || d == nullptr || std::abs (d->getCurrentSampleRate() - want) > 1.0)
+        {
+            s.sampleRate = fs; adm.setAudioDeviceSetup (s, true); curRate = fs; Thread::sleep (1500);
+            return std::abs (want - fs) < 1.0;
+        }
+        out ("  interface now at " + String (want, 0) + " Hz");
+        curRate = want; Thread::sleep (1500);   // let the converters settle
+        return true;
+    };
     std::set<String> stimSaved;
     FileOutputStream index (capDir.getChildFile ("run4-index.tsv")); index.setPosition (0); index.truncate();
     index << "file\tbatch\tprogram\tkind\tdescription\tstored-name\n";
@@ -391,13 +427,22 @@ static int runRun4 (int argc, char** argv)
     std::function<bool (const String&, int, const String&, const String&, float)> record;
     record = [&] (const String& batch, int number, const String& kind, const String& desc, float stimDb) -> bool
     {
-        auto st = makeStim4 (kind, fs, dev + 1);
-        if (stimDb != 0.0f) { const float g = Decibels::decibelsToGain (stimDb); for (auto& v : st.L) v *= g; for (auto& v : st.R) v *= g; }
-        if (! stimSaved.count (kind))
+        const bool isWav = kind.startsWith ("wav:");
+        const String kname = isWav ? kind.fromFirstOccurrenceOf ("wav:", false, false) : kind;   // used in file names
+        Stim4 st; double rate = fs;
+        if (isWav)
         {
-            writeWav (capDir.getChildFile ("stim-" + kind + ".wav"), { st.L, st.R }, fs);
-            capDir.getChildFile ("stim-" + kind + ".txt").replaceWithText (st.markers.joinIntoString ("\n") + "\n");
-            stimSaved.insert (kind);
+            const File wf = planDir.getChildFile ("stim").getChildFile (kname + ".wav");
+            if (! loadWavStim (wf, st, rate)) { out ("  stimulus " + wf.getFullPathName() + " missing or unreadable - line skipped"); return false; }
+        }
+        else st = makeStim4 (kind, fs, dev + 1);
+        if (! setRate (rate)) { out ("  the interface would not run at " + String (rate, 0) + " Hz - " + kname + " on " + String (number) + " skipped"); return false; }
+        if (stimDb != 0.0f) { const float g = Decibels::decibelsToGain (stimDb); for (auto& v : st.L) v *= g; for (auto& v : st.R) v *= g; }
+        if (! stimSaved.count (kname))
+        {
+            writeWav (capDir.getChildFile ("stim-" + kname + ".wav"), { st.L, st.R }, rate);
+            capDir.getChildFile ("stim-" + kname + ".txt").replaceWithText (st.markers.joinIntoString ("\n") + "\n");
+            stimSaved.insert (kname);
         }
         resetControllers();
         selectPC (number);
@@ -411,7 +456,7 @@ static int runRun4 (int argc, char** argv)
                         for (int k = 0; k < 96; ++k) if (buf[(size_t) k] != t.payload[(size_t) k]) diff << String::toHexString (k) << ":" << (int) t.payload[(size_t) k] << "->" << (int) buf[(size_t) k] << " ";
                         if (diff.isNotEmpty()) out ("  note: the unit changed bytes of " + String (number) + " on load: " + diff);
                     }
-        String name = "r4" + batch + "-" + String (number).paddedLeft ('0', 3) + "-" + kind + (stimDb != 0.0f ? "-m" + String ((int) -stimDb) : String());
+        String name = "r4" + batch + "-" + String (number).paddedLeft ('0', 3) + "-" + kname + (stimDb != 0.0f ? "-m" + String ((int) -stimDb) : String());
         for (int k = 2; capDir.getChildFile (name + ".wav").existsAsFile(); ++k)   // repeats never overwrite (run 9)
             name = name.upToLastOccurrenceOf ("-rep", false, false) + "-rep" + String (k);
         pr.setup ((int) st.L.size(), sends, rets); pr.play[0] = st.L; pr.play[1] = st.R;
@@ -426,13 +471,13 @@ static int runRun4 (int argc, char** argv)
             const int p = pr.pos.load();
             while (next < events.size() && p >= events[next].at) { mo->sendMessageNow (events[next].msg); sent.add (String (events[next].at) + "\t" + String (p) + "\t" + events[next].label); ++next; }
             Thread::sleep (1);
-            if (Time::getMillisecondCounterHiRes() - t0 > (pr.len / fs + 5.0) * 1000.0) { ok = false; break; }
+            if (Time::getMillisecondCounterHiRes() - t0 > (pr.len / rate + 5.0) * 1000.0) { ok = false; break; }
         }
         pr.pos.store (-1);
         while (next < events.size()) { mo->sendMessageNow (events[next].msg); sent.add (String (events[next].at) + "\tend\t" + events[next].label); ++next; }
         resetControllers();
         if (! ok) { out ("  audio stalled on " + name); return false; }
-        writeWav (capDir.getChildFile (name + ".wav"), pr.rec, fs);
+        writeWav (capDir.getChildFile (name + ".wav"), pr.rec, rate);
         if (! sent.isEmpty()) capDir.getChildFile (name + "-events.txt").replaceWithText ("intended\tactual\tevent\n" + sent.joinIntoString ("\n") + "\n");
         MemoryOutputStream m; for (auto b : buf) m.writeByte ((char) b);
         capDir.getChildFile (name + "-editbuffer.bin").replaceWithData (m.getData(), m.getDataSize());
@@ -477,7 +522,6 @@ static int runRun4 (int argc, char** argv)
     // Follow-up rounds (run 7 on): while the runner waits, Claude analyses the recordings so far and may place
     // round<N>-plan.txt (lines "R<N> <program> <kind> <description>") and, for new test programs, round<N>-tests.syx
     // next to the plan. Same safety as the batches: slots 101-128 only, every slot covered by the restore file.
-    const File planDir = File { String (CharPointer_UTF8 (argv[4])) }.getParentDirectory();
     for (int round = 1; round <= 12; )
     {
         out (">>> Follow-up round " + String (round) + ": wait until Claude says it is ready, then press Return here."
@@ -507,6 +551,7 @@ static int runRun4 (int argc, char** argv)
         out ("  round " + String (round) + ": " + String (n) + " recordings, elapsed " + String ((Time::getMillisecondCounterHiRes() - t0) / 60000.0, 1) + " min");
         ++round;
     }
+    setRate (fs);
     adm.removeAudioCallback (&pr);
 
     waitReturn ("Restoring slots 101-128: on the RSP-550, start Bulk Load again so it shows 'Waiting'.");

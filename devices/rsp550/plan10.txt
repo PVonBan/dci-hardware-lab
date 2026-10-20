@@ -1,0 +1,103 @@
+A	101	wav:imp1	Pre-delay: Large Hall 1 with Rev PreDly 0 ms (program value 30)
+A	102	wav:imp1	Pre-delay: Large Hall 1 with Rev PreDly 50 ms (program value 30)
+A	103	wav:imp1	Pre-delay: Large Hall 1 with ER PreDly 0 ms (program value 25)
+A	104	wav:imp1	Pre-delay: Large Hall 1 with ER PreDly 50 ms (program value 25)
+A	105	wav:imp1	Pre-delay: Warm Plate with Rev PreDly 0 ms (program value 0)
+A	106	wav:imp1	Pre-delay: Warm Plate with Rev PreDly 50 ms (program value 0)
+A	107	wav:imp1	Pre-delay: Large Room with Rev PreDly 0 ms (program value 10)
+A	108	wav:imp1	Pre-delay: Large Room with Rev PreDly 50 ms (program value 10)
+A	109	wav:labimp	Lab battery, Large Hall 1 wet only (Dir Lvl 0, program value 100)
+A	109	wav:sweepm12	Lab battery, Large Hall 1 wet only (Dir Lvl 0, program value 100)
+A	110	wav:labimp	Lab battery, Warm Plate wet only (Dir Lvl 0, program value 100)
+A	110	wav:sweepm12	Lab battery, Warm Plate wet only (Dir Lvl 0, program value 100)
+A	111	wav:labimp	Lab battery, Large Hall 2 wet only (Dir Lvl 0, program value 100)
+A	111	wav:sweepm12	Lab battery, Large Hall 2 wet only (Dir Lvl 0, program value 100)
+A	112	wav:labimp	Lab battery, Medium Hall 2 wet only (Dir Lvl 0, program value 100)
+A	112	wav:sweepm12	Lab battery, Medium Hall 2 wet only (Dir Lvl 0, program value 100)
+A	113	wav:labimp	Lab battery, Large Room wet only (Dir Lvl 0, program value 100)
+A	113	wav:sweepm12	Lab battery, Large Room wet only (Dir Lvl 0, program value 100)
+A	114	wav:labimp	Lab battery, Small Room wet only (Dir Lvl 0, program value 100)
+A	114	wav:sweepm12	Lab battery, Small Room wet only (Dir Lvl 0, program value 100)
+A	115	wav:labimp	Lab battery, Bright Plate wet only (Dir Lvl 0, program value 100)
+A	115	wav:sweepm12	Lab battery, Bright Plate wet only (Dir Lvl 0, program value 100)
+A	116	wav:labimp	Lab battery, Heaven wet only (Rev Dir Lvl 0, program value 100)
+A	116	wav:sweepm12	Lab battery, Heaven wet only (Rev Dir Lvl 0, program value 100)
+A	117	wav:sweepm24	Lab battery, Large Hall 1 at Total Level 18 (program value 100), for the level series
+A	117	wav:sweepm12	Lab battery, Large Hall 1 at Total Level 18 (program value 100), for the level series
+A	117	wav:sweep0	Lab battery, Large Hall 1 at Total Level 18 (program value 100), for the level series
+A	118	wav:sweepm24	Lab battery, Warm Plate at Total Level 17 (program value 100), for the level series
+A	118	wav:sweepm12	Lab battery, Warm Plate at Total Level 17 (program value 100), for the level series
+A	118	wav:sweep0	Lab battery, Warm Plate at Total Level 17 (program value 100), for the level series
+A	119	wav:sweepm24	Lab battery, Large Hall 2 at Total Level 16 (program value 100), for the level series
+A	119	wav:sweepm12	Lab battery, Large Hall 2 at Total Level 16 (program value 100), for the level series
+A	119	wav:sweep0	Lab battery, Large Hall 2 at Total Level 16 (program value 100), for the level series
+A	120	wav:sweepm24	Lab battery, Medium Hall 2 at Total Level 17 (program value 100), for the level series
+A	120	wav:sweepm12	Lab battery, Medium Hall 2 at Total Level 17 (program value 100), for the level series
+A	120	wav:sweep0	Lab battery, Medium Hall 2 at Total Level 17 (program value 100), for the level series
+A	121	wav:sweepm24	Lab battery, Large Room at Total Level 15 (program value 100), for the level series
+A	121	wav:sweepm12	Lab battery, Large Room at Total Level 15 (program value 100), for the level series
+A	121	wav:sweep0	Lab battery, Large Room at Total Level 15 (program value 100), for the level series
+A	122	wav:sweepm24	Lab battery, Small Room at Total Level 22 (program value 100), for the level series
+A	122	wav:sweepm12	Lab battery, Small Room at Total Level 22 (program value 100), for the level series
+A	122	wav:sweep0	Lab battery, Small Room at Total Level 22 (program value 100), for the level series
+A	123	wav:sweepm24	Lab battery, Bright Plate at Total Level 15 (program value 100), for the level series
+A	123	wav:sweepm12	Lab battery, Bright Plate at Total Level 15 (program value 100), for the level series
+A	123	wav:sweep0	Lab battery, Bright Plate at Total Level 15 (program value 100), for the level series
+A	124	wav:sweepm24	Lab battery, Heaven at Total Level 7 (program value 100), for the level series
+A	124	wav:sweepm12	Lab battery, Heaven at Total Level 7 (program value 100), for the level series
+A	124	wav:sweep0	Lab battery, Heaven at Total Level 7 (program value 100), for the level series
+A	125	wav:sweepm24	Lab battery, Wide Chorus at Total Level 15 (program value 61), for the level series
+A	125	wav:sweepm12	Lab battery, Wide Chorus at Total Level 15 (program value 61), for the level series
+A	125	wav:sweep0	Lab battery, Wide Chorus at Total Level 15 (program value 61), for the level series
+A	126	wav:sweepm24	Lab battery, Light Flanger at Total Level 32 (program value 80), for the level series
+A	126	wav:sweepm12	Lab battery, Light Flanger at Total Level 32 (program value 80), for the level series
+A	126	wav:sweep0	Lab battery, Light Flanger at Total Level 32 (program value 80), for the level series
+A	127	wav:sweepm24	Lab battery, Analog Delay at Total Level 30 (program value 100), for the level series
+A	127	wav:sweepm12	Lab battery, Analog Delay at Total Level 30 (program value 100), for the level series
+A	127	wav:sweep0	Lab battery, Analog Delay at Total Level 30 (program value 100), for the level series
+A	128	wav:sweepm24	Lab battery, Light Phaser at Total Level 31 (program value 76), for the level series
+A	128	wav:sweepm12	Lab battery, Light Phaser at Total Level 31 (program value 76), for the level series
+A	128	wav:sweep0	Lab battery, Light Phaser at Total Level 31 (program value 76), for the level series
+B	1	wav:labimp	Lab battery (impulse x4 + left/right): Large Hall 1
+B	1	wav:sweepm12	Lab battery (sweep -12 dBFS): Large Hall 1
+B	1	wav:labmisc	Lab battery (silence, long tones, clicks, pink): Large Hall 1
+B	8	wav:labimp	Lab battery (impulse x4 + left/right): Warm Plate
+B	8	wav:sweepm12	Lab battery (sweep -12 dBFS): Warm Plate
+B	8	wav:labmisc	Lab battery (silence, long tones, clicks, pink): Warm Plate
+B	2	wav:labimp	Lab battery (impulse x4 + left/right): Large Hall 2
+B	2	wav:sweepm12	Lab battery (sweep -12 dBFS): Large Hall 2
+B	2	wav:labmisc	Lab battery (silence, long tones, clicks, pink): Large Hall 2
+B	4	wav:labimp	Lab battery (impulse x4 + left/right): Medium Hall 2
+B	4	wav:sweepm12	Lab battery (sweep -12 dBFS): Medium Hall 2
+B	4	wav:labmisc	Lab battery (silence, long tones, clicks, pink): Medium Hall 2
+B	5	wav:labimp	Lab battery (impulse x4 + left/right): Large Room
+B	5	wav:sweepm12	Lab battery (sweep -12 dBFS): Large Room
+B	5	wav:labmisc	Lab battery (silence, long tones, clicks, pink): Large Room
+B	7	wav:labimp	Lab battery (impulse x4 + left/right): Small Room
+B	7	wav:sweepm12	Lab battery (sweep -12 dBFS): Small Room
+B	7	wav:labmisc	Lab battery (silence, long tones, clicks, pink): Small Room
+B	9	wav:labimp	Lab battery (impulse x4 + left/right): Bright Plate
+B	9	wav:sweepm12	Lab battery (sweep -12 dBFS): Bright Plate
+B	9	wav:labmisc	Lab battery (silence, long tones, clicks, pink): Bright Plate
+B	33	wav:labimp	Lab battery (impulse x4 + left/right): Heaven
+B	33	wav:sweepm12	Lab battery (sweep -12 dBFS): Heaven
+B	33	wav:labmisc	Lab battery (silence, long tones, clicks, pink): Heaven
+B	50	wav:labimp	Lab battery (impulse x4 + left/right): Wide Chorus
+B	50	wav:sweepm12	Lab battery (sweep -12 dBFS): Wide Chorus
+B	50	wav:labmisc	Lab battery (silence, long tones, clicks, pink): Wide Chorus
+B	54	wav:labimp	Lab battery (impulse x4 + left/right): Light Flanger
+B	54	wav:sweepm12	Lab battery (sweep -12 dBFS): Light Flanger
+B	54	wav:labmisc	Lab battery (silence, long tones, clicks, pink): Light Flanger
+B	60	wav:labimp	Lab battery (impulse x4 + left/right): Analog Delay
+B	60	wav:sweepm12	Lab battery (sweep -12 dBFS): Analog Delay
+B	60	wav:labmisc	Lab battery (silence, long tones, clicks, pink): Analog Delay
+B	70	wav:labimp	Lab battery (impulse x4 + left/right): Light Phaser
+B	70	wav:sweepm12	Lab battery (sweep -12 dBFS): Light Phaser
+B	70	wav:labmisc	Lab battery (silence, long tones, clicks, pink): Light Phaser
+B	1	wav:sweepm12_96	Lab battery (sweep -12 dBFS at 96 kHz): Large Hall 1
+B	8	wav:sweepm12_96	Lab battery (sweep -12 dBFS at 96 kHz): Warm Plate
+B	50	wav:sweepm12_96	Lab battery (sweep -12 dBFS at 96 kHz): Wide Chorus
+Z	1	wav:labimp	Repeat at the end (drift): Large Hall 1
+Z	8	wav:labimp	Repeat at the end (drift): Warm Plate
+Z	1	std	Same capture as runs 6-9 (chain unchanged?): Large Hall 1
+Z	54	std	Same capture as runs 6-9 (chain unchanged?): Light Flanger

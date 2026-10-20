@@ -6,10 +6,15 @@ import numpy as np
 from scipy import signal
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import guards
-SP = '/tmp/claude-0/-home-claude/43821833-de77-5012-b98f-e22767bd5dd6/scratchpad'
+SP = os.environ.get('DCI_LAB_WORK') or '/tmp/claude-0/-home-claude/43821833-de77-5012-b98f-e22767bd5dd6/scratchpad'   # where runs 6-8 and their plans live
 os.chdir(SP)
 ARGS = list(sys.argv)   # the runs' analysis code resets sys.argv
 R4 = ARGS[1] if len(ARGS) > 1 else 'an4/render4'
+# 2026-10-20: render4 has only the effect engines; since 1.6.4 the plug-in adds per-algorithm wet low-pass and shelf,
+# output scaling and more in its processor, so render4 no longer matches it (parity failed on 7 of 8 programs). Pass
+# the plug-in's test app (SSP550Test) so replay scores what ships.
+PLUG = os.path.basename(R4).startswith('SSP550Test')
+import lab10
 BK = '/mnt/user-data/uploads/Downloads/RSP-550/lab/RSP550-backup-20261018-041833.syx'
 RUNS = [
     ('run6pr', ['run6pr/plan4.txt'], {'A': 'run6pr/tests4A.syx', 'C': 'run6pr/tests4C.syx'}, 'run6pr/an6.py'),
@@ -33,7 +38,13 @@ for run, plans, syx, an in RUNS:
             if not os.path.exists(stim): missing.append(kind); continue
             bank = syx.get(b, BK)
             for src in (bank, BK):
-                subprocess.run([R4, src, stim, 'replay/tmp', str(prog)], check=True, capture_output=True)
+                if PLUG:   # the real plug-in engine (processor chain included): SSP550Test --render <dir> <stim> <bank> <prog>
+                    # the plug-in loads a .syx in file order, so give it the bank in slot order (lab10.slotbank)
+                    sb = 'replay/tmp/slots-' + src.replace('/', '_')   # run6 and run7 both have a tests4C.syx
+                    if not os.path.exists(sb): lab10.slotbank(BK, sb, src if src != BK else None)
+                    subprocess.run([R4, '--render', 'replay/tmp', stim, sb, str(prog)], check=True, capture_output=True)
+                else:
+                    subprocess.run([R4, src, stim, 'replay/tmp', str(prog)], check=True, capture_output=True)
                 if os.path.exists('replay/tmp/%03d.f32' % prog): break
             shutil.move('replay/tmp/%03d.f32' % prog, '%s/plug/r4%s-%03d-%s.f32' % (run, b, prog, kind)); n += 1
     # uniform score for every test: per-channel level and 1/3-octave tone, hw - plug, over the whole recording

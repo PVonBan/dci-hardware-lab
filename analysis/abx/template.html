@@ -49,6 +49,7 @@ button:disabled { opacity: .45; cursor: default; }
 .dots span.ok { background: var(--good); border-color: var(--good); }
 .dots span.no { background: var(--bad); border-color: var(--bad); }
 .dots span.now { border-color: var(--amber); }
+.dots span.unsure { background: var(--muted, #777); border-color: var(--muted, #777); }
 .result { display: grid; gap: 10px; }
 .score { font: 700 2rem/1 var(--display); }
 .verdict { color: var(--muted); }
@@ -68,7 +69,7 @@ kbd { font: 500 .8rem var(--mono); border: 1px solid var(--line); border-radius:
 <div class="wrap">
   <header>
     <h1>{{PLUG}} Blind Listening</h1>
-    <p>A is the {{UNIT}}, B is the plug-in. X is one of them at random. Switch freely while it plays (the switch keeps the position), then say which one X is. Ten trials per program; nine or ten right means you reliably hear a difference.</p>
+    <p>A is the {{UNIT}}, B is the plug-in. X is one of them at random. Switch freely while it plays (the switch keeps the position), then say which one X is, or that you can't tell. Ten trials per program; eight or more right means you reliably hear a difference. "Can't tell" is a useful answer: it counts as not right, and the saved result records how often you chose it.</p>
   </header>
 
   <section class="panel" aria-labelledby="pick">
@@ -89,6 +90,7 @@ kbd { font: 500 .8rem var(--mono); border: 1px solid var(--line); border-radius:
     <div class="trial">
       <button class="answer" id="ansA">X is A</button>
       <button class="answer" id="ansB">X is B</button>
+      <button class="answer" id="ansU">Can't tell</button>
       <div class="dots" id="dots" aria-label="Trials"></div>
     </div>
     <div class="status" id="trialStatus">Loading audio…</div>
@@ -104,7 +106,7 @@ kbd { font: 500 .8rem var(--mono); border: 1px solid var(--line); border-radius:
       <div class="status" id="saveStatus"></div>
     </div>
     <div class="notes">
-      <p>Keys: <kbd>A</kbd> <kbd>B</kbd> <kbd>X</kbd> switch, <kbd>Space</kbd> play or stop, <kbd>1</kbd> X is A, <kbd>2</kbd> X is B.</p>
+      <p>Keys: <kbd>A</kbd> <kbd>B</kbd> <kbd>X</kbd> switch, <kbd>Space</kbd> play or stop, <kbd>1</kbd> X is A, <kbd>2</kbd> X is B, <kbd>3</kbd> can't tell.</p>
     </div>
   </section>
 
@@ -127,7 +129,7 @@ const PAIRS = {{PAIRS}};
 const N = 10;
 const $ = (id) => document.getElementById(id);
 let ctx = null, bufs = {}, cur = PAIRS[0], playing = false, src = 'a', nodes = null, startAt = 0, offset = 0, raf = 0;
-let trial = null;   // { xIsA: bool[], answers: (bool|null)[], i }
+let trial = null;   // { xIsA: bool[], answers: (true = A | false = B | 'u' = can't tell | null)[], i }
 
 function newRun() {
   trial = { xIsA: Array.from({ length: N }, () => Math.random() < 0.5), answers: Array(N).fill(null), i: 0 };
@@ -136,9 +138,9 @@ function newRun() {
 }
 function renderDots() {
   const d = $('dots'); d.textContent = '';
-  trial.answers.forEach((a, k) => { const s = document.createElement('span'); if (a !== null) s.className = a === trial.xIsA[k] ? 'ok' : 'no'; else if (k === trial.i) s.className = 'now'; d.appendChild(s); });
+  trial.answers.forEach((a, k) => { const s = document.createElement('span'); if (a === 'u') s.className = 'unsure'; else if (a !== null) s.className = a === trial.xIsA[k] ? 'ok' : 'no'; else if (k === trial.i) s.className = 'now'; d.appendChild(s); });
 }
-function setAnswering(on) { $('ansA').disabled = !on; $('ansB').disabled = !on; }
+function setAnswering(on) { $('ansA').disabled = !on; $('ansB').disabled = !on; $('ansU').disabled = !on; }
 
 function renderPairs() {
   const box = $('pairs'); box.textContent = '';
@@ -202,12 +204,13 @@ function choose(n, k) { let r = 1; for (let j = 1; j <= k; j++) r = r * (n - k +
 function finish() {
   setAnswering(false);
   const k = trial.answers.filter((a, j) => a === trial.xIsA[j]).length, p = binomTail(k, N);
-  $('score').textContent = k + ' of ' + N + ' right';
+  const u = trial.answers.filter(a => a === 'u').length;
+  $('score').textContent = k + ' of ' + N + ' right' + (u ? ' (' + u + ' can\'t tell)' : '');
   $('verdict').textContent = p < 0.05
     ? 'You can hear a difference on ' + cur.name + ' (guessing would score this well only ' + (p * 100).toFixed(1) + ' % of the time).'
     : 'No reliable difference on ' + cur.name + ': guessing scores this well ' + (p * 100).toFixed(0) + ' % of the time.';
   $('trialStatus').textContent = 'Done. Save the result so Claude can read it, or run again.';
-  $('result').hidden = false; trial.k = k; trial.p = p;
+  $('result').hidden = false; trial.k = k; trial.p = p; trial.u = u;
 }
 
 // ---- saved results (db: shared, readable by Claude) ----
@@ -223,7 +226,7 @@ function renderRows(snap) {
   for (const d of snap.docs) {
     const r = d.data() || {}; const tr = tb.insertRow();
     const cell = (t, cls) => { const c = tr.insertCell(); c.textContent = t; if (cls) c.className = cls; };
-    cell(r.program || '?'); cell((r.correct ?? '?') + ' / ' + (r.n ?? N), 'num'); cell(r.p != null ? (r.p * 100).toFixed(1) + ' %' : '', 'num');
+    cell(r.program || '?'); cell((r.correct ?? '?') + ' / ' + (r.n ?? N) + (r.cantTell ? ' (' + r.cantTell + ' can\'t tell)' : ''), 'num'); cell(r.p != null ? (r.p * 100).toFixed(1) + ' %' : '', 'num');
     cell(r.build || '', 'num'); cell(r.notes || ''); cell(r.at ? new Date(r.at).toLocaleString() : '', 'num');
   }
 }
@@ -231,8 +234,8 @@ async function save() {
   if (!db || !trial || trial.k == null) return;
   $('save').disabled = true; $('saveStatus').textContent = 'Saving…';
   try {
-    await db.collection('abx').add({ program: cur.name, pair: cur.id, build: BUILD, n: N, correct: trial.k, p: trial.p,
-      trials: trial.xIsA.map((x, j) => ({ x: x ? 'A' : 'B', answered: trial.answers[j] ? 'A' : 'B' })),
+    await db.collection('abx').add({ program: cur.name, pair: cur.id, build: BUILD, n: N, correct: trial.k, p: trial.p, cantTell: trial.u || 0,
+      trials: trial.xIsA.map((x, j) => ({ x: x ? 'A' : 'B', answered: trial.answers[j] === 'u' ? 'cant-tell' : (trial.answers[j] ? 'A' : 'B') })),
       notes: $('what').value.trim(), at: Date.now(), by: user ? await user.id() : null });
     $('saveStatus').textContent = 'Saved. Claude can read it.';
   } catch (e) {
@@ -243,7 +246,7 @@ async function save() {
 
 $('play').onclick = () => { playing ? stop() : start(); };
 document.querySelectorAll('.key').forEach(b => b.onclick = () => select(b.dataset.src));
-$('ansA').onclick = () => answer(true); $('ansB').onclick = () => answer(false);
+$('ansA').onclick = () => answer(true); $('ansB').onclick = () => answer(false); $('ansU').onclick = () => answer('u');
 $('save').onclick = save; $('again').onclick = () => { stop(); offset = 0; newRun(); };
 document.addEventListener('keydown', e => {
   if (e.target.tagName === 'TEXTAREA') return;
@@ -252,6 +255,7 @@ document.addEventListener('keydown', e => {
   else if (k === ' ') { e.preventDefault(); playing ? stop() : start(); }
   else if (k === '1' && !$('ansA').disabled) answer(true);
   else if (k === '2' && !$('ansB').disabled) answer(false);
+  else if (k === '3' && !$('ansU').disabled) answer('u');
 });
 renderPairs(); load(); initStore();
 </script>

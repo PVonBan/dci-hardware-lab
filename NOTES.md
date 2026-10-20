@@ -126,3 +126,34 @@ replay, parity, guards, hold-out, repeatability and ABX. These were missing; add
   dci-core plug-in check `hostreset` (dci-core 3554554).
 - **Installs on the Mac:** remove the old bundle before copying, or macOS kills every host that loads it ("Code
   Signature Invalid"). That happened to DCI Reverb and Tape Echo on 2026-10-20.
+
+## Run 10 prepared: the reference-lab battery on the RSP-550 (2026-10-20, SSP-550 1.6.6)
+- Everything in the section above is in run 10 (`devices/rsp550/make_run10.py`, `plan10.txt`, `slots10.json`;
+  launcher `RSP-550-run10.command`; 103 captures, about 50 min). Run 9 has not been run yet; run 10 is meant to follow
+  it but works on its own.
+- The runner (`lab-tool/Source/Run4.h`) gained kind `wav:<name>`: it plays `run10/stim/<name>.wav` at that file's rate,
+  switching the interface to 96 kHz and back for the 96 kHz sweep (a refused rate is logged and skipped). The stimuli
+  are the reverb lab's own (`dci-effects tools/reverblab/make_run3.py`), so `analyse_run3.py` measures the unit and
+  ours with the same code. `analysis/lab10.py` cuts captures (loop latency and gain removed) and our renders into the
+  reverb lab's file layout, adds the unit's idle noise to ours, measures both and compares them, tolerance from the
+  unit's own spread over its 4 impulses.
+- The 0 dBFS sweep would clip the interface on every factory program (our renders peak +4 to +18 dBFS), so the level
+  series runs on copies with Total Level lowered; the factory programs get the -12 dBFS sweep only. Our model's
+  output at 0 dBFS input goes far above full scale (Light Flanger +20 dBFS): the unit cannot, so run 10 shows where
+  its converters or internal word length clip, which the model does not have yet.
+- Decay measures (EDT, shape, density, build-up) on factory programs are dominated by the direct sound; wet-only
+  copies of the 8 reverb programs carry them.
+- Self-test before trusting captures: our renders put through the loop model and analysed as the unit match ours
+  on 97 % or more of measures (gating in `run_all.sh`).
+- **Replay was scoring the wrong renderer.** `render4` has only the effect engines; since 1.6.4 the plug-in adds per-
+  algorithm wet low-pass and shelf and output scaling in its processor. Parity render4 vs plug-in failed on 7 of 8
+  programs (up to 11 dB in a band). `replay.py` now renders with the plug-in's own `SSP550Test --render` when given
+  that binary; `render4` parity is reported every run. Fits made with render4 since 1.6.4 need checking on the plug-in.
+- **The plug-in's bank loader ignores SysEx addresses**: it fills programs 1, 2, 3 ... in file order. A test bank
+  loaded alone (slots 101-128) lands in programs 1-28, so `--render` of program 106 played the factory copy. Renders
+  now load the unit's whole backup in slot order with the test programs overlaid in their own slots
+  (`lab10.py slotbank`; replay caches one per test bank, keyed by path: runs 6 and 7 both have a `tests4C.syx`).
+- Replay with the real plug-in (baseline `scores-plug166.json`): run 6 median level 0.84 dB, tone 0.79 dB; run 7
+  1.46 / 0.81; run 8 1.31 / 1.15. 1.6.6 = 1.6.5 (no measure moved > 0.3 dB). The render4 scores (`scores-v16x`) are
+  kept for history only; `scores-v164.json` was also made before 1.6.4's last changes.
+- Test list: `devices/rsp550/TESTS.md` and `run_all.sh`.

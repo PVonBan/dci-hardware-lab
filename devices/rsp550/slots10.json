@@ -1,0 +1,230 @@
+{
+ "101": {
+  "source": 1,
+  "what": "Large Hall 1 with Rev PreDly 0 ms (program value 30)",
+  "kinds": [
+   "imp1"
+  ]
+ },
+ "102": {
+  "source": 1,
+  "what": "Large Hall 1 with Rev PreDly 50 ms (program value 30)",
+  "kinds": [
+   "imp1"
+  ]
+ },
+ "103": {
+  "source": 1,
+  "what": "Large Hall 1 with ER PreDly 0 ms (program value 25)",
+  "kinds": [
+   "imp1"
+  ]
+ },
+ "104": {
+  "source": 1,
+  "what": "Large Hall 1 with ER PreDly 50 ms (program value 25)",
+  "kinds": [
+   "imp1"
+  ]
+ },
+ "105": {
+  "source": 8,
+  "what": "Warm Plate with Rev PreDly 0 ms (program value 0)",
+  "kinds": [
+   "imp1"
+  ]
+ },
+ "106": {
+  "source": 8,
+  "what": "Warm Plate with Rev PreDly 50 ms (program value 0)",
+  "kinds": [
+   "imp1"
+  ]
+ },
+ "107": {
+  "source": 5,
+  "what": "Large Room with Rev PreDly 0 ms (program value 10)",
+  "kinds": [
+   "imp1"
+  ]
+ },
+ "108": {
+  "source": 5,
+  "what": "Large Room with Rev PreDly 50 ms (program value 10)",
+  "kinds": [
+   "imp1"
+  ]
+ },
+ "109": {
+  "source": 1,
+  "what": "Large Hall 1 wet only (Dir Lvl 0, program value 100)",
+  "kinds": [
+   "labimp",
+   "sweepm12"
+  ]
+ },
+ "110": {
+  "source": 8,
+  "what": "Warm Plate wet only (Dir Lvl 0, program value 100)",
+  "kinds": [
+   "labimp",
+   "sweepm12"
+  ]
+ },
+ "111": {
+  "source": 2,
+  "what": "Large Hall 2 wet only (Dir Lvl 0, program value 100)",
+  "kinds": [
+   "labimp",
+   "sweepm12"
+  ]
+ },
+ "112": {
+  "source": 4,
+  "what": "Medium Hall 2 wet only (Dir Lvl 0, program value 100)",
+  "kinds": [
+   "labimp",
+   "sweepm12"
+  ]
+ },
+ "113": {
+  "source": 5,
+  "what": "Large Room wet only (Dir Lvl 0, program value 100)",
+  "kinds": [
+   "labimp",
+   "sweepm12"
+  ]
+ },
+ "114": {
+  "source": 7,
+  "what": "Small Room wet only (Dir Lvl 0, program value 100)",
+  "kinds": [
+   "labimp",
+   "sweepm12"
+  ]
+ },
+ "115": {
+  "source": 9,
+  "what": "Bright Plate wet only (Dir Lvl 0, program value 100)",
+  "kinds": [
+   "labimp",
+   "sweepm12"
+  ]
+ },
+ "116": {
+  "source": 33,
+  "what": "Heaven wet only (Rev Dir Lvl 0, program value 100)",
+  "kinds": [
+   "labimp",
+   "sweepm12"
+  ]
+ },
+ "117": {
+  "source": 1,
+  "what": "Large Hall 1 at Total Level 18 (program value 100), for the level series",
+  "kinds": [
+   "sweepm24",
+   "sweepm12",
+   "sweep0"
+  ]
+ },
+ "118": {
+  "source": 8,
+  "what": "Warm Plate at Total Level 17 (program value 100), for the level series",
+  "kinds": [
+   "sweepm24",
+   "sweepm12",
+   "sweep0"
+  ]
+ },
+ "119": {
+  "source": 2,
+  "what": "Large Hall 2 at Total Level 16 (program value 100), for the level series",
+  "kinds": [
+   "sweepm24",
+   "sweepm12",
+   "sweep0"
+  ]
+ },
+ "120": {
+  "source": 4,
+  "what": "Medium Hall 2 at Total Level 17 (program value 100), for the level series",
+  "kinds": [
+   "sweepm24",
+   "sweepm12",
+   "sweep0"
+  ]
+ },
+ "121": {
+  "source": 5,
+  "what": "Large Room at Total Level 15 (program value 100), for the level series",
+  "kinds": [
+   "sweepm24",
+   "sweepm12",
+   "sweep0"
+  ]
+ },
+ "122": {
+  "source": 7,
+  "what": "Small Room at Total Level 22 (program value 100), for the level series",
+  "kinds": [
+   "sweepm24",
+   "sweepm12",
+   "sweep0"
+  ]
+ },
+ "123": {
+  "source": 9,
+  "what": "Bright Plate at Total Level 15 (program value 100), for the level series",
+  "kinds": [
+   "sweepm24",
+   "sweepm12",
+   "sweep0"
+  ]
+ },
+ "124": {
+  "source": 33,
+  "what": "Heaven at Total Level 7 (program value 100), for the level series",
+  "kinds": [
+   "sweepm24",
+   "sweepm12",
+   "sweep0"
+  ]
+ },
+ "125": {
+  "source": 50,
+  "what": "Wide Chorus at Total Level 15 (program value 61), for the level series",
+  "kinds": [
+   "sweepm24",
+   "sweepm12",
+   "sweep0"
+  ]
+ },
+ "126": {
+  "source": 54,
+  "what": "Light Flanger at Total Level 32 (program value 80), for the level series",
+  "kinds": [
+   "sweepm24",
+   "sweepm12",
+   "sweep0"
+  ]
+ },
+ "127": {
+  "source": 60,
+  "what": "Analog Delay at Total Level 30 (program value 100), for the level series",
+  "kinds": [
+   "sweepm24",
+   "sweepm12",
+   "sweep0"
+  ]
+ },
+ "128": {
+  "source": 70,
+  "what": "Light Phaser at Total Level 31 (program value 76), for the level series",
+  "kinds": [
+   "sweepm24",
+   "sweepm12",
+   "sweep0"
+  ]
+ }
+}
