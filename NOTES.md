@@ -95,3 +95,34 @@
 - Warm Plate 9/10 (chance 1.1 %): reliably heard. Loudness-matched music, unit minus plug-in: 250-500 Hz -1.6/-2.6 dB, 1 kHz +2.2, 2-8 kHz +0.5..+1.0. The plug-in has more low-mid and less 1 kHz: the program's EQ (Mid -3 dB at 400 Hz, Low -3 dB) acts differently. Run 9's EQ series (Mid/Low/High at +-12 on a reverb and a delay) measures exactly this.
 - Large Hall 1 8/10 (chance 5.5 %), note "overall brighter": borderline. Unit minus plug-in: 250 Hz +1.8, 500 Hz-1 kHz -1.4/-1.6, 2-16 kHz about -0.5: the plug-in has less low end and slightly more mids/top, so it reads brighter.
 - Not tested yet: Wide Chorus, Light Flanger, Shimmer, Soft Rotary.
+
+## Additions from the DCI Reverb reference lab (2026-10-20): check before the next session
+Source: dci-effects `docs/REFERENCE_LAB_PROTOCOL.md`, skill `dci-reference-lab`. Run 9's protocol already covers
+replay, parity, guards, hold-out, repeatability and ABX. These were missing; add them to the next run's batches:
+- **Variance per measure:** the same impulse or click several times at different moments (4 starts 0.37-1.2 s apart),
+  per reverb program. The spread of each measure (T30 per band, echo density, build-up, early/late) becomes the fit
+  tolerance. Batch Z measures drift over the session, but not this. The 480L Random Hall varied 37 ms in build-up
+  between repeats; the 224 almost nothing.
+- **Level steps on the reverbs:** the same sweep at -24, -12 and 0 dBFS per reverb program. Look at T30, tone and
+  distortion. The 224 Plate's decay changed with level (2.3 s at -24, 5.5 s at -12 dBFS), and a level-dependent unit
+  looks wrong in every other test unless this is known. Re-take any clipped capture lower, as the runner already does.
+- **Long tones for reverb modulation:** 2 s tones at 250 / 500 / 1000 / 2000 / 4000 Hz. Measure spectral spread
+  (cents), modulation rate and level wobble over the last 1.5 s. Short windows overstated modulation about 4x. Click
+  trains remain right for flangers and choruses.
+- **Click-to-click similarity on reverbs:** a 4 Hz click train for 3 s. Correlate each click's first 100 ms, measured
+  from the unit's own onset (a long pre-delay otherwise gives a silent window and NaN). Static reverbs read 0.9 or
+  more; randomised ones (480L Random Hall) read 0.05.
+- **Pre-delay meaning:** the impulse with pre-delay 0 and 50 ms. This shows whether the onset moves by the full amount
+  or from the unit's own minimum (the 224's counted from about 25 ms).
+- **No session needed, from recordings you already have:**
+  - decay shape: EDT, T20, late slope and curvature at 500 Hz / 1 kHz / 4 kHz (the 480L halls bow: curvature 0.53-0.71);
+  - energy-weighted echo density at 0-50 / 50-150 / 150-300 ms;
+  - band build-up peaks at 250 Hz / 1 kHz / 4 kHz.
+- **The same battery through the plug-in:** run every new test through the SSP-550 plug-in too (replay does this
+  once the test is in a plan), so each measure is compared on both sides.
+- **Plug-in reset:** the SSP-550 processor has no `AudioProcessor::reset()` override. An AU host's stop, locate or
+  offline bounce leaves its tail running, and AU renders differ from VST3. DCI Reverb rendered -5 to -20 dB apart
+  Mac/Linux because of this; matched, -122 dB. Add the override (clear as prepare does, no allocation) and the
+  dci-core plug-in check `hostreset` (dci-core 3554554).
+- **Installs on the Mac:** remove the old bundle before copying, or macOS kills every host that loads it ("Code
+  Signature Invalid"). That happened to DCI Reverb and Tape Echo on 2026-10-20.

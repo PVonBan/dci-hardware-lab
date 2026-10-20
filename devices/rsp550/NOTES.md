@@ -86,3 +86,13 @@
 - **Stereo Flanger delay vs Manual:** left 10.75 ms at 0, falling 0.1067 ms per step to about 0.3 ms at 100. Right is 0.65 ms shorter (0.42 ms minimum). The direct sound is on the left output only.
 - **Dry converter path:** flat within 0.7 dB 20 Hz-20 kHz; -4 dB at 21 kHz, -27 dB at 22 kHz, -60 dB at 23 kHz. Noise -87 dBFS (-89 A-weighted); THD about -75 dB (H2 dominant); crosstalk -62 dB at 1 kHz, -44 dB at 10 kHz.
 - **Program change:** output below -40 dB for 150-170 ms (repeatable).
+
+## Next session (run 10): include the reference-lab additions
+See `NOTES.md`, "Additions from the DCI Reverb reference lab (2026-10-20)":
+- per reverb program, impulse repeats at 4 starts, the sweep at -24 / -12 / 0 dBFS, 2 s long tones, a 4 Hz click
+  train and pre-delay 0 / 50 ms;
+- decay shape, weighted echo density and band build-up computed from the existing recordings first;
+- the plug-in's `reset()` override before the next build.
+
+Time: about 1 minute of recording per reverb program, plus the analysis without the unit.
+
