@@ -1,0 +1,13 @@
+# recordings and renders stay on the Mac
+*.wav
+*.f32
+*.aif
+*.aiff
+captures/
+runs/
+# build output
+lab-tool/build/
+build/
+*.log
+.DS_Store
+._*

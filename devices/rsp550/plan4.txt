@@ -1,0 +1,74 @@
+A	101	conv	dry reference
+A	102	std	Hall1 RT code 2
+A	103	std	Hall1 RT code 5
+A	104	std	Hall1 RT code 10
+A	105	std	Hall1 RT code 20
+A	106	std	Hall1 RT code 30
+A	107	std	Hall1 RT code 50
+A	108	std	Hall1 RT code 70
+A	109	std	Hall1 RT code 90
+A	110	std	Hall1 RT3 damp f1 l0
+A	111	std	Hall1 RT3 damp f1 l2
+A	112	std	Hall1 RT3 damp f3 l0
+A	113	std	Hall1 RT3 damp f3 l2
+A	114	std	Hall1 RT3 damp f5 l0
+A	115	std	Hall1 RT3 damp f5 l2
+A	116	std	Hall1 RT3 damp f7 l0
+A	117	std	Hall1 RT3 damp f7 l2
+A	118	std	Hall1 predelay 0
+A	119	std	Hall1 predelay 50
+A	120	std	Hall1 predelay 150
+A	121	std	Hall1 predelay 400
+A	122	std	Hall1 diffusion 1
+A	123	std	Hall1 diffusion 6
+A	124	std	Hall1 diffusion 12
+A	125	std	Hall2 RT code 10
+A	126	std	Hall2 RT code 30
+A	127	std	Hall2 RT code 60
+A	128	std	Plate2 RT code 30
+B	101	tone	Chorus rate 10 depth 100
+B	102	tone	Chorus rate 50 depth 100
+B	103	tone	Chorus rate 100 depth 100
+B	104	tone	Chorus rate 50 depth 30
+B	105	tone	Flanger rate 10 depth 100 manual 50
+B	106	tone	Flanger rate 50 depth 100 manual 50
+B	107	tone	Flanger rate 10 depth 0 manual 50
+B	108	tone	Delay mod rate 20 depth 100
+B	109	tone	Delay mod rate 60 depth 100
+B	110	tone	Delay mod rate 20 depth 30
+B	111	std	Phaser static manual 0
+B	112	std	Phaser static manual 33
+B	113	std	Phaser static manual 66
+B	114	std	Phaser static manual 100
+B	115	tone440	Pitch +12 semis
+B	116	tone440	Pitch -12 semis
+B	117	tone440	Pitch +1 semis
+B	118	tone	Rotary slow
+B	119	tone	Rotary fast
+B	120	rotsw	Rotary speed by CC1
+B	121	fb	Delay FB 100
+B	122	fb	Delay FB 110
+B	123	fb	Delay FB 120
+B	124	gate	Hall1 gate atk 1 hold 0 rel 1
+B	125	gate	Hall1 gate atk 40 hold 0 rel 1
+B	126	gate	Hall1 gate atk 1 hold 60 rel 1
+B	127	gate	Hall1 gate atk 1 hold 0 rel 60
+B	128	cc	Hall2 Rev Level by CC1, Total Level by aftertouch
+C	101	enh	Enhancer freq 40 mix 50
+C	102	enh	Enhancer freq 40 mix 100
+C	103	enh	Enhancer freq 90 mix 100
+C	104	enh	Enhancer freq 10 mix 100
+C	105	pb	Hall2 Rev Level by pitch bend
+C	106	vel	Hall2 Rev Level by velocity
+C	121	std	run3 T121 RRD TL100
+C	122	std	run3 T122 Shim TL50
+C	123	std	run3 T123 DblEcho D10
+C	124	std	run3 T124 Phaser stat
+C	125	std	run3 T125 Flange stat
+C	126	std	run3 T126 HallGate T7
+C	127	std	run3 T127 HallGate T3
+C	128	std	run3 T128 Shim TL75
+C	126	gsweep	run3 gate sweep Thr 70
+C	127	gsweep	run3 gate sweep Thr 30
+C	100	note	Vocoder 100 with held note 48
+C	1	pcgap	Program change 1 -> 4 -> 1 during a tone

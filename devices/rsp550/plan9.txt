@@ -1,0 +1,86 @@
+A	101	std	Effect path alg 1 (Light Phaser): direct off, depth 0, feedback 0, EQ flat
+A	102	std	Effect path alg 2 (Light Flanger): direct off, depth 0, feedback 0, EQ flat
+A	103	std	Effect path alg 3 (Doubling Echo): direct off, depth 0, feedback 0, EQ flat
+A	104	std	Effect path alg 5 (Shimmer): direct off, depth 0, feedback 0, EQ flat
+A	105	std	Effect path alg 6 (Flanging Piano): direct off, depth 0, feedback 0, EQ flat
+A	106	std	Effect path alg 7 (Rhodes Chorus): direct off, depth 0, feedback 0, EQ flat
+A	107	std	Effect path alg 8 (Octave Brass): direct off, depth 0, feedback 0, EQ flat
+A	108	std	Effect path alg 9 (Rhodes Phaser): direct off, depth 0, feedback 0, EQ flat
+A	109	std	Effect path alg 10 (Accent Phaser): direct off, depth 0, feedback 0, EQ flat
+A	110	std	Effect path alg 11 (Analog Chorus): direct off, depth 0, feedback 0, EQ flat
+A	111	std	Effect path alg 12 (SDD-320 Mode 3): direct off, depth 0, feedback 0, EQ flat
+A	112	std	Effect path alg 13 (Wide Chorus): direct off, depth 0, feedback 0, EQ flat
+A	113	std	Effect path alg 14 (Vocal Chorus): direct off, depth 0, feedback 0, EQ flat
+A	114	std	Effect path alg 18 (Guitar Chorus): direct off, depth 0, feedback 0, EQ flat
+A	115	std	Effect path alg 19 (String Ensemble): direct off, depth 0, feedback 0, EQ flat
+A	116	std	Effect path alg 31 (fountain): direct off, depth 0, feedback 0, EQ flat
+A	117	std	Effect path alg 32 (Auto Pan Delay): direct off, depth 0, feedback 0, EQ flat
+A	118	std	Effect path alg 33 (Tapping Delay): direct off, depth 0, feedback 0, EQ flat
+A	119	std	Effect path alg 35 (Vibrating Vibe): direct off, depth 0, feedback 0, EQ flat
+A	120	std	Effect path alg 37 (Hall / Room  *): direct off, depth 0, feedback 0, EQ flat
+A	121	std	Effect path alg 38 (Mod.Delay Lead): direct off, depth 0, feedback 0, EQ flat
+A	122	std	Jet Flanging effect only (Direct Mix off)
+A	122	stereo	Jet Flanging effect only (Direct Mix off)
+A	123	std	Jet Flanging direct only (Mix 0)
+A	123	stereo	Jet Flanging direct only (Mix 0)
+A	124	std	Bright Plate * with EQ flat
+A	125	std	Bright Plate * with Diffusion 120
+A	126	std	Industrial * with Pre-Delay 0
+A	127	std	Industrial * with Reverb Time 2.0
+A	128	std	Church * with EQ flat
+B	1	std	Repeatability reference (start): Large Hall 1
+B	61	std	Repeatability reference (start): fountain
+B	54	std	Repeatability reference (start): Light Flanger
+B	74	stereolo	Jet Phasing noise at -30
+B	74	stereo	Jet Phasing noise at -20
+B	74	stereohi	Jet Phasing noise at -15
+B	1	filelo	Listening material 10 dB lower (filelo): Large Hall 1
+B	1	file2lo	Listening material 10 dB lower (file2lo): Large Hall 1
+B	1	file3lo	Listening material 10 dB lower (file3lo): Large Hall 1
+B	8	filelo	Listening material 10 dB lower (filelo): Warm Plate
+B	8	file2lo	Listening material 10 dB lower (file2lo): Warm Plate
+B	8	file3lo	Listening material 10 dB lower (file3lo): Warm Plate
+B	50	filelo	Listening material 10 dB lower (filelo): Wide Chorus
+B	50	file2lo	Listening material 10 dB lower (file2lo): Wide Chorus
+B	50	file3lo	Listening material 10 dB lower (file3lo): Wide Chorus
+B	54	filelo	Listening material 10 dB lower (filelo): Light Flanger
+B	54	file2lo	Listening material 10 dB lower (file2lo): Light Flanger
+B	54	file3lo	Listening material 10 dB lower (file3lo): Light Flanger
+B	58	filelo	Listening material 10 dB lower (filelo): Shimmer
+B	58	file2lo	Listening material 10 dB lower (file2lo): Shimmer
+B	58	file3lo	Listening material 10 dB lower (file3lo): Shimmer
+B	87	filelo	Listening material 10 dB lower (filelo): Soft Rotary
+B	87	file2lo	Listening material 10 dB lower (file2lo): Soft Rotary
+B	87	file3lo	Listening material 10 dB lower (file3lo): Soft Rotary
+C	101	std	Industrial * with Damp Level 0.71
+C	102	std	Church * with ER Level 0
+C	103	std	Reverb EQ: EQ Hi -12 dB (wet-only Baroque Hall *)
+C	104	std	Reverb EQ: EQ Hi -6 dB (wet-only Baroque Hall *)
+C	105	std	Reverb EQ: EQ Hi +6 dB (wet-only Baroque Hall *)
+C	106	std	Reverb EQ: EQ Hi +12 dB (wet-only Baroque Hall *)
+C	107	std	Reverb EQ: EQ Lo -12 dB (wet-only Baroque Hall *)
+C	108	std	Reverb EQ: EQ Lo +12 dB (wet-only Baroque Hall *)
+C	109	std	Reverb EQ: EQ Mid -12 dB (wet-only Baroque Hall *)
+C	110	std	Reverb EQ: EQ Mid +12 dB (wet-only Baroque Hall *)
+C	111	std	Reverb EQ: all flat, EQ on (reference)
+C	112	std	Stereo Delay EQ: EQ Hi -12 dB (effect only, feedback 0)
+C	113	std	Stereo Delay EQ: EQ Hi +12 dB (effect only, feedback 0)
+C	114	std	Stereo Delay EQ: EQ Lo -12 dB (effect only, feedback 0)
+C	115	std	Stereo Delay EQ: EQ Lo +12 dB (effect only, feedback 0)
+C	116	std	Stereo Delay EQ: all flat, EQ on (reference)
+C	117	stereo	Multi Phaser mode 4, depth 0, Manual 0, Resonance 0
+C	118	stereo	Multi Phaser mode 4, depth 0, Manual 25, Resonance 0
+C	119	stereo	Multi Phaser mode 4, depth 0, Manual 50, Resonance 0
+C	120	stereo	Multi Phaser mode 4, depth 0, Manual 75, Resonance 0
+C	121	stereo	Multi Phaser mode 4, depth 0, Manual 100, Resonance 0
+C	122	stereo	Multi Phaser mode 4, depth 0, Manual 0, Resonance 92
+C	123	stereo	Multi Phaser mode 4, depth 0, Manual 25, Resonance 92
+C	124	stereo	Multi Phaser mode 4, depth 0, Manual 50, Resonance 92
+C	125	stereo	Multi Phaser mode 4, depth 0, Manual 75, Resonance 92
+C	126	stereo	Multi Phaser mode 4, depth 0, Manual 100, Resonance 92
+C	127	stereolo	Round Phaser in mode 4, LFO running, noise at -30/-20/-15
+C	127	stereo	Round Phaser in mode 4, LFO running, noise at -30/-20/-15
+C	127	stereohi	Round Phaser in mode 4, LFO running, noise at -30/-20/-15
+Z	1	std	Repeatability reference (end): Large Hall 1
+Z	61	std	Repeatability reference (end): fountain
+Z	54	std	Repeatability reference (end): Light Flanger

@@ -1,0 +1,15 @@
+A	101	conv	dry reference (simple delay, echo 0, direct 100)
+A	102	fb	Simple Delay FB 40, echo only
+A	103	fb	Simple Delay FB 80, echo only
+A	104	fb	Simple Delay FB 100, echo only
+A	105	fb	Simple Delay FB 110, echo only
+A	106	fb	Simple Delay FB 120, echo only
+A	107	fb	Stereo Delay FB 30, no damping or FB filter
+A	108	fb	Stereo Delay FB 60, no damping or FB filter
+A	109	fb	Stereo Delay FB 100, no damping or FB filter
+A	110	std	Flanger static, Manual 0
+A	111	std	Flanger static, Manual 25
+A	112	std	Flanger static, Manual 50
+A	113	std	Flanger static, Manual 75
+A	114	std	Flanger static, Manual 100
+A	1	pcgap	Program change 1 -> 4 -> 1 during a tone (repeat)

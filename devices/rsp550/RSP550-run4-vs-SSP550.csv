@@ -1,0 +1,244 @@
+test,description,measure,RSP-550,SSP-550 1.5.3,SSP-550 1.5.4
+A-102-std,Hall1 RT code 2,T30 500 (s),0.437,0.589,0.486
+A-102-std,Hall1 RT code 2,T30 1k (s),0.47,0.67,0.468
+A-102-std,Hall1 RT code 2,T30 4k (s),0.469,0.594,0.439
+A-102-std,Hall1 RT code 2,T30 8k (s),0.629,0.512,0.447
+A-102-std,Hall1 RT code 2,level (dB),-3.36,-3.46,-4.7
+A-103-std,Hall1 RT code 5,T30 500 (s),0.785,0.959,0.808
+A-103-std,Hall1 RT code 5,T30 1k (s),0.77,0.975,0.782
+A-103-std,Hall1 RT code 5,T30 4k (s),0.672,0.869,0.692
+A-103-std,Hall1 RT code 5,T30 8k (s),0.756,0.718,0.686
+A-103-std,Hall1 RT code 5,level (dB),-3.8,-1.74,-0.92
+A-104-std,Hall1 RT code 10,T30 500 (s),1.443,1.553,1.474
+A-104-std,Hall1 RT code 10,T30 1k (s),1.399,1.562,1.441
+A-104-std,Hall1 RT code 10,T30 4k (s),1.223,1.306,1.253
+A-104-std,Hall1 RT code 10,T30 8k (s),1.232,1.032,1.225
+A-104-std,Hall1 RT code 10,level (dB),-2.99,-2.45,-1.9
+A-105-std,Hall1 RT code 20,T30 500 (s),2.66,2.643,2.724
+A-105-std,Hall1 RT code 20,T30 1k (s),2.679,2.547,2.62
+A-105-std,Hall1 RT code 20,T30 4k (s),2.398,2.177,2.481
+A-105-std,Hall1 RT code 20,T30 8k (s),2.41,1.602,2.414
+A-105-std,Hall1 RT code 20,level (dB),-0.83,-1.18,-1.69
+A-106-std,Hall1 RT code 30,T30 500 (s),3.894,3.577,3.996
+A-106-std,Hall1 RT code 30,T30 1k (s),4.071,3.742,4.067
+A-106-std,Hall1 RT code 30,T30 4k (s),3.622,3.176,3.576
+A-106-std,Hall1 RT code 30,T30 8k (s),3.613,2.5,3.647
+A-106-std,Hall1 RT code 30,level (dB),0.73,1.38,0.63
+A-107-std,Hall1 RT code 50,T30 500 (s),6.587,5.92,6.669
+A-107-std,Hall1 RT code 50,T30 1k (s),6.429,5.818,6.351
+A-107-std,Hall1 RT code 50,T30 4k (s),5.934,4.865,5.957
+A-107-std,Hall1 RT code 50,T30 8k (s),5.825,3.627,5.841
+A-107-std,Hall1 RT code 50,level (dB),2.64,2.34,3.25
+A-108-std,Hall1 RT code 70,T30 500 (s),7.996,7.459,7.716
+A-108-std,Hall1 RT code 70,T30 1k (s),8.022,7.627,7.729
+A-108-std,Hall1 RT code 70,T30 4k (s),7.178,5.878,6.922
+A-108-std,Hall1 RT code 70,T30 8k (s),7.031,3.814,6.761
+A-108-std,Hall1 RT code 70,level (dB),3.79,2.96,2.91
+A-109-std,Hall1 RT code 90,T30 500 (s),8.176,8.283,7.937
+A-109-std,Hall1 RT code 90,T30 1k (s),8.227,8.089,7.766
+A-109-std,Hall1 RT code 90,T30 4k (s),7.349,6.922,7.154
+A-109-std,Hall1 RT code 90,T30 8k (s),7.201,4.545,6.814
+A-109-std,Hall1 RT code 90,level (dB),4.58,2.34,3.34
+A-110-std,Hall1 RT3 damp f1 l0,T30 500 (s),3.598,3.399,3.612
+A-110-std,Hall1 RT3 damp f1 l0,T30 1k (s),3.136,3.176,3.12
+A-110-std,Hall1 RT3 damp f1 l0,T30 4k (s),1.282,1.72,1.223
+A-110-std,Hall1 RT3 damp f1 l0,T30 8k (s),0.951,1.28,0.87
+A-110-std,Hall1 RT3 damp f1 l0,level (dB),-0.17,0.74,-0.52
+A-111-std,Hall1 RT3 damp f1 l2,T30 500 (s),3.721,3.567,3.775
+A-111-std,Hall1 RT3 damp f1 l2,T30 1k (s),3.562,3.576,3.559
+A-111-std,Hall1 RT3 damp f1 l2,T30 4k (s),1.963,2.637,1.887
+A-111-std,Hall1 RT3 damp f1 l2,T30 8k (s),1.657,2.071,1.542
+A-111-std,Hall1 RT3 damp f1 l2,level (dB),0.23,1.2,-0.02
+A-112-std,Hall1 RT3 damp f3 l0,T30 500 (s),3.761,3.539,3.816
+A-112-std,Hall1 RT3 damp f3 l0,T30 1k (s),3.684,3.506,3.62
+A-112-std,Hall1 RT3 damp f3 l0,T30 4k (s),1.79,2.13,1.708
+A-112-std,Hall1 RT3 damp f3 l0,T30 8k (s),1.127,1.473,1.1
+A-112-std,Hall1 RT3 damp f3 l0,level (dB),0.26,1.02,-0.1
+A-113-std,Hall1 RT3 damp f3 l2,T30 500 (s),3.828,3.558,3.926
+A-113-std,Hall1 RT3 damp f3 l2,T30 1k (s),3.857,3.68,3.831
+A-113-std,Hall1 RT3 damp f3 l2,T30 4k (s),2.321,2.825,2.366
+A-113-std,Hall1 RT3 damp f3 l2,T30 8k (s),1.797,2.166,1.814
+A-113-std,Hall1 RT3 damp f3 l2,level (dB),0.49,1.28,0.23
+A-114-std,Hall1 RT3 damp f5 l0,T30 500 (s),3.837,3.564,3.932
+A-114-std,Hall1 RT3 damp f5 l0,T30 1k (s),3.928,3.632,3.836
+A-114-std,Hall1 RT3 damp f5 l0,T30 4k (s),2.326,2.572,2.296
+A-114-std,Hall1 RT3 damp f5 l0,T30 8k (s),1.466,1.77,1.473
+A-114-std,Hall1 RT3 damp f5 l0,level (dB),0.5,1.2,0.18
+A-115-std,Hall1 RT3 damp f5 l2,T30 500 (s),3.856,3.563,3.977
+A-115-std,Hall1 RT3 damp f5 l2,T30 1k (s),3.979,3.727,3.938
+A-115-std,Hall1 RT3 damp f5 l2,T30 4k (s),2.731,2.978,2.776
+A-115-std,Hall1 RT3 damp f5 l2,T30 8k (s),2.088,2.276,2.189
+A-115-std,Hall1 RT3 damp f5 l2,level (dB),0.64,1.33,0.4
+A-116-std,Hall1 RT3 damp f7 l0,T30 500 (s),3.891,3.561,3.979
+A-116-std,Hall1 RT3 damp f7 l0,T30 1k (s),4.011,3.717,3.976
+A-116-std,Hall1 RT3 damp f7 l0,T30 4k (s),2.859,2.882,2.803
+A-116-std,Hall1 RT3 damp f7 l0,T30 8k (s),1.984,2.117,2.059
+A-116-std,Hall1 RT3 damp f7 l0,level (dB),0.67,1.3,0.38
+A-117-std,Hall1 RT3 damp f7 l2,T30 500 (s),3.895,3.565,3.99
+A-117-std,Hall1 RT3 damp f7 l2,T30 1k (s),4.036,3.737,4.039
+A-117-std,Hall1 RT3 damp f7 l2,T30 4k (s),3.155,3.091,3.136
+A-117-std,Hall1 RT3 damp f7 l2,T30 8k (s),2.518,2.402,2.657
+A-117-std,Hall1 RT3 damp f7 l2,level (dB),0.77,1.36,0.51
+A-118-std,Hall1 predelay 0,T30 500 (s),1.444,1.577,1.465
+A-118-std,Hall1 predelay 0,T30 1k (s),1.399,1.563,1.449
+A-118-std,Hall1 predelay 0,T30 4k (s),1.222,1.297,1.242
+A-118-std,Hall1 predelay 0,T30 8k (s),1.232,1.0,1.238
+A-118-std,Hall1 predelay 0,level (dB),-2.93,-2.59,-2.12
+A-119-std,Hall1 predelay 50,T30 500 (s),1.445,1.54,1.484
+A-119-std,Hall1 predelay 50,T30 1k (s),1.399,1.564,1.452
+A-119-std,Hall1 predelay 50,T30 4k (s),1.223,1.321,1.259
+A-119-std,Hall1 predelay 50,T30 8k (s),1.232,1.041,1.223
+A-119-std,Hall1 predelay 50,level (dB),-2.77,-2.35,-1.83
+A-120-std,Hall1 predelay 150,T30 500 (s),1.445,1.589,1.462
+A-120-std,Hall1 predelay 150,T30 1k (s),1.4,1.559,1.438
+A-120-std,Hall1 predelay 150,T30 4k (s),1.223,1.367,1.291
+A-120-std,Hall1 predelay 150,T30 8k (s),1.232,1.041,1.214
+A-120-std,Hall1 predelay 150,level (dB),-2.66,-2.14,-2.07
+A-121-std,Hall1 predelay 400,T30 500 (s),1.443,1.481,1.371
+A-121-std,Hall1 predelay 400,T30 1k (s),1.4,1.545,1.439
+A-121-std,Hall1 predelay 400,T30 4k (s),1.223,1.292,1.252
+A-121-std,Hall1 predelay 400,T30 8k (s),1.232,1.032,1.247
+A-121-std,Hall1 predelay 400,level (dB),-2.75,-3.21,-2.96
+A-122-std,Hall1 diffusion 1,T30 500 (s),2.76,2.622,2.685
+A-122-std,Hall1 diffusion 1,T30 1k (s),2.679,2.578,2.603
+A-122-std,Hall1 diffusion 1,T30 4k (s),2.427,2.21,2.484
+A-122-std,Hall1 diffusion 1,T30 8k (s),2.588,1.614,2.422
+A-122-std,Hall1 diffusion 1,level (dB),-3.93,-1.47,-0.96
+A-123-std,Hall1 diffusion 6,T30 500 (s),2.707,2.624,2.692
+A-123-std,Hall1 diffusion 6,T30 1k (s),2.682,2.614,2.652
+A-123-std,Hall1 diffusion 6,T30 4k (s),2.432,2.171,2.478
+A-123-std,Hall1 diffusion 6,T30 8k (s),2.413,1.612,2.436
+A-123-std,Hall1 diffusion 6,level (dB),-2.74,-0.88,-1.54
+A-124-std,Hall1 diffusion 12,T30 500 (s),2.662,2.643,2.724
+A-124-std,Hall1 diffusion 12,T30 1k (s),2.673,2.547,2.62
+A-124-std,Hall1 diffusion 12,T30 4k (s),2.398,2.177,2.481
+A-124-std,Hall1 diffusion 12,T30 8k (s),2.409,1.602,2.414
+A-124-std,Hall1 diffusion 12,level (dB),-0.57,-1.18,-1.69
+A-125-std,Hall2 RT code 10,T30 500 (s),1.428,1.531,1.434
+A-125-std,Hall2 RT code 10,T30 1k (s),1.405,1.509,1.431
+A-125-std,Hall2 RT code 10,T30 4k (s),1.402,1.415,1.4
+A-125-std,Hall2 RT code 10,T30 8k (s),1.425,1.203,1.407
+A-125-std,Hall2 RT code 10,level (dB),-5.75,0.69,-0.11
+A-126-std,Hall2 RT code 30,T30 500 (s),4.095,3.658,4.073
+A-126-std,Hall2 RT code 30,T30 1k (s),4.117,3.54,3.969
+A-126-std,Hall2 RT code 30,T30 4k (s),4.11,3.244,4.077
+A-126-std,Hall2 RT code 30,T30 8k (s),4.125,2.476,4.165
+A-126-std,Hall2 RT code 30,level (dB),0.27,6.25,6.99
+A-127-std,Hall2 RT code 60,T30 500 (s),7.664,6.868,7.353
+A-127-std,Hall2 RT code 60,T30 1k (s),7.587,6.602,7.37
+A-127-std,Hall2 RT code 60,T30 4k (s),7.093,5.651,7.091
+A-127-std,Hall2 RT code 60,T30 8k (s),6.723,4.142,6.705
+A-127-std,Hall2 RT code 60,level (dB),3.33,3.05,3.59
+A-128-std,Plate2 RT code 30,T30 500 (s),4.07,3.563,3.988
+A-128-std,Plate2 RT code 30,T30 1k (s),3.964,3.591,4.082
+A-128-std,Plate2 RT code 30,T30 4k (s),4.044,3.016,4.151
+A-128-std,Plate2 RT code 30,T30 8k (s),3.945,2.029,4.113
+A-128-std,Plate2 RT code 30,level (dB),-0.75,1.18,2.11
+B-101-tone,Chorus rate 10 depth 100,level L (dB),0.96,-4.65,-1.62
+B-102-tone,Chorus rate 50 depth 100,level L (dB),0.94,-4.65,-1.64
+B-103-tone,Chorus rate 100 depth 100,level L (dB),0.98,-4.68,-1.64
+B-104-tone,Chorus rate 50 depth 30,level L (dB),1.37,-4.65,-2.37
+B-105-tone,Flanger rate 10 depth 100 manual 50,level L (dB),2.38,-1.92,-0.18
+B-106-tone,Flanger rate 50 depth 100 manual 50,level L (dB),2.42,-1.89,-0.11
+B-107-tone,Flanger rate 10 depth 0 manual 50,level L (dB),-2.96,-4.62,-0.43
+B-108-tone,Delay mod rate 20 depth 100,level L (dB),-4.07,-0.93,-0.93
+B-109-tone,Delay mod rate 60 depth 100,level L (dB),-4.06,-0.94,-0.93
+B-110-tone,Delay mod rate 20 depth 30,level L (dB),-4.07,-0.93,-0.93
+B-111-std,Phaser static manual 0,T30 500 (s),0.018,0.018,0.018
+B-111-std,Phaser static manual 0,T30 1k (s),0.006,0.009,0.009
+B-111-std,Phaser static manual 0,T30 4k (s),0.003,0.002,0.002
+B-111-std,Phaser static manual 0,T30 8k (s),0.001,0.001,0.001
+B-111-std,Phaser static manual 0,level (dB),0.37,1.88,-0.93
+B-112-std,Phaser static manual 33,T30 500 (s),0.011,0.018,0.019
+B-112-std,Phaser static manual 33,T30 1k (s),0.005,0.009,0.009
+B-112-std,Phaser static manual 33,T30 4k (s),0.002,0.002,0.002
+B-112-std,Phaser static manual 33,T30 8k (s),0.001,0.001,0.001
+B-112-std,Phaser static manual 33,level (dB),1.17,-1.48,0.05
+B-113-std,Phaser static manual 66,T30 500 (s),0.017,0.018,0.018
+B-113-std,Phaser static manual 66,T30 1k (s),0.009,0.01,0.009
+B-113-std,Phaser static manual 66,T30 4k (s),0.001,0.002,0.002
+B-113-std,Phaser static manual 66,T30 8k (s),0.001,0.001,0.001
+B-113-std,Phaser static manual 66,level (dB),-2.09,-1.33,-3.86
+B-114-std,Phaser static manual 100,T30 500 (s),0.018,0.018,0.018
+B-114-std,Phaser static manual 100,T30 1k (s),0.006,0.009,0.009
+B-114-std,Phaser static manual 100,T30 4k (s),0.003,0.001,0.002
+B-114-std,Phaser static manual 100,T30 8k (s),0.001,0.001,0.001
+B-114-std,Phaser static manual 100,level (dB),1.3,-2.12,0.36
+B-115-tone440,Pitch +12 semis,shift (semitones),12.109,11.773,12.109
+B-115-tone440,Pitch +12 semis,splice ripple (dB),2.6,10.19,1.69
+B-116-tone440,Pitch -12 semis,shift (semitones),-12.192,-11.555,-12.188
+B-116-tone440,Pitch -12 semis,splice ripple (dB),2.48,10.19,0.03
+B-117-tone440,Pitch +1 semis,shift (semitones),1.021,0.975,1.009
+B-117-tone440,Pitch +1 semis,splice ripple (dB),2.39,10.19,1.9
+B-118-tone,Rotary slow,level L (dB),-7.23,-3.71,-0.64
+B-119-tone,Rotary fast,level L (dB),-7.2,-3.64,-0.61
+C-101-enh,Enhancer freq 40 mix 50,gain 97 Hz (dB),0.24,0.0,-1.1
+C-101-enh,Enhancer freq 40 mix 50,gain 203 Hz (dB),-1.68,0.01,-1.31
+C-101-enh,Enhancer freq 40 mix 50,gain 511 Hz (dB),-7.25,0.16,-4.8
+C-101-enh,Enhancer freq 40 mix 50,gain 1013 Hz (dB),2.32,-1.25,-3.36
+C-101-enh,Enhancer freq 40 mix 50,gain 2027 Hz (dB),12.43,2.56,8.64
+C-101-enh,Enhancer freq 40 mix 50,gain 4001 Hz (dB),14.39,9.8,13.41
+C-101-enh,Enhancer freq 40 mix 50,gain 7919 Hz (dB),14.73,9.58,14.98
+C-102-enh,Enhancer freq 40 mix 100,gain 97 Hz (dB),-0.37,0.0,-2.36
+C-102-enh,Enhancer freq 40 mix 100,gain 203 Hz (dB),-4.06,0.01,-2.83
+C-102-enh,Enhancer freq 40 mix 100,gain 511 Hz (dB),-17.82,0.32,-16.42
+C-102-enh,Enhancer freq 40 mix 100,gain 1013 Hz (dB),6.99,-0.8,4.16
+C-102-enh,Enhancer freq 40 mix 100,gain 2027 Hz (dB),17.37,9.56,14.42
+C-102-enh,Enhancer freq 40 mix 100,gain 4001 Hz (dB),19.32,14.86,18.79
+C-102-enh,Enhancer freq 40 mix 100,gain 7919 Hz (dB),19.66,14.16,20.26
+C-103-enh,Enhancer freq 90 mix 100,gain 97 Hz (dB),0.66,-0.0,-2.38
+C-103-enh,Enhancer freq 90 mix 100,gain 203 Hz (dB),0.34,-0.0,-2.36
+C-103-enh,Enhancer freq 90 mix 100,gain 511 Hz (dB),-2.24,0.0,-2.69
+C-103-enh,Enhancer freq 90 mix 100,gain 1013 Hz (dB),-11.65,0.02,-6.51
+C-103-enh,Enhancer freq 90 mix 100,gain 2027 Hz (dB),-8.22,0.2,-4.08
+C-103-enh,Enhancer freq 90 mix 100,gain 4001 Hz (dB),12.1,0.2,10.92
+C-103-enh,Enhancer freq 90 mix 100,gain 7919 Hz (dB),18.72,6.54,17.73
+C-104-enh,Enhancer freq 10 mix 100,gain 97 Hz (dB),-3.32,0.02,-3.23
+C-104-enh,Enhancer freq 10 mix 100,gain 203 Hz (dB),-17.98,0.29,-14.44
+C-104-enh,Enhancer freq 10 mix 100,gain 511 Hz (dB),7.42,-1.73,8.07
+C-104-enh,Enhancer freq 10 mix 100,gain 1013 Hz (dB),17.79,12.07,16.1
+C-104-enh,Enhancer freq 10 mix 100,gain 2027 Hz (dB),19.76,14.41,19.38
+C-104-enh,Enhancer freq 10 mix 100,gain 4001 Hz (dB),20.01,15.56,20.37
+C-104-enh,Enhancer freq 10 mix 100,gain 7919 Hz (dB),20.08,14.3,20.64
+C-121-std,run3 T121 RRD TL100,T30 500 (s),3.357,3.145,3.706
+C-121-std,run3 T121 RRD TL100,T30 1k (s),3.398,3.2,3.758
+C-121-std,run3 T121 RRD TL100,T30 4k (s),3.238,3.081,3.889
+C-121-std,run3 T121 RRD TL100,T30 8k (s),2.984,2.475,3.927
+C-121-std,run3 T121 RRD TL100,level (dB),7.49,2.9,7.42
+C-122-std,run3 T122 Shim TL50,T30 500 (s),1.199,0.023,0.043
+C-122-std,run3 T122 Shim TL50,T30 1k (s),2.399,0.598,1.197
+C-122-std,run3 T122 Shim TL50,T30 4k (s),2.403,3.0,4.801
+C-122-std,run3 T122 Shim TL50,T30 8k (s),3.0,3.0,4.801
+C-122-std,run3 T122 Shim TL50,level (dB),-2.14,-2.14,-1.07
+C-123-std,run3 T123 DblEcho D10,T30 500 (s),0.107,0.018,0.032
+C-123-std,run3 T123 DblEcho D10,T30 1k (s),0.006,0.009,0.104
+C-123-std,run3 T123 DblEcho D10,T30 4k (s),0.002,0.002,0.105
+C-123-std,run3 T123 DblEcho D10,T30 8k (s),0.003,0.001,0.001
+C-123-std,run3 T123 DblEcho D10,level (dB),5.34,0.0,4.86
+C-124-std,run3 T124 Phaser stat,T30 500 (s),0.011,0.018,0.019
+C-124-std,run3 T124 Phaser stat,T30 1k (s),0.006,0.009,0.009
+C-124-std,run3 T124 Phaser stat,T30 4k (s),0.002,0.002,0.002
+C-124-std,run3 T124 Phaser stat,T30 8k (s),0.001,0.001,0.001
+C-124-std,run3 T124 Phaser stat,level (dB),1.89,-2.1,1.56
+C-125-std,run3 T125 Flange stat,T30 500 (s),0.042,0.018,0.016
+C-125-std,run3 T125 Flange stat,T30 1k (s),0.04,0.009,0.019
+C-125-std,run3 T125 Flange stat,T30 4k (s),0.038,0.005,0.056
+C-125-std,run3 T125 Flange stat,T30 8k (s),0.036,0.004,0.038
+C-125-std,run3 T125 Flange stat,level (dB),-0.86,-0.06,-1.47
+C-126-gsweep,run3 gate sweep Thr 70,gate opens at (dBFS),-22.0,-16.0,-22.0
+C-126-std,run3 T126 HallGate T7,T30 500 (s),3.938,0.018,0.021
+C-126-std,run3 T126 HallGate T7,T30 1k (s),2.23,0.009,0.39
+C-126-std,run3 T126 HallGate T7,T30 4k (s),1.037,0.002,1.712
+C-126-std,run3 T126 HallGate T7,T30 8k (s),0.781,0.001,0.992
+C-126-std,run3 T126 HallGate T7,level (dB),3.43,-1.36,2.86
+C-127-gsweep,run3 gate sweep Thr 30,gate opens at (dBFS),-30.0,-40.0,-30.0
+C-127-std,run3 T127 HallGate T3,T30 500 (s),4.006,0.021,0.021
+C-127-std,run3 T127 HallGate T3,T30 1k (s),2.424,0.307,0.392
+C-127-std,run3 T127 HallGate T3,T30 4k (s),1.212,1.967,1.777
+C-127-std,run3 T127 HallGate T3,T30 8k (s),0.932,1.24,1.087
+C-127-std,run3 T127 HallGate T3,level (dB),3.48,2.52,2.97
+C-128-std,run3 T128 Shim TL75,T30 500 (s),1.2,0.023,0.043
+C-128-std,run3 T128 Shim TL75,T30 1k (s),2.399,0.598,1.197
+C-128-std,run3 T128 Shim TL75,T30 4k (s),2.403,3.0,4.801
+C-128-std,run3 T128 Shim TL75,T30 8k (s),3.0,3.0,4.801
+C-128-std,run3 T128 Shim TL75,level (dB),1.46,1.38,2.45

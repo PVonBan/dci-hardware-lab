@@ -1,0 +1,257 @@
+<title>{{PLUG}} Blind Listening</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: one rack-panel column; transport strip, trial row, results ledger. Dark-first (the user's black). */
+:root {
+  --bg: #0b0c0d; --panel: #141618; --line: #262a2e; --fg: #e6e8ea; --muted: #8b939a;
+  --amber: #f0a43a; --hw: #6fb7ff; --plug: #f0a43a; --good: #5fc98b; --bad: #e0675d;
+  --display: "Barlow Condensed", "Arial Narrow", system-ui, sans-serif;
+  --body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  color-scheme: dark;
+}
+@media (prefers-color-scheme: light) { :root:not([data-theme="dark"]) {
+  --bg: #f3f4f5; --panel: #ffffff; --line: #d9dde1; --fg: #15181b; --muted: #5d666e;
+  --amber: #b36a00; --hw: #1f6fc2; --plug: #b36a00; --good: #1f8a4c; --bad: #b8382d; color-scheme: light } }
+:root[data-theme="light"] {
+  --bg: #f3f4f5; --panel: #ffffff; --line: #d9dde1; --fg: #15181b; --muted: #5d666e;
+  --amber: #b36a00; --hw: #1f6fc2; --plug: #b36a00; --good: #1f8a4c; --bad: #b8382d; color-scheme: light }
+
+body { background: var(--bg); color: var(--fg); font: 15px/1.55 var(--body); }
+.wrap { max-width: 860px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 28px 56px; display: grid; gap: 22px; }
+header h1 { font: 700 2.4rem/1 var(--display); letter-spacing: .02em; text-transform: uppercase; margin: 0; text-wrap: balance; }
+header p { margin: 8px 0 0; color: var(--muted); max-width: 64ch; }
+.label { font: 600 .78rem/1 var(--display); letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+.panel { background: var(--panel); border: 1px solid var(--line); border-radius: 6px; padding: 18px; display: grid; gap: 14px; min-width: 0; }
+.pairs { display: flex; flex-wrap: wrap; gap: 8px; }
+.pair { font: 500 .95rem var(--body); background: transparent; color: var(--fg); border: 1px solid var(--line); border-radius: 4px; padding: 7px 12px; cursor: pointer; }
+.pair[aria-pressed="true"] { border-color: var(--amber); color: var(--amber); }
+.pair .n { font-family: var(--mono); color: var(--muted); margin-right: 6px; font-size: .85em; }
+.transport { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.key { font: 700 1.5rem/1 var(--display); min-width: 72px; padding: 14px 18px; border-radius: 4px; border: 1px solid var(--line); background: var(--bg); color: var(--fg); cursor: pointer; letter-spacing: .04em; }
+.key small { display: block; font: 500 .7rem/1.2 var(--body); color: var(--muted); letter-spacing: 0; margin-top: 4px; }
+.key[data-src="a"][aria-pressed="true"] { border-color: var(--hw); color: var(--hw); }
+.key[data-src="b"][aria-pressed="true"] { border-color: var(--plug); color: var(--plug); }
+.key[data-src="x"][aria-pressed="true"] { border-color: var(--fg); }
+.play { font: 600 1rem var(--body); padding: 12px 18px; border-radius: 4px; border: 1px solid var(--amber); background: var(--amber); color: #111; cursor: pointer; }
+.play[aria-pressed="true"] { background: transparent; color: var(--amber); }
+button:focus-visible { outline: 2px solid var(--amber); outline-offset: 2px; }
+button:disabled { opacity: .45; cursor: default; }
+.bar { height: 4px; background: var(--line); border-radius: 2px; overflow: hidden; }
+.bar i { display: block; height: 100%; width: 0; background: var(--amber); }
+.trial { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.answer { font: 600 1rem var(--body); padding: 12px 16px; border-radius: 4px; border: 1px solid var(--line); background: transparent; color: var(--fg); cursor: pointer; }
+.answer:hover:not(:disabled) { border-color: var(--fg); }
+.dots { display: flex; gap: 6px; margin-left: auto; }
+.dots span { width: 12px; height: 12px; border-radius: 50%; border: 1px solid var(--line); }
+.dots span.ok { background: var(--good); border-color: var(--good); }
+.dots span.no { background: var(--bad); border-color: var(--bad); }
+.dots span.now { border-color: var(--amber); }
+.result { display: grid; gap: 10px; }
+.score { font: 700 2rem/1 var(--display); }
+.verdict { color: var(--muted); }
+textarea { width: 100%; box-sizing: border-box; min-height: 70px; font: 15px/1.5 var(--body); background: var(--bg); color: var(--fg); border: 1px solid var(--line); border-radius: 4px; padding: 10px; }
+.status { font-size: .9rem; color: var(--muted); min-height: 1.4em; }
+table { width: 100%; border-collapse: collapse; font-size: .92rem; }
+th, td { text-align: left; padding: 8px 10px 8px 0; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font: 600 .75rem var(--display); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+td.num { font-family: var(--mono); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.tablewrap { overflow-x: auto; }
+.notes { color: var(--muted); font-size: .9rem; display: grid; gap: 6px; max-width: 70ch; }
+.notes p { margin: 0; }
+kbd { font: 500 .8rem var(--mono); border: 1px solid var(--line); border-radius: 3px; padding: 0 4px; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+
+<div class="wrap">
+  <header>
+    <h1>{{PLUG}} Blind Listening</h1>
+    <p>A is the {{UNIT}}, B is the plug-in. X is one of them at random. Switch freely while it plays (the switch keeps the position), then say which one X is. Ten trials per program; nine or ten right means you reliably hear a difference.</p>
+  </header>
+
+  <section class="panel" aria-labelledby="pick">
+    <div class="label" id="pick">Program</div>
+    <div class="pairs" id="pairs"></div>
+    <div class="status" id="pairInfo"></div>
+  </section>
+
+  <section class="panel" aria-labelledby="listen">
+    <div class="label" id="listen">Listen</div>
+    <div class="transport">
+      <button class="play" id="play" aria-pressed="false">Play</button>
+      <button class="key" data-src="a" aria-pressed="true">A<small>{{UNIT}}</small></button>
+      <button class="key" data-src="b" aria-pressed="false">B<small>{{PLUG}}</small></button>
+      <button class="key" data-src="x" aria-pressed="false">X<small>hidden</small></button>
+    </div>
+    <div class="bar" aria-hidden="true"><i id="pos"></i></div>
+    <div class="trial">
+      <button class="answer" id="ansA">X is A</button>
+      <button class="answer" id="ansB">X is B</button>
+      <div class="dots" id="dots" aria-label="Trials"></div>
+    </div>
+    <div class="status" id="trialStatus">Loading audio…</div>
+    <div class="result" id="result" hidden>
+      <div class="score" id="score"></div>
+      <div class="verdict" id="verdict"></div>
+      <label class="label" for="what">What did you hear? (optional)</label>
+      <textarea id="what" placeholder="e.g. the plug-in's tail is brighter; chorus wider on the hardware"></textarea>
+      <div class="transport">
+        <button class="play" id="save">Save this result</button>
+        <button class="answer" id="again">Run again</button>
+      </div>
+      <div class="status" id="saveStatus"></div>
+    </div>
+    <div class="notes">
+      <p>Keys: <kbd>A</kbd> <kbd>B</kbd> <kbd>X</kbd> switch, <kbd>Space</kbd> play or stop, <kbd>1</kbd> X is A, <kbd>2</kbd> X is B.</p>
+    </div>
+  </section>
+
+  <section class="panel" aria-labelledby="ledger">
+    <div class="label" id="ledger">Saved results</div>
+    <div class="tablewrap"><table>
+      <thead><tr><th>Program</th><th>Correct</th><th>Chance</th><th>Build</th><th>Notes</th><th>When</th></tr></thead>
+      <tbody id="rows"><tr><td colspan="6" class="status">No saved results yet. Finish ten trials on a program and press Save.</td></tr></tbody>
+    </table></div>
+  </section>
+
+  <section class="notes">
+{{NOTES}}
+  </section>
+</div>
+
+<script>
+const BUILD = '{{BUILD}}';
+const PAIRS = {{PAIRS}};
+const N = 10;
+const $ = (id) => document.getElementById(id);
+let ctx = null, bufs = {}, cur = PAIRS[0], playing = false, src = 'a', nodes = null, startAt = 0, offset = 0, raf = 0;
+let trial = null;   // { xIsA: bool[], answers: (bool|null)[], i }
+
+function newRun() {
+  trial = { xIsA: Array.from({ length: N }, () => Math.random() < 0.5), answers: Array(N).fill(null), i: 0 };
+  renderDots(); $('result').hidden = true; $('saveStatus').textContent = ''; $('what').value = '';
+  setAnswering(true); $('trialStatus').textContent = 'Trial 1 of ' + N + '. Listen to A, B and X, then answer.';
+}
+function renderDots() {
+  const d = $('dots'); d.textContent = '';
+  trial.answers.forEach((a, k) => { const s = document.createElement('span'); if (a !== null) s.className = a === trial.xIsA[k] ? 'ok' : 'no'; else if (k === trial.i) s.className = 'now'; d.appendChild(s); });
+}
+function setAnswering(on) { $('ansA').disabled = !on; $('ansB').disabled = !on; }
+
+function renderPairs() {
+  const box = $('pairs'); box.textContent = '';
+  PAIRS.forEach(p => {
+    const b = document.createElement('button'); b.className = 'pair'; b.setAttribute('aria-pressed', p === cur);
+    const n = document.createElement('span'); n.className = 'n'; n.textContent = p.id; b.append(n, p.name);
+    b.onclick = () => { if (p !== cur) { cur = p; renderPairs(); load(); } };
+    box.appendChild(b);
+  });
+  $('pairInfo').textContent = cur.name + ' — ' + cur.kind + ' algorithm';
+}
+
+async function load() {
+  stop(); offset = 0; $('pos').style.width = '0';
+  $('trialStatus').textContent = 'Loading ' + cur.name + '…'; setAnswering(false);
+  try {
+    if (!ctx) ctx = new (window.AudioContext || window.webkitAudioContext)();
+    const get = async (ab) => { const r = await fetch('audio/' + cur.id + '-' + ab + '.wav'); if (!r.ok) throw new Error(r.status); return ctx.decodeAudioData(await r.arrayBuffer()); };
+    const [a, b] = await Promise.all([get('a'), get('b')]);
+    bufs = { a, b };
+    newRun();
+  } catch (e) {
+    $('trialStatus').textContent = 'Could not load the audio for ' + cur.name + ' (' + e.message + '). Try another program or reload the page.';
+  }
+}
+
+function bufFor(which) { return which === 'x' ? (trial.xIsA[trial.i] ? bufs.a : bufs.b) : bufs[which]; }
+function start() {
+  if (!bufs.a) return;
+  if (ctx.state === 'suspended') ctx.resume();
+  const t = ctx.currentTime + 0.05; nodes = {};
+  for (const k of ['a', 'b', 'x']) {
+    const s = ctx.createBufferSource(); s.buffer = bufFor(k); s.loop = true;
+    const g = ctx.createGain(); g.gain.value = k === src ? 1 : 0;
+    s.connect(g).connect(ctx.destination); s.start(t, offset % s.buffer.duration); nodes[k] = { s, g };
+  }
+  startAt = t - offset; playing = true; $('play').setAttribute('aria-pressed', 'true'); $('play').textContent = 'Stop';
+  const tick = () => { if (!playing) return; const d = bufs.a.duration; $('pos').style.width = ((ctx.currentTime - startAt) % d) / d * 100 + '%'; raf = requestAnimationFrame(tick); };
+  tick();
+}
+function stop() {
+  if (nodes) { offset = ctx.currentTime - startAt; for (const k in nodes) { try { nodes[k].s.stop(); } catch (_) {} } nodes = null; }
+  playing = false; cancelAnimationFrame(raf); $('play').setAttribute('aria-pressed', 'false'); $('play').textContent = 'Play';
+}
+function select(which) {
+  src = which;
+  document.querySelectorAll('.key').forEach(b => b.setAttribute('aria-pressed', b.dataset.src === which));
+  if (nodes) { const t = ctx.currentTime; for (const k in nodes) { const g = nodes[k].g.gain; g.cancelScheduledValues(t); g.setValueAtTime(g.value, t); g.linearRampToValueAtTime(k === which ? 1 : 0, t + 0.008); } }
+}
+function answer(saysA) {
+  if (!trial || trial.i >= N) return;
+  trial.answers[trial.i] = saysA; trial.i++;
+  renderDots();
+  if (trial.i < N) {
+    const keep = playing; if (keep) { stop(); start(); }   // X changes for the next trial
+    $('trialStatus').textContent = 'Trial ' + (trial.i + 1) + ' of ' + N + '.';
+  } else finish();
+}
+function binomTail(k, n) { let p = 0; for (let j = k; j <= n; j++) p += choose(n, j); return p / Math.pow(2, n); }
+function choose(n, k) { let r = 1; for (let j = 1; j <= k; j++) r = r * (n - k + j) / j; return r; }
+function finish() {
+  setAnswering(false);
+  const k = trial.answers.filter((a, j) => a === trial.xIsA[j]).length, p = binomTail(k, N);
+  $('score').textContent = k + ' of ' + N + ' right';
+  $('verdict').textContent = p < 0.05
+    ? 'You can hear a difference on ' + cur.name + ' (guessing would score this well only ' + (p * 100).toFixed(1) + ' % of the time).'
+    : 'No reliable difference on ' + cur.name + ': guessing scores this well ' + (p * 100).toFixed(0) + ' % of the time.';
+  $('trialStatus').textContent = 'Done. Save the result so Claude can read it, or run again.';
+  $('result').hidden = false; trial.k = k; trial.p = p;
+}
+
+// ---- saved results (db: shared, readable by Claude) ----
+let db = null, user = null;
+async function initStore() {
+  try { db = await claude.use('db'); user = await claude.use('user'); } catch (_) { db = null; }
+  if (!db) { $('save').disabled = true; $('saveStatus').textContent = 'Saving needs you to be signed in to Claude.'; return; }
+  db.collection('abx').orderBy('at', 'desc').limit(60).onSnapshot(renderRows, () => {});
+}
+function renderRows(snap) {
+  const tb = $('rows'); tb.textContent = '';
+  if (snap.empty) { const tr = tb.insertRow(); const td = tr.insertCell(); td.colSpan = 6; td.className = 'status'; td.textContent = 'No saved results yet. Finish ten trials on a program and press Save.'; return; }
+  for (const d of snap.docs) {
+    const r = d.data() || {}; const tr = tb.insertRow();
+    const cell = (t, cls) => { const c = tr.insertCell(); c.textContent = t; if (cls) c.className = cls; };
+    cell(r.program || '?'); cell((r.correct ?? '?') + ' / ' + (r.n ?? N), 'num'); cell(r.p != null ? (r.p * 100).toFixed(1) + ' %' : '', 'num');
+    cell(r.build || '', 'num'); cell(r.notes || ''); cell(r.at ? new Date(r.at).toLocaleString() : '', 'num');
+  }
+}
+async function save() {
+  if (!db || !trial || trial.k == null) return;
+  $('save').disabled = true; $('saveStatus').textContent = 'Saving…';
+  try {
+    await db.collection('abx').add({ program: cur.name, pair: cur.id, build: BUILD, n: N, correct: trial.k, p: trial.p,
+      trials: trial.xIsA.map((x, j) => ({ x: x ? 'A' : 'B', answered: trial.answers[j] ? 'A' : 'B' })),
+      notes: $('what').value.trim(), at: Date.now(), by: user ? await user.id() : null });
+    $('saveStatus').textContent = 'Saved. Claude can read it.';
+  } catch (e) {
+    $('save').disabled = false;
+    $('saveStatus').textContent = e && e.code === 'permission_denied' ? 'This page is view-only for you, so the result could not be saved.' : 'Saving failed (' + ((e && (e.code || e.message)) || 'unknown') + '). Press Save to try again.';
+  }
+}
+
+$('play').onclick = () => { playing ? stop() : start(); };
+document.querySelectorAll('.key').forEach(b => b.onclick = () => select(b.dataset.src));
+$('ansA').onclick = () => answer(true); $('ansB').onclick = () => answer(false);
+$('save').onclick = save; $('again').onclick = () => { stop(); offset = 0; newRun(); };
+document.addEventListener('keydown', e => {
+  if (e.target.tagName === 'TEXTAREA') return;
+  const k = e.key.toLowerCase();
+  if (k === 'a' || k === 'b' || k === 'x') select(k);
+  else if (k === ' ') { e.preventDefault(); playing ? stop() : start(); }
+  else if (k === '1' && !$('ansA').disabled) answer(true);
+  else if (k === '2' && !$('ansB').disabled) answer(false);
+});
+renderPairs(); load(); initStore();
+</script>
