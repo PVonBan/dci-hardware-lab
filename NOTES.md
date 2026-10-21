@@ -157,3 +157,13 @@ replay, parity, guards, hold-out, repeatability and ABX. These were missing; add
   1.46 / 0.81; run 8 1.31 / 1.15. 1.6.6 = 1.6.5 (no measure moved > 0.3 dB). The render4 scores (`scores-v16x`) are
   kept for history only; `scores-v164.json` was also made before 1.6.4's last changes.
 - Test list: `devices/rsp550/TESTS.md` and `run_all.sh`.
+
+## 2026-10-21: test round 2 (from the DCI Overdrive chat)
+- `analysis/guards.py` round 2: `self_test()` (run it first: every analyser on known answers), `aligned()` (fractional
+  lag; more than 0.25 sample is not evidence), `transfer()` (coherence per bin, power-weighted per band; the gate is the
+  share of coherent bands, since a deep notch alone reads 0.96), `linear_level()`, `masked_excess()` (audibility of a
+  difference), `attack_nulls()`. Each came from a mistake made first in the Overdrive's own analysis (a Hann window
+  read a pure sine as -46 dB aliasing; a band-summed coherence read a linear band-pass as 0.42; a "reference" at the
+  same internal rate as the render it was judging).
+- `analysis/stimuli_round2.py`: what the next unit's capture battery should add (coherent-level noise, SMPTE and chord
+  intermodulation, burst recovery, a level staircase, plucks for attack nulls), 50 s in all.
