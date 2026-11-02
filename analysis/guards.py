@@ -50,6 +50,22 @@ def check_capture(y, name='capture', clip=0.99, flat_run=4):
     return pk
 
 
+def check_dropout(y, name='capture', fs=FS, floor=-97.0, other=-80.0, block=0.25):
+    """Reject a capture where one return channel went dead: a block of one channel below `floor` dBFS (under the unit's
+    own idle noise, about -88 to -91 dBFS on the RSP-550, so nothing the unit outputs can read that low) while the other
+    channel carries signal above `other`. Run 9 (2026-11-02): the left return cut in and out for about 20 minutes
+    (-101 to -113 dBFS on the left with the right at -35); level and tone comparisons on those captures were nonsense."""
+    y = np.asarray(y, float)
+    if y.ndim < 2 or y.shape[1] < 2: return
+    n = int(block * fs)
+    for i in range(0, len(y) - n, n):
+        e = 10 * np.log10(np.mean(y[i:i + n] ** 2, 0) + 1e-30)
+        for c in (0, 1):
+            if e[c] < floor and e[1 - c] > other:
+                raise GuardError('%s: channel %d dead at %.2f s (%.0f dBFS while the other is at %.0f): a return dropped out; '
+                                 're-record, do not analyse' % (name, c, i / fs, e[c], e[1 - c]))
+
+
 def late_energy_shift(ir, seg, fs=FS, late=72000, bands=(4000, 6300, 8000, 10000, 12500, 16000)):
     """How much the high bands of a full-window spectrum (ir[:seg]) move when the last `late` samples of that window
     are removed, in dB (largest band). Above 1 dB the window holds late energy that matters (a long delay tail, leakage

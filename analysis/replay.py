@@ -21,6 +21,7 @@ RUNS = [
     ('run7pr', ['run7pr/plan4.txt'] + ['run7/round%d-plan.txt' % k for k in range(1, 5)],
      dict({'C': 'run7pr/tests4C.syx'}, **{'R%d' % k: 'run7/round%d-tests.syx' % k for k in range(1, 5)}), 'run7pr/an7.py'),
     ('run8pr', ['run8pr/plan4.txt'], {'C': 'run8/tests8C.syx'}, 'run8pr/an8.py'),
+    ('run9pr', ['run9pr/plan9.txt'], {'A': 'run9pr/tests9A.syx', 'C': 'run9pr/tests9C.syx'}, 'run9pr/an9.py'),
 ]
 os.makedirs('replay', exist_ok=True); os.makedirs('replay/tmp', exist_ok=True)
 CENT = 1000 * 2 ** (np.arange(-10, 13) / 3)
@@ -57,7 +58,9 @@ for run, plans, syx, an in RUNS:
             b, prog, kind, desc = f[0], int(f[1]), f[2], f[3]
             try:
                 x, yh, mk = G['get'](b, prog, kind, False); _, yp, _ = G['get'](b, prog, kind, True)
-                guards.check_capture(yh, '%s %s%d %s' % (run, b, prog, kind))
+                raw = yh * G['CAL'].gain if 'CAL' in G else yh   # guards look at the capture as recorded, not after the
+                guards.check_capture(raw, '%s %s%d %s' % (run, b, prog, kind))   # loop-gain correction (C108 read 1.10)
+                guards.check_dropout(raw, '%s %s%d %s' % (run, b, prog, kind))
             except guards.GuardError as e: rows.append((b, prog, kind, desc, None, None, str(e))); continue
             except Exception as e: rows.append((b, prog, kind, desc, None, None, 'missing: %s' % e)); continue
             m = min(len(yh), len(yp)); d = guards.per_channel(bands, yh[:m], yp[:m])

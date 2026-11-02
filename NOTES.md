@@ -179,3 +179,15 @@ replay, parity, guards, hold-out, repeatability and ABX. These were missing; add
 | Warm Plate | not retested | 1.6.5: 9 of 10 |
 Next work: Large Hall 1 and Warm Plate (run 10 measures both in full, with and without the direct sound), then Soft
 Rotary (not in run 10's battery: needs its own rotary tests in a later run).
+
+## Run 9 (2026-11-02, SSP-550 1.6.6): the left return dropped out
+- 86 captures, none clipped. 38 of them (A-111 to B-087, about 01:14-01:33, plus the start of C-101) have the left
+  return dead in places: -100 to -113 dBFS on the left, below the unit's own idle noise (-88 to -91), while the right
+  carried signal. A loose cable or socket between the RSP-550's left output and interface input 5; batches C (after
+  C-101) and Z were clean. Runs 6-8 show no such dropout.
+- New guard `guards.check_dropout` (a 0.25 s block below -97 dBFS on one channel while the other is above -80);
+  replay applies it, and the runner (`Run4.h`) now says "LEFT/RIGHT RETURN DEAD" in the log and retakes the capture
+  once. Guards now look at the capture as recorded: `check_capture` after the loop-gain correction had called C-108
+  clipped (1.10) when its real peak was 0.68.
+- The 38 lost captures are retaken as run 10's follow-up round 1 (`devices/rsp550/run10-round1-plan.txt`).
+- The user was asked to reseat or replace that cable before run 10.

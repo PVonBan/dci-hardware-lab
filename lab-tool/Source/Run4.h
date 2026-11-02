@@ -487,6 +487,28 @@ static int runRun4 (int argc, char** argv)
         out ("  " + name + "  \"" + stored + "\"  " + desc + ", peak " + String (20 * std::log10 (peak + 1e-9), 1) + " dBFS" + (peak > 0.99f ? "  CLIPPED" : ""));
         // run 9: a clipped capture is useless for level and tone; take it again right away with the stimulus 10 dB
         // lower (saved as ...-m10; the index notes the stimulus level). One retake only.
+        // run 10 (2026-11-02): run 9 lost 38 captures to a left return that cut in and out. A block of one channel
+        // below the unit's own idle noise (-97 dBFS) while the other carries signal (> -80) is a dead return, not the
+        // unit: say so loudly and take it again once.
+        {
+            const int blk = (int) (0.25 * rate); int deadCh = -1; double deadAt = 0;
+            for (int i = 0; i + blk <= (int) pr.rec[0].size() && deadCh < 0; i += blk)
+            {
+                double e[2] = { 0, 0 };
+                for (int c = 0; c < 2; ++c) { for (int k = i; k < i + blk; ++k) e[c] += (double) pr.rec[(size_t) c][(size_t) k] * pr.rec[(size_t) c][(size_t) k]; e[c] = 10 * std::log10 (e[c] / blk + 1e-30); }
+                for (int c = 0; c < 2; ++c) if (e[c] < -97.0 && e[1 - c] > -80.0) { deadCh = c; deadAt = i / rate; }
+            }
+            if (deadCh >= 0)
+            {
+                out (String ("  *** ") + (deadCh == 0 ? "LEFT" : "RIGHT") + " RETURN DEAD at " + String (deadAt, 1) + " s in " + name
+                     + " - check the cable from the RSP-550 " + (deadCh == 0 ? "left" : "right") + " output to the interface");
+                if (! desc.endsWith ("(retake: return dropout)"))
+                {
+                    Thread::sleep (3000);
+                    return record (batch, number, kind, desc + " (retake: return dropout)", stimDb);
+                }
+            }
+        }
         if (peak > 0.99f && stimDb == 0.0f)
         {
             out ("  clipped at the interface: recording it again with the stimulus 10 dB lower");
