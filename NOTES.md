@@ -191,3 +191,14 @@ Rotary (not in run 10's battery: needs its own rotary tests in a later run).
   clipped (1.10) when its real peak was 0.68.
 - The 38 lost captures are retaken as run 10's follow-up round 1 (`devices/rsp550/run10-round1-plan.txt`).
 - The user was asked to reseat or replace that cable before run 10.
+- Run 9's clean captures (`analysis/run9/`): the program EQ shelves are 2nd order with Q about 0.48, low at 394 Hz
+  and high at 3842 Hz (Stereo Delay and wet-only hall agree; fit 0.08 / 0.05 dB rms). The plug-in had 160 Hz / 6 kHz
+  at Q 0.71. On the hall, high-shelf cuts saturate where the early reflections dominate while boosts and the low
+  shelf act in full: possibly the EQ acts on the late field only (that fits the high shelf, not the low one).
+  Any Mid setting moved the whole hall by -6 dB below 1 kHz: run 10 round 2 measures the Mid band on the delay
+  (`gen_run10_round2.py`) and tests the late-only idea (ER level 0).
+- SSP-550 1.6.7 candidate (not released): the new shelves, Stereo Chorus output 1.4 -> 1.06, Ambience +2 dB
+  (both refitted after the shelves; held across runs 6-9). Replay with the plug-in: medians better in every run
+  (run 6 level 0.84 -> 0.70, tone 0.79 -> 0.73; run 9 1.54 / 1.82 -> 1.17 / 1.08). On music, Large Hall 1 still
+  lacks 1-2.4 dB at 100-250 Hz (heard as "brighter") and Warm Plate has 1.5 dB too much at 100-250 Hz and 2 dB too
+  little at 1 kHz: run 10 (wet-only decay per band) and round 2 (Mid EQ) address those.

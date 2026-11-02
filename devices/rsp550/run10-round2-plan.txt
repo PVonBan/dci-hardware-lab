@@ -1,0 +1,23 @@
+R2	101	std	Stereo Delay EQ: all flat, Mid Frq 500 (reference)
+R2	102	std	Stereo Delay EQ: all flat, Mid Frq 1000 (reference)
+R2	103	std	Stereo Delay EQ: all flat, Mid Frq 2000 (reference)
+R2	104	std	Stereo Delay EQ: all flat, Mid Frq 4000 (reference)
+R2	105	std	Stereo Delay EQ: Mid -12 dB at 2000 Hz
+R2	106	std	Stereo Delay EQ: Mid -6 dB at 2000 Hz
+R2	107	std	Stereo Delay EQ: Mid -3 dB at 2000 Hz
+R2	108	std	Stereo Delay EQ: Mid +3 dB at 2000 Hz
+R2	109	std	Stereo Delay EQ: Mid +6 dB at 2000 Hz
+R2	110	std	Stereo Delay EQ: Mid +12 dB at 2000 Hz
+R2	111	std	Stereo Delay EQ: Mid -12 dB at 500 Hz
+R2	112	std	Stereo Delay EQ: Mid +12 dB at 500 Hz
+R2	113	std	Stereo Delay EQ: Mid -12 dB at 1000 Hz
+R2	114	std	Stereo Delay EQ: Mid +12 dB at 1000 Hz
+R2	115	std	Stereo Delay EQ: Mid -12 dB at 4000 Hz
+R2	116	std	Stereo Delay EQ: Mid +12 dB at 4000 Hz
+R2	117	std	Stereo Delay EQ: EQ Hi -6 dB
+R2	118	std	Stereo Delay EQ: EQ Hi +6 dB
+R2	119	std	Stereo Delay EQ: EQ Lo -6 dB
+R2	120	std	Stereo Delay EQ: EQ Lo +6 dB
+R2	121	std	Reverb EQ with ER level 0 (wet-only Baroque Hall): flat
+R2	122	std	Reverb EQ with ER level 0 (wet-only Baroque Hall): Hi -12
+R2	123	std	Reverb EQ with ER level 0 (wet-only Baroque Hall): Hi +12
