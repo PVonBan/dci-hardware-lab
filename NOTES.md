@@ -167,3 +167,15 @@ replay, parity, guards, hold-out, repeatability and ABX. These were missing; add
   same internal rate as the render it was judging).
 - `analysis/stimuli_round2.py`: what the next unit's capture battery should add (coherent-level noise, SMPTE and chord
   intermodulation, burst recovery, a level staircase, plucks for attack nulls), 50 s in all.
+
+## Listening results, SSP-550 1.6.6 (2026-11-02)
+| Program | Right of 10 | Reading |
+|---|---|---|
+| Large Hall 1 | 9 | real difference (1.6.5: 8, "overall brighter") |
+| Soft Rotary | 8 | real difference (8 or more) |
+| Light Flanger | 7 | not reliable |
+| Wide Chorus | 6 | no difference (saved by Claude from the chat: the page's Save button stuck after one save, fixed) |
+| Shimmer | 6 | no difference |
+| Warm Plate | not retested | 1.6.5: 9 of 10 |
+Next work: Large Hall 1 and Warm Plate (run 10 measures both in full, with and without the direct sound), then Soft
+Rotary (not in run 10's battery: needs its own rotary tests in a later run).
