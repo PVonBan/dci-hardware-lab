@@ -134,6 +134,7 @@ let trial = null;   // { xIsA: bool[], answers: (true = A | false = B | 'u' = ca
 function newRun() {
   trial = { xIsA: Array.from({ length: N }, () => Math.random() < 0.5), answers: Array(N).fill(null), i: 0 };
   renderDots(); $('result').hidden = true; $('saveStatus').textContent = ''; $('what').value = '';
+  $('save').disabled = !db;   // a save on the previous program left it disabled
   setAnswering(true); $('trialStatus').textContent = 'Trial 1 of ' + N + '. Listen to A, B and X, then answer.';
 }
 function renderDots() {
