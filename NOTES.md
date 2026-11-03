@@ -236,3 +236,23 @@ Rotary (not in run 10's battery: needs its own rotary tests in a later run).
   0.77-0.85, ours ~1.0), cross-feed sign on LH1, and the unit's strong left-to-right asymmetry on wet-only reverbs.
 - The dci-core denormals check is a timing test; on the 2-core workspace it failed once (1.84x) under load and passed
   three reruns (0.6-1.3x). Rerun before believing it.
+
+## SSP-550 1.6.8 (2026-11-03): fitted from runs 9-10b without a new run
+- The user asked for the remaining differences to be fixed from the existing recordings. Listening results set the
+  priority: Large Hall 1 9/10, Warm Plate 9/10, Soft Rotary 8/10 were heard; Wide Chorus 6, Light Flanger 7, Shimmer 6
+  were not.
+- Run 10's "stereo asymmetry" of the wet-only reverbs was the left cable: the late field's R-L balance of one program
+  changed between takes (Large Hall 2 +2.3 dB on take 1, +11.5 to +12.6 on the others; Large Room +1.2 to +18.8). Fits
+  use the first stereo impulse (`imp_r1`), whose balance is clean (+0.6 to +2.3 dB) on all eight programs.
+- The unit's reverbs are not modulated: its long-tone pitch spread is the decay bandwidth (about 0.5 Hz at every
+  frequency) and its level wobble is 0.03-0.6 dB; ours at modulation 0 matches on all six reverbs (`modtest.py`).
+- Fit loop (`analysis/run10/fit168/fit.py`): render the eight wet-only slots on one impulse (5 s), score the 5 ms envelope
+  0-300 ms (floor -15 dB), the late tone 150-600 ms and band decay; `tune.py` / `grid2.py` search the engine's shape
+  controls through environment hooks (`-DSSP_TUNE_SHAPE` builds only). Rotary: `rotan.py` on three music clips (band
+  gain, L/R coherence, band-level fluctuation).
+- Found and fixed on the way: the new controls and 1.6.7's ER high-pass kept the first sample rate's coefficients
+  (caught by SSP550Test's rate check); a random-sign build-up filter passed DC (dci-core `dc` -45 dBFS; now zero-sum).
+- SSP550Test's rate check measured only 2 s of a 4-5 s reverb: its low octaves scattered +-1 dB between noise seeds on
+  1.6.7 and 1.6.8 alike (`ratechk.py`). Now 8 s rendered, the last 6 s analysed; limit unchanged (worst 0.79 dB).
+- Levels: wet loudness moved with the shape changes; compensating from music alone overshot the run-9 hall EQ tests.
+  Each algorithm's wet level is set from the replay's signed level of its own tests (runs 6-9).
