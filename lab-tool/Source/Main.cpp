@@ -252,6 +252,7 @@ static int runProbe (int argc, char** argv)
 
 #include "Capture.h"
 #include "Run4.h"
+#include "LoopCheck.h"
 
 int main (int argc, char** argv)
 {
@@ -267,6 +268,7 @@ int main (int argc, char** argv)
     if (mode == "run4") return runRun4 (argc, argv);
     if (mode == "restore") return runRestore (argc, argv);
     if (mode == "stims") return runStims (argc, argv);
+    if (mode == "loopcheck") return runLoopCheck (argc, argv);
     out ("usage: rsplab probe <outdir> [reference.syx] | rsplab capture <labdir> <bank.syx> [first last]");
     return 1;
 }
