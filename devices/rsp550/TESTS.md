@@ -66,3 +66,6 @@ Made by `make_run10.py` (stimuli are the reverb lab's own, `dci-effects tools/re
 - 2026-11-03 (SSP-550 1.6.7): the self-test's loop model now uses the per-channel latency and gain (`LATS`, `GAIN`) as
   the capture reader does; with one latency for both it read 920 of 1073 after the 7/8 calibration. All gating tests
   pass on 1.6.7.
+- 2026-11-03 (SSP-550 1.6.8): SSP550Test's sample-rate check renders 8 s of noise and analyses the last 6 s (was 4 / 2 s;
+  long reverbs scattered +-1 dB in the low octaves between noise seeds). The fit loops for the wet-only impulses and
+  the rotary are in `analysis/run10/fit168` (targets, run by hand when fitting). All gating tests pass on 1.6.8.
