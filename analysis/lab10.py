@@ -19,7 +19,16 @@ import numpy as np
 import soundfile as sf
 
 FS = 48000
-LAT, GAIN = 1179, np.array([10 ** (0.9 / 20), 10 ** (-4.6 / 20)])   # loop calibration (run 1)
+LAT, GAIN = 1179, np.array([10 ** (0.9 / 20), 10 ** (-4.6 / 20)])   # loop calibration (run 1, returns 5/6)
+LATS = (LAT, LAT)
+# Returns 7/8 (from run 10, 2026-11-03): the direct impulse arrives at 1133 samples on both channels (on 5/6 the left
+# arrived 32 samples later: the "right channel 33 samples early" of every earlier run was input 5). Gains from the unit's
+# own symmetric signals in the same session (Large Hall 1's direct impulse, the loop check's noise): R is 0.5 dB below
+# L; L from Light Flanger's direct against run 9 (-0.5 dB re input 5's +0.9). An energy comparison of whole captures
+# across sessions had given R -4.9 dB, which made every reverb's cross-feed look 6 dB lopsided. LAB10_CAL=56 selects
+# the old calibration.
+if os.environ.get('LAB10_CAL', '78') == '78':
+    LATS, GAIN = (1133, 1133), np.array([10 ** (0.4 / 20), 10 ** (-0.1 / 20)])
 
 
 def segs(run10):
@@ -55,8 +64,9 @@ def hw(capdir, run10, out):
         if not kind.startswith('wav:'): continue
         k = kind[4:]; fs = S[k]['fs']
         y, r = sf.read(os.path.join(capdir, f), always_2d=True)
-        lat = LAT if r == FS else 0      # 96 kHz: latency unknown, only the deconvolved response is used
-        y = y[lat:] / GAIN
+        lat = LATS if r == FS else (0, 0)   # 96 kHz: latency unknown, only the deconvolved response is used
+        n = len(y) - max(lat)
+        y = np.stack([y[lat[0]:lat[0] + n, 0], y[lat[1]:lat[1] + n, 1]], 1) / GAIN
         if '(stimulus -10 dB)' in desc: y = y * 10 ** (10 / 20)    # a clipped take retaken 10 dB lower
         tag = 'p%03d' % int(prog)
         if batch == 'A' and k != 'imp1':          # wet-only variants: tag w<program>; level series: l<program>
@@ -153,8 +163,11 @@ def simulate(ours_out, run10, capdir):
         if not k.startswith('wav:'): continue
         k = k[4:]; n = int(n)
         src = os.path.join(T, 'imp1' if k == 'imp1' else ('A' + k if b == 'A' else k), '%03d.f32' % n)
-        y = np.fromfile(src, np.float32).reshape(-1, 2); fs = S[k]['fs']; lat = LAT if fs == FS else 0
-        z = np.vstack([np.zeros((lat, 2)), y])[:len(y)] * GAIN
+        y = np.fromfile(src, np.float32).reshape(-1, 2); fs = S[k]['fs']
+        z = np.zeros_like(y, dtype=float)
+        for c in (0, 1):
+            lat = LATS[c] if fs == FS else 0
+            z[lat:, c] = y[:len(y) - lat, c] * GAIN[c]
         z = z + np.random.default_rng(n).standard_normal(z.shape) * 10 ** (-87 / 20)
         f = 'r4%s-%03d-%s.wav' % (b, n, k)
         if f in names: f = f[:-4] + '-rep2.wav'

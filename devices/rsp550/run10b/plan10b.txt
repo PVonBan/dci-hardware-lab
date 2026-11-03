@@ -1,0 +1,65 @@
+A	111	std	Run-9 retake (left return dropped out): Effect path alg 12 (SDD-320 Mode 3): direct off, depth 0, feedback 0, EQ flat
+A	112	std	Run-9 retake (left return dropped out): Effect path alg 13 (Wide Chorus): direct off, depth 0, feedback 0, EQ flat
+A	113	std	Run-9 retake (left return dropped out): Effect path alg 14 (Vocal Chorus): direct off, depth 0, feedback 0, EQ flat
+A	114	std	Run-9 retake (left return dropped out): Effect path alg 18 (Guitar Chorus): direct off, depth 0, feedback 0, EQ flat
+A	115	std	Run-9 retake (left return dropped out): Effect path alg 19 (String Ensemble): direct off, depth 0, feedback 0, EQ flat
+A	116	std	Run-9 retake (left return dropped out): Effect path alg 31 (fountain): direct off, depth 0, feedback 0, EQ flat
+A	117	std	Run-9 retake (left return dropped out): Effect path alg 32 (Auto Pan Delay): direct off, depth 0, feedback 0, EQ flat
+A	118	std	Run-9 retake (left return dropped out): Effect path alg 33 (Tapping Delay): direct off, depth 0, feedback 0, EQ flat
+A	119	std	Run-9 retake (left return dropped out): Effect path alg 35 (Vibrating Vibe): direct off, depth 0, feedback 0, EQ flat
+A	120	std	Run-9 retake (left return dropped out): Effect path alg 37 (Hall / Room  *): direct off, depth 0, feedback 0, EQ flat
+A	121	std	Run-9 retake (left return dropped out): Effect path alg 38 (Mod.Delay Lead): direct off, depth 0, feedback 0, EQ flat
+A	122	std	Run-9 retake (left return dropped out): Jet Flanging effect only (Direct Mix off)
+A	123	std	Run-9 retake (left return dropped out): Jet Flanging direct only (Mix 0)
+A	123	stereo	Run-9 retake (left return dropped out): Jet Flanging direct only (Mix 0)
+A	124	std	Run-9 retake (left return dropped out): Bright Plate * with EQ flat
+A	125	std	Run-9 retake (left return dropped out): Bright Plate * with Diffusion 120
+A	127	std	Run-9 retake (left return dropped out): Industrial * with Reverb Time 2.0
+A	128	std	Run-9 retake (left return dropped out): Church * with EQ flat
+A	101	std	Run-9 retake (left return dropped out): Industrial * with Damp Level 0.71
+B	61	std	Run-9 retake (left return dropped out): Repeatability reference (start): fountain
+B	54	std	Run-9 retake (left return dropped out): Repeatability reference (start): Light Flanger
+B	74	stereolo	Run-9 retake (left return dropped out): Jet Phasing noise at -30
+B	74	stereohi	Run-9 retake (left return dropped out): Jet Phasing noise at -15
+B	1	filelo	Run-9 retake (left return dropped out): Listening material 10 dB lower (filelo): Large Hall 1
+B	1	file2lo	Run-9 retake (left return dropped out): Listening material 10 dB lower (file2lo): Large Hall 1
+B	1	file3lo	Run-9 retake (left return dropped out): Listening material 10 dB lower (file3lo): Large Hall 1
+B	8	filelo	Run-9 retake (left return dropped out): Listening material 10 dB lower (filelo): Warm Plate
+B	8	file2lo	Run-9 retake (left return dropped out): Listening material 10 dB lower (file2lo): Warm Plate
+B	8	file3lo	Run-9 retake (left return dropped out): Listening material 10 dB lower (file3lo): Warm Plate
+B	50	filelo	Run-9 retake (left return dropped out): Listening material 10 dB lower (filelo): Wide Chorus
+B	50	file2lo	Run-9 retake (left return dropped out): Listening material 10 dB lower (file2lo): Wide Chorus
+B	54	filelo	Run-9 retake (left return dropped out): Listening material 10 dB lower (filelo): Light Flanger
+B	54	file2lo	Run-9 retake (left return dropped out): Listening material 10 dB lower (file2lo): Light Flanger
+B	54	file3lo	Run-9 retake (left return dropped out): Listening material 10 dB lower (file3lo): Light Flanger
+B	58	filelo	Run-9 retake (left return dropped out): Listening material 10 dB lower (filelo): Shimmer
+B	58	file2lo	Run-9 retake (left return dropped out): Listening material 10 dB lower (file2lo): Shimmer
+B	58	file3lo	Run-9 retake (left return dropped out): Listening material 10 dB lower (file3lo): Shimmer
+B	87	filelo	Run-9 retake (left return dropped out): Listening material 10 dB lower (filelo): Soft Rotary
+C	101	std	Stereo Delay EQ: all flat, Mid Frq 500 (reference)
+C	102	std	Stereo Delay EQ: all flat, Mid Frq 1000 (reference)
+C	103	std	Stereo Delay EQ: all flat, Mid Frq 2000 (reference)
+C	104	std	Stereo Delay EQ: all flat, Mid Frq 4000 (reference)
+C	105	std	Stereo Delay EQ: Mid -12 dB at 2000 Hz
+C	106	std	Stereo Delay EQ: Mid -6 dB at 2000 Hz
+C	107	std	Stereo Delay EQ: Mid -3 dB at 2000 Hz
+C	108	std	Stereo Delay EQ: Mid +3 dB at 2000 Hz
+C	109	std	Stereo Delay EQ: Mid +6 dB at 2000 Hz
+C	110	std	Stereo Delay EQ: Mid +12 dB at 2000 Hz
+C	111	std	Stereo Delay EQ: Mid -12 dB at 500 Hz
+C	112	std	Stereo Delay EQ: Mid +12 dB at 500 Hz
+C	113	std	Stereo Delay EQ: Mid -12 dB at 1000 Hz
+C	114	std	Stereo Delay EQ: Mid +12 dB at 1000 Hz
+C	115	std	Stereo Delay EQ: Mid -12 dB at 4000 Hz
+C	116	std	Stereo Delay EQ: Mid +12 dB at 4000 Hz
+C	117	std	Stereo Delay EQ: EQ Hi -6 dB
+C	118	std	Stereo Delay EQ: EQ Hi +6 dB
+C	119	std	Stereo Delay EQ: EQ Lo -6 dB
+C	120	std	Stereo Delay EQ: EQ Lo +6 dB
+C	121	std	Reverb EQ with ER level 0 (wet-only Baroque Hall): flat
+C	122	std	Reverb EQ with ER level 0 (wet-only Baroque Hall): Hi -12
+C	123	std	Reverb EQ with ER level 0 (wet-only Baroque Hall): Hi +12
+Z	1	wav:labimp	Repeat at the end (drift): Large Hall 1
+Z	8	wav:labimp	Repeat at the end (drift): Warm Plate
+Z	1	std	Same capture as runs 6-9 (chain unchanged? loop gain on inputs 7/8): Large Hall 1
+Z	54	std	Same capture as runs 6-9 (chain unchanged? loop gain on inputs 7/8): Light Flanger

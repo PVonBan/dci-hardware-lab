@@ -1,0 +1,38 @@
+R1	111	std	Run-9 retake (left return dropped out): Effect path alg 12 (SDD-320 Mode 3): direct off, depth 0, feedback 0, EQ flat
+R1	112	std	Run-9 retake (left return dropped out): Effect path alg 13 (Wide Chorus): direct off, depth 0, feedback 0, EQ flat
+R1	113	std	Run-9 retake (left return dropped out): Effect path alg 14 (Vocal Chorus): direct off, depth 0, feedback 0, EQ flat
+R1	114	std	Run-9 retake (left return dropped out): Effect path alg 18 (Guitar Chorus): direct off, depth 0, feedback 0, EQ flat
+R1	115	std	Run-9 retake (left return dropped out): Effect path alg 19 (String Ensemble): direct off, depth 0, feedback 0, EQ flat
+R1	116	std	Run-9 retake (left return dropped out): Effect path alg 31 (fountain): direct off, depth 0, feedback 0, EQ flat
+R1	117	std	Run-9 retake (left return dropped out): Effect path alg 32 (Auto Pan Delay): direct off, depth 0, feedback 0, EQ flat
+R1	118	std	Run-9 retake (left return dropped out): Effect path alg 33 (Tapping Delay): direct off, depth 0, feedback 0, EQ flat
+R1	119	std	Run-9 retake (left return dropped out): Effect path alg 35 (Vibrating Vibe): direct off, depth 0, feedback 0, EQ flat
+R1	120	std	Run-9 retake (left return dropped out): Effect path alg 37 (Hall / Room  *): direct off, depth 0, feedback 0, EQ flat
+R1	121	std	Run-9 retake (left return dropped out): Effect path alg 38 (Mod.Delay Lead): direct off, depth 0, feedback 0, EQ flat
+R1	122	std	Run-9 retake (left return dropped out): Jet Flanging effect only (Direct Mix off)
+R1	123	std	Run-9 retake (left return dropped out): Jet Flanging direct only (Mix 0)
+R1	123	stereo	Run-9 retake (left return dropped out): Jet Flanging direct only (Mix 0)
+R1	124	std	Run-9 retake (left return dropped out): Bright Plate * with EQ flat
+R1	125	std	Run-9 retake (left return dropped out): Bright Plate * with Diffusion 120
+R1	127	std	Run-9 retake (left return dropped out): Industrial * with Reverb Time 2.0
+R1	128	std	Run-9 retake (left return dropped out): Church * with EQ flat
+R1	61	std	Run-9 retake (left return dropped out): Repeatability reference (start): fountain
+R1	54	std	Run-9 retake (left return dropped out): Repeatability reference (start): Light Flanger
+R1	74	stereolo	Run-9 retake (left return dropped out): Jet Phasing noise at -30
+R1	74	stereohi	Run-9 retake (left return dropped out): Jet Phasing noise at -15
+R1	1	filelo	Run-9 retake (left return dropped out): Listening material 10 dB lower (filelo): Large Hall 1
+R1	1	file2lo	Run-9 retake (left return dropped out): Listening material 10 dB lower (file2lo): Large Hall 1
+R1	1	file3lo	Run-9 retake (left return dropped out): Listening material 10 dB lower (file3lo): Large Hall 1
+R1	8	filelo	Run-9 retake (left return dropped out): Listening material 10 dB lower (filelo): Warm Plate
+R1	8	file2lo	Run-9 retake (left return dropped out): Listening material 10 dB lower (file2lo): Warm Plate
+R1	8	file3lo	Run-9 retake (left return dropped out): Listening material 10 dB lower (file3lo): Warm Plate
+R1	50	filelo	Run-9 retake (left return dropped out): Listening material 10 dB lower (filelo): Wide Chorus
+R1	50	file2lo	Run-9 retake (left return dropped out): Listening material 10 dB lower (file2lo): Wide Chorus
+R1	54	filelo	Run-9 retake (left return dropped out): Listening material 10 dB lower (filelo): Light Flanger
+R1	54	file2lo	Run-9 retake (left return dropped out): Listening material 10 dB lower (file2lo): Light Flanger
+R1	54	file3lo	Run-9 retake (left return dropped out): Listening material 10 dB lower (file3lo): Light Flanger
+R1	58	filelo	Run-9 retake (left return dropped out): Listening material 10 dB lower (filelo): Shimmer
+R1	58	file2lo	Run-9 retake (left return dropped out): Listening material 10 dB lower (file2lo): Shimmer
+R1	58	file3lo	Run-9 retake (left return dropped out): Listening material 10 dB lower (file3lo): Shimmer
+R1	87	filelo	Run-9 retake (left return dropped out): Listening material 10 dB lower (filelo): Soft Rotary
+R1	101	std	Run-9 retake (left return dropped out): Industrial * with Damp Level 0.71

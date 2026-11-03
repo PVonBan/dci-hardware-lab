@@ -207,3 +207,32 @@ Rotary (not in run 10's battery: needs its own rotary tests in a later run).
   then LOOP OK (both floors -86/-89 dBFS, no dropouts while the cables were moved). Run 10 and the loop check now read
   returns 7/8. Loop gain on 7/8 is not yet calibrated: run 10's Z captures (1 and 54, `std`) against run 9's clean
   B-001/Z captures give the per-channel change (the 5/6 calibration was L +0.9, R -4.6 dB).
+
+## Runs 10 and 10b (2026-11-03) and SSP-550 1.6.7
+- Calibration on returns 7/8: the direct impulse arrives at 1133 samples on both channels; on 5/6 input 5 delivered the
+  left 32 samples late, which was the "right 33 samples early" of every earlier run. Gains L +0.4, R -0.1 dB from the
+  unit's own symmetric signals in the same session (`lab10.py`, `LATS` / `GAIN`; `LAB10_CAL=56` selects the old ones).
+  An energy comparison of whole captures across sessions had given R -4.9 dB and made cross-feed look 6 dB lopsided.
+  Absolute level on 7/8 is still uncertain (music pairs read +2 to +4 dB plug-in excess everywhere): do not fit levels
+  from runs 10/10b.
+- Sweep deconvolution reads the unit's top octave low because the unit runs on its own clock (the sweep drifts against
+  the inverse filter). For high-frequency tone use steady pink noise or music: there LH1 and Warm Plate are within ~1 dB.
+- Program EQ (run 10b round 2, Stereo Delay, `analysis/run10/mideq.py`, `fitmid*.py`): Mid is a peak at the full set
+  gain, Q 0.98 for cuts and 0.79 for boosts (500 Hz - 4 kHz, -12 to +12 dB). Shelves 394 Hz Q 0.47, 3842 Hz Q 0.49.
+- Reverbs: with ER level 0 the EQ moves the hall fully, so the program EQ acts on the late field only; the early
+  reflections bypass it and are high-passed near 1.2 kHz (`grid_erhp.py`). A non-zero Mid lowers the late field by
+  |gain|/2 dB (the "whole hall -6 dB" of run 9 at Mid +-12).
+- Pre-delay test (imp1 with 0 / 50 ms): the direct sound dominates the onset and lag measures, so it says nothing about
+  the reverb's pre-delay; only Large Hall 1's ER pre-delay showed a move (49.6 ms on the unit, 0 on ours, old
+  calibration). Redo wet-only.
+- Run 10b: C115-C119 have the left return 1-10 dB down and C120 dropped out (retaken). The intermittent left output
+  fault is back; use the right channel only for those, and the guards need a partial-attenuation check.
+- After the 96 kHz switch the MHLink stalled for the rest of the session: rate switching in the runner is unsafe.
+- 1.6.7 released (EQ shapes, late-only reverb EQ, ER high-pass, Mid pad, Stereo Chorus 1.06, alg 15 1.07). Replay
+  medians: run 6 level 0.84 -> 0.78, tone 0.79 -> 0.76; run 8 1.31 -> 0.81; run 9 1.54 / 1.82 -> 1.14 / 1.01. Run 10:
+  493 of 1064 measures within the unit's own spread (1.6.6: 472). Pink-noise tone median 0.78 dB.
+- Left to fit (time domain): early echo density (LH1 50-150 ms 0.17 vs the unit's 0.39), build-up timing, LH1 late
+  slope and curvature, modulation level wobble (Warm Plate 500 Hz 5.8 vs 0.6 dB), click-to-click correlation (unit
+  0.77-0.85, ours ~1.0), cross-feed sign on LH1, and the unit's strong left-to-right asymmetry on wet-only reverbs.
+- The dci-core denormals check is a timing test; on the 2-core workspace it failed once (1.84x) under load and passed
+  three reruns (0.6-1.3x). Rerun before believing it.

@@ -20,7 +20,7 @@ run-10 captures, once they exist). Add a new test here and in `run_all.sh` in th
 | hostreset, every program | `SSP550Test --hostreset` | after `reset()` alone (what an AU host calls on stop, locate, offline bounce) each of the 199 programs renders exactly as a fresh instance (< -100 dB; 1.6.6: -300 dB) |
 | dci-core checks | `SSP550Checks` -> CHECKS OK | blocks, latency (dry), denormals, badinput, state, dc, startup, tail, extremes, rates, jumps, reset, hostreset, determinism, midi |
 | run-10 validate | `lab10.py validate` | the 28 test programs differ from their source only in the field they test; every battery render is finite and not silent; captures expected to clip are listed (the runner retakes them 10 dB lower) |
-| run-10 self-test | `lab10.py simulate / hw / addnoise / measure / compare` | our renders put through the loop model (latency 1179, loop gain, -87 dBFS noise) and analysed as if they were the unit come back matching ours on >= 97 % of measures: slicing, calibration and every measure work before real captures are trusted |
+| run-10 self-test | `lab10.py simulate / hw / addnoise / measure / compare` | our renders put through the loop model (latency and gain per channel, `LATS`/`GAIN`, -87 dBFS noise) and analysed as if they were the unit come back matching ours on >= 97 % of measures: slicing, calibration and every measure work before real captures are trusted |
 
 Also before a build is delivered (dci-hardware-capture protocol): render parity (`parity.py`), analysis guards
 (`guards.py`), and on the Mac auval on the installed AU.
@@ -63,3 +63,6 @@ Made by `make_run10.py` (stimuli are the reverb lab's own, `dci-effects tools/re
 - 2026-10-20: `replay/scores-v164.json` had been made before 1.6.4's last changes; 1.6.4 as published scores the same
   as 1.6.5 and 1.6.6 (`scores-v164check.json`). The large moves it showed (Hall3 direct off -12 dB, Wide Chorus and
   flanger click trains +3 dB) are 1.6.4's own changes, not regressions of later builds.
+- 2026-11-03 (SSP-550 1.6.7): the self-test's loop model now uses the per-channel latency and gain (`LATS`, `GAIN`) as
+  the capture reader does; with one latency for both it read 920 of 1073 after the 7/8 calibration. All gating tests
+  pass on 1.6.7.
