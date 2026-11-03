@@ -5,7 +5,7 @@ import numpy as np, soundfile as sf, sys, os
 from scipy import signal
 fs = 48000
 U = '/mnt/user-data/uploads/Downloads/RSP-550/lab/capture/run10b/'
-LAT, G = 1133, np.array([10 ** (0.4 / 20), 10 ** (-0.1 / 20)])
+LAT, G = 1133, np.array([10 ** (-4.1 / 20), 10 ** (-4.6 / 20)])   # inputs 7/8, corrected 2026-11-03 (see lab10.py)
 x, _ = sf.read(U + 'stim-filelo.wav', always_2d=True); N = len(x)
 cent = 1000 * 2 ** (np.arange(-15, 13) / 3)
 def hwcap(n):

@@ -2,7 +2,7 @@
 import numpy as np, soundfile as sf, subprocess, os, sys
 fs = 48000; SW0, SWN = 396002, 120000; SEG = SWN + 144000; NF = 1 << 19
 U = '/mnt/user-data/uploads/Downloads/RSP-550/lab/capture/run10b/'
-LAT = 1133; G = np.array([10 ** (0.4 / 20), 10 ** (-0.1 / 20)])
+LAT = 1133; G = np.array([10 ** (-4.1 / 20), 10 ** (-4.6 / 20)])   # inputs 7/8, corrected 2026-11-03 (see lab10.py)
 x, _ = sf.read(U + 'stim-std.wav'); xs = x[SW0:SW0 + SEG, 0]
 X = np.fft.rfft(xs, NF); f = np.fft.rfftfreq(NF, 1 / fs); Xi = np.where((f > 20) & (f < 20000), 1 / np.where(np.abs(X) > 1e-9, X, 1), 0)
 cent = 1000 * 2 ** (np.arange(-14, 13) / 3)

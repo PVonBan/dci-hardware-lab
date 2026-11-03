@@ -18,7 +18,7 @@ U = '/mnt/user-data/uploads/Downloads/RSP-550/lab/capture/run10b/'
 BK = '/mnt/user-data/uploads/Downloads/RSP-550/lab/RSP550-backup-20261018-041833.syx'
 lab10.slotbank(BK, 'v168/bk.syx')
 x, _ = sf.read(U + 'stim-filelo.wav', always_2d=True); N = len(x); x.astype('<f4').tofile('v168/filelo.f32')
-LAT, G = 1133, np.array([10 ** (0.4 / 20), 10 ** (-0.1 / 20)])
+LAT, G = 1133, np.array([10 ** (-4.1 / 20), 10 ** (-4.6 / 20)])   # inputs 7/8, corrected 2026-11-03 (see lab10.py)
 names = {1: 'Large Hall 1', 8: 'Warm Plate', 50: 'Wide Chorus', 54: 'Light Flanger', 58: 'Shimmer', 87: 'Soft Rotary'}
 os.makedirs('v168/abr', exist_ok=True)
 subprocess.run([BIN, '--render', 'v168/abr', 'v168/filelo.f32', 'v168/bk.syx'] + [str(n) for n in names], check=True, capture_output=True)

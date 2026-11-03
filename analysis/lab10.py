@@ -27,8 +27,12 @@ LATS = (LAT, LAT)
 # L; L from Light Flanger's direct against run 9 (-0.5 dB re input 5's +0.9). An energy comparison of whole captures
 # across sessions had given R -4.9 dB, which made every reverb's cross-feed look 6 dB lopsided. LAB10_CAL=56 selects
 # the old calibration.
+# Corrected 2026-11-03 (analysis/verify/repeat.py, anchor.py): the absolute gain had been anchored to input 5, the
+# intermittent one. The raw right-channel level of every program shared by runs 9 and 10b is identical (within 0.1 dB),
+# so input 8 has input 6's gain: R -4.6 dB; L keeps the measured 0.5 dB offset. The earlier R -0.1 made the plug-in look
+# 2-4 dB too loud on everything; with -4.6, run 10b agrees with run 9 to 0.1 dB and the plug-in is 0-2.5 dB too quiet.
 if os.environ.get('LAB10_CAL', '78') == '78':
-    LATS, GAIN = (1133, 1133), np.array([10 ** (0.4 / 20), 10 ** (-0.1 / 20)])
+    LATS, GAIN = (1133, 1133), np.array([10 ** (-4.1 / 20), 10 ** (-4.6 / 20)])
 
 
 def segs(run10):
@@ -239,6 +243,27 @@ def compare(hwo, ouo, jout=None):
             for k in ('EDT', 'T20', 'late', 'curvature'):
                 a, c = num(rep['shape_1k'][k]), num(orp['shape_1k'][k])
                 if a and c: r['shape 1k %s' % k] = (c, a, max(0.1 * abs(a), 0.05), '')
+        # v2026-11-03 (verify/sens.py): the sweep tone misses a 3 dB shelf on the tail and nothing measured level, while T30
+        # at 125/250 Hz with the direct sound present fires on unrelated changes. Added from the stereo impulses: wet level
+        # (both inputs, 0-1.5 s, absolute: both sides are calibrated) and late tone (150-600 ms, per octave, re 500 Hz-1 kHz).
+        for b in ('125', '250'):
+            if tag.startswith('p') and 'T30 %s' % b in r: del r['T30 %s' % b]
+        try:
+            def imp(d): return np.vstack([sf.read(os.path.join(d, 'renders', '%s_%s.wav' % (tag, k)))[0] for k in ('impL', 'impR')])
+            hi, oi = imp(hwo), imp(ouo); fs_ = 48000
+            lv = lambda y: 10 * np.log10(np.mean(np.sum(y[:int(1.5 * fs_)] ** 2, 1)) + 1e-30)
+            r['level'] = (lv(oi), lv(hi), 1.0, 'dB')
+            from scipy import signal as _sg
+            def late(y):
+                t = []
+                for b in BANDS:
+                    sos = _sg.butter(3, [int(b) / 2 ** 0.5, min(int(b) * 2 ** 0.5, 23000)], 'band', fs=fs_, output='sos')
+                    z = _sg.sosfiltfilt(sos, y, axis=0); t.append(10 * np.log10(np.sum(z[int(.15 * fs_):int(.6 * fs_)] ** 2) + 1e-30))
+                t = np.array(t); return t - (t[2] + t[3]) / 2
+            lh, lo_ = late(hi), late(oi)
+            for i, b in enumerate(BANDS):
+                if b not in ('500', '1000'): r['late tone %s' % b] = (lo_[i], lh[i], 1.0, 'dB')
+        except FileNotFoundError: pass
         if 'sides' in h and 'sides' in o:
             for s in ('L', 'R'): r['crossfeed %s' % s] = (o['sides'][s]['crossfeed_dB'], h['sides'][s]['crossfeed_dB'], 2.0, 'dB')
             r['mono loss'] = (o['sides']['mono_loss_dB'], h['sides']['mono_loss_dB'], 1.0, 'dB')
