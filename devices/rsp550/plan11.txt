@@ -1,0 +1,349 @@
+Z	1	wav:labimp	Reference (drift): Large Hall 1
+Z	1	wav:labimp	Reference (drift): Large Hall 1
+A	101	std	Stereo Delay EQ: all flat (reference)
+A	102	std	Stereo Delay EQ: EQ Hi -10 dB
+A	103	std	Stereo Delay EQ: EQ Lo -10 dB
+A	104	std	Stereo Delay EQ: EQ Hi -3 dB
+A	105	std	Stereo Delay EQ: EQ Lo -3 dB
+A	106	std	Stereo Delay EQ: EQ Hi -1 dB
+A	107	std	Stereo Delay EQ: EQ Lo -1 dB
+A	108	std	Stereo Delay EQ: EQ Hi +1 dB
+A	109	std	Stereo Delay EQ: EQ Lo +1 dB
+A	110	std	Stereo Delay EQ: EQ Hi +3 dB
+A	111	std	Stereo Delay EQ: EQ Lo +3 dB
+A	112	std	Stereo Delay EQ: EQ Hi +10 dB
+A	113	std	Stereo Delay EQ: EQ Lo +10 dB
+A	114	std	Stereo Delay EQ: Mid -9 dB at 2000 Hz
+A	115	std	Stereo Delay EQ: Mid +9 dB at 2000 Hz
+A	116	std	Stereo Delay EQ: EQ Total -6 dB (level law)
+A	117	std	Stereo Delay EQ: EQ Total +6 dB (level law)
+A	118	std	Ambience effect-only EQ: all flat (reference)
+A	119	std	Ambience effect-only EQ: EQ Hi -6 dB
+A	120	std	Ambience effect-only EQ: EQ Hi +6 dB
+Z	1	wav:labimp	Reference (drift): Large Hall 1
+A	121	std	Ambience effect-only EQ: EQ Lo -6 dB
+A	122	std	Ambience effect-only EQ: EQ Lo +6 dB
+A	123	std	Ambience effect-only EQ: EQ Mid -6 dB at 2000 Hz
+A	124	std	Ambience effect-only EQ: EQ Mid +6 dB at 2000 Hz
+A	125	std	Wide Chorus effect-only, EQ flat (reference)
+A	125	wav:musichi	Wide Chorus effect-only, EQ flat (reference)
+A	126	std	Wide Chorus effect-only, EQ Hi +10 only
+A	126	wav:musichi	Wide Chorus effect-only, EQ Hi +10 only
+A	127	std	Wide Chorus effect-only, EQ Lo +7.5 only
+A	127	wav:musichi	Wide Chorus effect-only, EQ Lo +7.5 only
+A	128	std	Wide Chorus effect-only, EQ Mid -5.5 only (program Mid Frq)
+A	128	wav:musichi	Wide Chorus effect-only, EQ Mid -5.5 only (program Mid Frq)
+C	101	wav:labimp	Large Hall 1 wet only, Rev PreDly 0 ms
+C	102	wav:labimp	Large Hall 1 wet only, Rev PreDly 50 ms
+C	103	wav:labimp	Large Hall 1 wet only, Rev PreDly 100 ms
+C	104	wav:labimp	Large Hall 1 wet only, ER PreDly 0 ms
+C	105	wav:labimp	Large Hall 1 wet only, ER PreDly 50 ms
+C	106	wav:labimp	Small Room (Room 2) wet only, Rev Time 0.5 (low)
+C	106	wav:sweepm12	Small Room (Room 2) wet only, Rev Time 0.5 (low)
+C	107	wav:labimp	Small Room (Room 2) wet only, Rev Time 2 (mid)
+Z	1	wav:labimp	Reference (drift): Large Hall 1
+C	107	wav:sweepm12	Small Room (Room 2) wet only, Rev Time 2 (mid)
+C	108	wav:labimp	Small Room (Room 2) wet only, Rev Time 6 (high)
+C	108	wav:sweepm12	Small Room (Room 2) wet only, Rev Time 6 (high)
+C	109	wav:labimp	Small Room (Room 2) wet only, Rev PreDly 50 ms
+C	110	wav:sweepm12	Small Room (Room 2) wet only, Damp Lvl at its strongest (code 0)
+C	111	wav:labimp	Bright Plate (Plate 1) wet only, Rev Time 0.5 (low)
+C	111	wav:sweepm12	Bright Plate (Plate 1) wet only, Rev Time 0.5 (low)
+C	112	wav:labimp	Bright Plate (Plate 1) wet only, Rev Time 2 (mid)
+C	112	wav:sweepm12	Bright Plate (Plate 1) wet only, Rev Time 2 (mid)
+C	113	wav:labimp	Bright Plate (Plate 1) wet only, Rev Time 6 (high)
+C	113	wav:sweepm12	Bright Plate (Plate 1) wet only, Rev Time 6 (high)
+C	114	wav:labimp	Bright Plate (Plate 1) wet only, Rev PreDly 50 ms
+C	115	wav:sweepm12	Bright Plate (Plate 1) wet only, Damp Lvl at its strongest (code 0)
+C	116	wav:labimp	150msec Gate (gate reverb) wet only, Gate Time 12
+C	117	wav:labimp	150msec Gate (gate reverb) wet only, Gate Time 305
+C	118	wav:labimp	150msec Gate (gate reverb) wet only, Gate Time 599
+C	119	wav:labimp	150msec Gate wet only, the other Gate Mode
+C	120	wav:labimp	150msec Gate wet only, Density low
+C	121	wav:sweepm12	Detuned Chorus: PS1 Fine +50, direct off
+C	121	wav:labimp	Detuned Chorus: PS1 Fine +50, direct off
+Z	1	wav:labimp	Reference (drift): Large Hall 1
+C	122	wav:labimp	Detuned Chorus: PS1 PreDly 100 ms, direct off
+C	123	wav:labimp	Detuned Chorus: PS1 FB 50, direct off
+C	124	wav:labimp	fountain: Tap 1 time doubled, direct off
+C	125	wav:labimp	fountain: Tap 1 FB 50, direct off
+C	126	wav:labimp	Heaven wet only, Mod Depth 0
+C	126	wav:sweepm12	Heaven wet only, Mod Depth 0
+C	127	wav:labimp	Heaven wet only, Rev Time short
+C	128	wav:tonelv	Soft Rotary at the fast speed (the factory program has no overdrive block)
+C	128	wav:musichi	Soft Rotary at the fast speed (the factory program has no overdrive block)
+B	87	wav:musichi	Level dependence (musichi): Soft Rotary
+B	87	wav:musiclo	Level dependence (musiclo): Soft Rotary
+B	87	wav:tonelv	Level dependence (tonelv): Soft Rotary
+B	1	wav:musichi	Level dependence (musichi): Large Hall 1
+B	1	wav:musiclo	Level dependence (musiclo): Large Hall 1
+B	1	wav:tonelv	Level dependence (tonelv): Large Hall 1
+B	50	wav:musichi	Level dependence (musichi): Wide Chorus
+B	50	wav:musiclo	Level dependence (musiclo): Wide Chorus
+B	50	wav:tonelv	Level dependence (tonelv): Wide Chorus
+B	1	wav:labimp	Whole bank (impulse x4 + left/right): Large Hall 1
+B	1	wav:sweepm12	Whole bank (sweep -12 dBFS): Large Hall 1
+Z	1	wav:labimp	Reference (drift): Large Hall 1
+B	2	wav:labimp	Whole bank (impulse x4 + left/right): Large Hall 2
+B	2	wav:sweepm12	Whole bank (sweep -12 dBFS): Large Hall 2
+B	3	wav:labimp	Whole bank (impulse x4 + left/right): Medium Hall 1
+B	3	wav:sweepm12	Whole bank (sweep -12 dBFS): Medium Hall 1
+B	4	wav:labimp	Whole bank (impulse x4 + left/right): Medium Hall 2
+B	4	wav:sweepm12	Whole bank (sweep -12 dBFS): Medium Hall 2
+B	5	wav:labimp	Whole bank (impulse x4 + left/right): Large Room
+B	5	wav:sweepm12	Whole bank (sweep -12 dBFS): Large Room
+B	6	wav:labimp	Whole bank (impulse x4 + left/right): Medium Room
+B	6	wav:sweepm12	Whole bank (sweep -12 dBFS): Medium Room
+B	7	wav:labimp	Whole bank (impulse x4 + left/right): Small Room
+B	7	wav:sweepm12	Whole bank (sweep -12 dBFS): Small Room
+B	8	wav:labimp	Whole bank (impulse x4 + left/right): Warm Plate
+B	8	wav:sweepm12	Whole bank (sweep -12 dBFS): Warm Plate
+B	9	wav:labimp	Whole bank (impulse x4 + left/right): Bright Plate
+B	9	wav:sweepm12	Whole bank (sweep -12 dBFS): Bright Plate
+B	10	wav:labimp	Whole bank (impulse x4 + left/right): Vocal Plate 1
+B	10	wav:sweepm12	Whole bank (sweep -12 dBFS): Vocal Plate 1
+B	11	wav:labimp	Whole bank (impulse x4 + left/right): Vocal Plate 2
+B	11	wav:sweepm12	Whole bank (sweep -12 dBFS): Vocal Plate 2
+Z	1	wav:labimp	Reference (drift): Large Hall 1
+B	12	wav:labimp	Whole bank (impulse x4 + left/right): Cathedral
+B	12	wav:sweepm12	Whole bank (sweep -12 dBFS): Cathedral
+B	13	wav:labimp	Whole bank (impulse x4 + left/right): Arena
+B	13	wav:sweepm12	Whole bank (sweep -12 dBFS): Arena
+B	14	wav:labimp	Whole bank (impulse x4 + left/right): Classical Hall
+B	14	wav:sweepm12	Whole bank (sweep -12 dBFS): Classical Hall
+B	15	wav:labimp	Whole bank (impulse x4 + left/right): Baroque Hall
+B	15	wav:sweepm12	Whole bank (sweep -12 dBFS): Baroque Hall
+B	16	wav:labimp	Whole bank (impulse x4 + left/right): Opera House
+B	16	wav:sweepm12	Whole bank (sweep -12 dBFS): Opera House
+B	17	wav:labimp	Whole bank (impulse x4 + left/right): String Hall
+B	17	wav:sweepm12	Whole bank (sweep -12 dBFS): String Hall
+B	18	wav:labimp	Whole bank (impulse x4 + left/right): Wide Space
+B	18	wav:sweepm12	Whole bank (sweep -12 dBFS): Wide Space
+B	19	wav:labimp	Whole bank (impulse x4 + left/right): Midnight Street
+B	19	wav:sweepm12	Whole bank (sweep -12 dBFS): Midnight Street
+B	20	wav:labimp	Whole bank (impulse x4 + left/right): Garage
+B	20	wav:sweepm12	Whole bank (sweep -12 dBFS): Garage
+B	21	wav:labimp	Whole bank (impulse x4 + left/right): Industrial
+B	21	wav:sweepm12	Whole bank (sweep -12 dBFS): Industrial
+Z	1	wav:labimp	Reference (drift): Large Hall 1
+B	22	wav:labimp	Whole bank (impulse x4 + left/right): Reflection
+B	22	wav:sweepm12	Whole bank (sweep -12 dBFS): Reflection
+B	23	wav:labimp	Whole bank (impulse x4 + left/right): Church
+B	23	wav:sweepm12	Whole bank (sweep -12 dBFS): Church
+B	24	wav:labimp	Whole bank (impulse x4 + left/right): Metallic Room
+B	24	wav:sweepm12	Whole bank (sweep -12 dBFS): Metallic Room
+B	25	wav:labimp	Whole bank (impulse x4 + left/right): Club Stage
+B	25	wav:sweepm12	Whole bank (sweep -12 dBFS): Club Stage
+B	26	wav:labimp	Whole bank (impulse x4 + left/right): Wood Floor
+B	26	wav:sweepm12	Whole bank (sweep -12 dBFS): Wood Floor
+B	27	wav:labimp	Whole bank (impulse x4 + left/right): Bright Chamber
+B	27	wav:sweepm12	Whole bank (sweep -12 dBFS): Bright Chamber
+B	28	wav:labimp	Whole bank (impulse x4 + left/right): String Chamber
+B	28	wav:sweepm12	Whole bank (sweep -12 dBFS): String Chamber
+B	29	wav:labimp	Whole bank (impulse x4 + left/right): Tiled Room
+B	29	wav:sweepm12	Whole bank (sweep -12 dBFS): Tiled Room
+B	30	wav:labimp	Whole bank (impulse x4 + left/right): Bright Room
+B	30	wav:sweepm12	Whole bank (sweep -12 dBFS): Bright Room
+B	31	wav:labimp	Whole bank (impulse x4 + left/right): Warm Room
+B	31	wav:sweepm12	Whole bank (sweep -12 dBFS): Warm Room
+Z	1	wav:labimp	Reference (drift): Large Hall 1
+B	32	wav:labimp	Whole bank (impulse x4 + left/right): Corridor
+B	32	wav:sweepm12	Whole bank (sweep -12 dBFS): Corridor
+B	33	wav:labimp	Whole bank (impulse x4 + left/right): Heaven
+B	33	wav:sweepm12	Whole bank (sweep -12 dBFS): Heaven
+B	34	wav:labimp	Whole bank (impulse x4 + left/right): Hell
+B	34	wav:sweepm12	Whole bank (sweep -12 dBFS): Hell
+B	35	wav:labimp	Whole bank (impulse x4 + left/right): Drum Ambience
+B	35	wav:sweepm12	Whole bank (sweep -12 dBFS): Drum Ambience
+B	36	wav:labimp	Whole bank (impulse x4 + left/right): Jazz Club
+B	36	wav:sweepm12	Whole bank (sweep -12 dBFS): Jazz Club
+B	37	wav:labimp	Whole bank (impulse x4 + left/right): Live Sound
+B	37	wav:sweepm12	Whole bank (sweep -12 dBFS): Live Sound
+B	38	wav:labimp	Whole bank (impulse x4 + left/right): Hall + Gate
+B	38	wav:sweepm12	Whole bank (sweep -12 dBFS): Hall + Gate
+B	39	wav:labimp	Whole bank (impulse x4 + left/right): Plate + Gate
+B	39	wav:sweepm12	Whole bank (sweep -12 dBFS): Plate + Gate
+B	40	wav:labimp	Whole bank (impulse x4 + left/right): 150msec Gate
+B	40	wav:sweepm12	Whole bank (sweep -12 dBFS): 150msec Gate
+B	41	wav:labimp	Whole bank (impulse x4 + left/right): 450msec Gate
+B	41	wav:sweepm12	Whole bank (sweep -12 dBFS): 450msec Gate
+Z	1	wav:labimp	Reference (drift): Large Hall 1
+B	42	wav:labimp	Whole bank (impulse x4 + left/right): Left =>=> Right
+B	42	wav:sweepm12	Whole bank (sweep -12 dBFS): Left =>=> Right
+B	43	wav:labimp	Whole bank (impulse x4 + left/right): Reverse + Accent
+B	43	wav:sweepm12	Whole bank (sweep -12 dBFS): Reverse + Accent
+B	44	wav:labimp	Whole bank (impulse x4 + left/right): Strange Gate
+B	44	wav:sweepm12	Whole bank (sweep -12 dBFS): Strange Gate
+B	45	wav:labimp	Whole bank (impulse x4 + left/right): SDD-320 Mode 3
+B	45	wav:sweepm12	Whole bank (sweep -12 dBFS): SDD-320 Mode 3
+B	46	wav:labimp	Whole bank (impulse x4 + left/right): Vocal Chorus
+B	46	wav:sweepm12	Whole bank (sweep -12 dBFS): Vocal Chorus
+B	47	wav:labimp	Whole bank (impulse x4 + left/right): Guitar Chorus
+B	47	wav:sweepm12	Whole bank (sweep -12 dBFS): Guitar Chorus
+B	48	wav:labimp	Whole bank (impulse x4 + left/right): Bass Chorus
+B	48	wav:sweepm12	Whole bank (sweep -12 dBFS): Bass Chorus
+B	49	wav:labimp	Whole bank (impulse x4 + left/right): Piano Chorus
+B	49	wav:sweepm12	Whole bank (sweep -12 dBFS): Piano Chorus
+B	50	wav:labimp	Whole bank (impulse x4 + left/right): Wide Chorus
+B	50	wav:sweepm12	Whole bank (sweep -12 dBFS): Wide Chorus
+B	51	wav:labimp	Whole bank (impulse x4 + left/right): Analog Chorus
+B	51	wav:sweepm12	Whole bank (sweep -12 dBFS): Analog Chorus
+Z	1	wav:labimp	Reference (drift): Large Hall 1
+B	52	wav:labimp	Whole bank (impulse x4 + left/right): Ensemble Chorus
+B	52	wav:sweepm12	Whole bank (sweep -12 dBFS): Ensemble Chorus
+B	53	wav:labimp	Whole bank (impulse x4 + left/right): Detuned Chorus
+B	53	wav:sweepm12	Whole bank (sweep -12 dBFS): Detuned Chorus
+B	54	wav:labimp	Whole bank (impulse x4 + left/right): Light Flanger
+B	54	wav:sweepm12	Whole bank (sweep -12 dBFS): Light Flanger
+B	55	wav:labimp	Whole bank (impulse x4 + left/right): Deep Swell
+B	55	wav:sweepm12	Whole bank (sweep -12 dBFS): Deep Swell
+B	56	wav:labimp	Whole bank (impulse x4 + left/right): Tapping Delay
+B	56	wav:sweepm12	Whole bank (sweep -12 dBFS): Tapping Delay
+B	57	wav:labimp	Whole bank (impulse x4 + left/right): Tapping Dot 8th
+B	57	wav:sweepm12	Whole bank (sweep -12 dBFS): Tapping Dot 8th
+B	58	wav:labimp	Whole bank (impulse x4 + left/right): Shimmer
+B	58	wav:sweepm12	Whole bank (sweep -12 dBFS): Shimmer
+B	59	wav:labimp	Whole bank (impulse x4 + left/right): Crazy Echo
+B	59	wav:sweepm12	Whole bank (sweep -12 dBFS): Crazy Echo
+B	60	wav:labimp	Whole bank (impulse x4 + left/right): Analog Delay
+B	60	wav:sweepm12	Whole bank (sweep -12 dBFS): Analog Delay
+B	61	wav:labimp	Whole bank (impulse x4 + left/right): fountain
+B	61	wav:sweepm12	Whole bank (sweep -12 dBFS): fountain
+Z	1	wav:labimp	Reference (drift): Large Hall 1
+B	62	wav:labimp	Whole bank (impulse x4 + left/right): Auto Pan Delay
+B	62	wav:sweepm12	Whole bank (sweep -12 dBFS): Auto Pan Delay
+B	63	wav:labimp	Whole bank (impulse x4 + left/right): Wave
+B	63	wav:sweepm12	Whole bank (sweep -12 dBFS): Wave
+B	64	wav:labimp	Whole bank (impulse x4 + left/right): Running Horse
+B	64	wav:sweepm12	Whole bank (sweep -12 dBFS): Running Horse
+B	65	wav:labimp	Whole bank (impulse x4 + left/right): Four Waves
+B	65	wav:sweepm12	Whole bank (sweep -12 dBFS): Four Waves
+B	66	wav:labimp	Whole bank (impulse x4 + left/right): Double Pan Dly
+B	66	wav:sweepm12	Whole bank (sweep -12 dBFS): Double Pan Dly
+B	67	wav:labimp	Whole bank (impulse x4 + left/right): Doubling Echo
+B	67	wav:sweepm12	Whole bank (sweep -12 dBFS): Doubling Echo
+B	68	wav:labimp	Whole bank (impulse x4 + left/right): Exciting Male
+B	68	wav:sweepm12	Whole bank (sweep -12 dBFS): Exciting Male
+B	69	wav:labimp	Whole bank (impulse x4 + left/right): Exciting Female
+B	69	wav:sweepm12	Whole bank (sweep -12 dBFS): Exciting Female
+B	70	wav:labimp	Whole bank (impulse x4 + left/right): Light Phaser
+B	70	wav:sweepm12	Whole bank (sweep -12 dBFS): Light Phaser
+B	71	wav:labimp	Whole bank (impulse x4 + left/right): Round Phaser
+B	71	wav:sweepm12	Whole bank (sweep -12 dBFS): Round Phaser
+Z	1	wav:labimp	Reference (drift): Large Hall 1
+B	72	wav:labimp	Whole bank (impulse x4 + left/right): Jungle Phaser
+B	72	wav:sweepm12	Whole bank (sweep -12 dBFS): Jungle Phaser
+B	73	wav:labimp	Whole bank (impulse x4 + left/right): Accent Phaser
+B	73	wav:sweepm12	Whole bank (sweep -12 dBFS): Accent Phaser
+B	74	wav:labimp	Whole bank (impulse x4 + left/right): Jet Phasing
+B	74	wav:sweepm12	Whole bank (sweep -12 dBFS): Jet Phasing
+B	75	wav:labimp	Whole bank (impulse x4 + left/right): Jet Flanging
+B	75	wav:sweepm12	Whole bank (sweep -12 dBFS): Jet Flanging
+B	76	wav:labimp	Whole bank (impulse x4 + left/right): Rhodes Phaser
+B	76	wav:sweepm12	Whole bank (sweep -12 dBFS): Rhodes Phaser
+B	77	wav:labimp	Whole bank (impulse x4 + left/right): Rhodes Chorus
+B	77	wav:sweepm12	Whole bank (sweep -12 dBFS): Rhodes Chorus
+B	78	wav:labimp	Whole bank (impulse x4 + left/right): Rhodes Vibrato
+B	78	wav:sweepm12	Whole bank (sweep -12 dBFS): Rhodes Vibrato
+B	79	wav:labimp	Whole bank (impulse x4 + left/right): Wide Guitar
+B	79	wav:sweepm12	Whole bank (sweep -12 dBFS): Wide Guitar
+B	80	wav:labimp	Whole bank (impulse x4 + left/right): Octave Brass
+B	80	wav:sweepm12	Whole bank (sweep -12 dBFS): Octave Brass
+B	81	wav:labimp	Whole bank (impulse x4 + left/right): String Phaser
+B	81	wav:sweepm12	Whole bank (sweep -12 dBFS): String Phaser
+Z	1	wav:labimp	Reference (drift): Large Hall 1
+B	82	wav:labimp	Whole bank (impulse x4 + left/right): Wide Piano
+B	82	wav:sweepm12	Whole bank (sweep -12 dBFS): Wide Piano
+B	83	wav:labimp	Whole bank (impulse x4 + left/right): Bright Piano
+B	83	wav:sweepm12	Whole bank (sweep -12 dBFS): Bright Piano
+B	84	wav:labimp	Whole bank (impulse x4 + left/right): Flanging Piano
+B	84	wav:sweepm12	Whole bank (sweep -12 dBFS): Flanging Piano
+B	85	wav:labimp	Whole bank (impulse x4 + left/right): Vibrating Vibe
+B	85	wav:sweepm12	Whole bank (sweep -12 dBFS): Vibrating Vibe
+B	86	wav:labimp	Whole bank (impulse x4 + left/right): Round Rotary
+B	86	wav:sweepm12	Whole bank (sweep -12 dBFS): Round Rotary
+B	87	wav:labimp	Whole bank (impulse x4 + left/right): Soft Rotary
+B	87	wav:sweepm12	Whole bank (sweep -12 dBFS): Soft Rotary
+B	88	wav:labimp	Whole bank (impulse x4 + left/right): Hardrock Organ
+B	88	wav:sweepm12	Whole bank (sweep -12 dBFS): Hardrock Organ
+B	89	wav:labimp	Whole bank (impulse x4 + left/right): String Ensemble
+B	89	wav:sweepm12	Whole bank (sweep -12 dBFS): String Ensemble
+B	90	wav:labimp	Whole bank (impulse x4 + left/right): Vibrato Lead
+B	90	wav:sweepm12	Whole bank (sweep -12 dBFS): Vibrato Lead
+B	91	wav:labimp	Whole bank (impulse x4 + left/right): Mod.Delay Lead
+B	91	wav:sweepm12	Whole bank (sweep -12 dBFS): Mod.Delay Lead
+Z	1	wav:labimp	Reference (drift): Large Hall 1
+B	92	wav:labimp	Whole bank (impulse x4 + left/right): Flanging Lead
+B	92	wav:sweepm12	Whole bank (sweep -12 dBFS): Flanging Lead
+B	93	wav:labimp	Whole bank (impulse x4 + left/right): Hitting Saw
+B	93	wav:sweepm12	Whole bank (sweep -12 dBFS): Hitting Saw
+B	94	wav:labimp	Whole bank (impulse x4 + left/right): MIDI NOTE->Chord
+B	94	wav:sweepm12	Whole bank (sweep -12 dBFS): MIDI NOTE->Chord
+B	95	wav:labimp	Whole bank (impulse x4 + left/right): Skip !
+B	95	wav:sweepm12	Whole bank (sweep -12 dBFS): Skip !
+B	96	wav:labimp	Whole bank (impulse x4 + left/right): Diminish Up&Down
+B	96	wav:sweepm12	Whole bank (sweep -12 dBFS): Diminish Up&Down
+B	97	wav:labimp	Whole bank (impulse x4 + left/right): 12 String Guitar
+B	97	wav:sweepm12	Whole bank (sweep -12 dBFS): 12 String Guitar
+B	98	wav:labimp	Whole bank (impulse x4 + left/right): 1 Note Arpeggio
+B	98	wav:sweepm12	Whole bank (sweep -12 dBFS): 1 Note Arpeggio
+B	99	wav:labimp	Whole bank (impulse x4 + left/right): Funny BarberPole
+B	99	wav:sweepm12	Whole bank (sweep -12 dBFS): Funny BarberPole
+B	100	wav:labimp	Whole bank (impulse x4 + left/right): Vocoder S.Tooth
+B	100	wav:sweepm12	Whole bank (sweep -12 dBFS): Vocoder S.Tooth
+B	101	wav:labimp	Whole bank (impulse x4 + left/right): Large Hall 1 *
+B	101	wav:sweepm12	Whole bank (sweep -12 dBFS): Large Hall 1 *
+Z	1	wav:labimp	Reference (drift): Large Hall 1
+B	102	wav:labimp	Whole bank (impulse x4 + left/right): Large Hall 2 *
+B	102	wav:sweepm12	Whole bank (sweep -12 dBFS): Large Hall 2 *
+B	103	wav:labimp	Whole bank (impulse x4 + left/right): Medium Hall 1 *
+B	103	wav:sweepm12	Whole bank (sweep -12 dBFS): Medium Hall 1 *
+B	104	wav:labimp	Whole bank (impulse x4 + left/right): Medium Hall 2 *
+B	104	wav:sweepm12	Whole bank (sweep -12 dBFS): Medium Hall 2 *
+B	105	wav:labimp	Whole bank (impulse x4 + left/right): Large Room   *
+B	105	wav:sweepm12	Whole bank (sweep -12 dBFS): Large Room   *
+B	106	wav:labimp	Whole bank (impulse x4 + left/right): Medium Room  *
+B	106	wav:sweepm12	Whole bank (sweep -12 dBFS): Medium Room  *
+B	107	wav:labimp	Whole bank (impulse x4 + left/right): Small Room  *
+B	107	wav:sweepm12	Whole bank (sweep -12 dBFS): Small Room  *
+B	108	wav:labimp	Whole bank (impulse x4 + left/right): Warm Plate  *
+B	108	wav:sweepm12	Whole bank (sweep -12 dBFS): Warm Plate  *
+B	109	wav:labimp	Whole bank (impulse x4 + left/right): Bright Plate *
+B	109	wav:sweepm12	Whole bank (sweep -12 dBFS): Bright Plate *
+B	110	wav:labimp	Whole bank (impulse x4 + left/right): Vocal Plate 1 *
+B	110	wav:sweepm12	Whole bank (sweep -12 dBFS): Vocal Plate 1 *
+B	111	wav:labimp	Whole bank (impulse x4 + left/right): Vocal Plate 2 *
+B	111	wav:sweepm12	Whole bank (sweep -12 dBFS): Vocal Plate 2 *
+Z	1	wav:labimp	Reference (drift): Large Hall 1
+B	112	wav:labimp	Whole bank (impulse x4 + left/right): Cathedral   *
+B	112	wav:sweepm12	Whole bank (sweep -12 dBFS): Cathedral   *
+B	113	wav:labimp	Whole bank (impulse x4 + left/right): Arena     *
+B	113	wav:sweepm12	Whole bank (sweep -12 dBFS): Arena     *
+B	114	wav:labimp	Whole bank (impulse x4 + left/right): Classical Hall*
+B	114	wav:sweepm12	Whole bank (sweep -12 dBFS): Classical Hall*
+B	115	wav:labimp	Whole bank (impulse x4 + left/right): Baroque Hall *
+B	115	wav:sweepm12	Whole bank (sweep -12 dBFS): Baroque Hall *
+B	116	wav:labimp	Whole bank (impulse x4 + left/right): Opera House  *
+B	116	wav:sweepm12	Whole bank (sweep -12 dBFS): Opera House  *
+B	117	wav:labimp	Whole bank (impulse x4 + left/right): String Hall  *
+B	117	wav:sweepm12	Whole bank (sweep -12 dBFS): String Hall  *
+B	118	wav:labimp	Whole bank (impulse x4 + left/right): Wide Space  *
+B	118	wav:sweepm12	Whole bank (sweep -12 dBFS): Wide Space  *
+B	119	wav:labimp	Whole bank (impulse x4 + left/right): Midnight Street*
+B	119	wav:sweepm12	Whole bank (sweep -12 dBFS): Midnight Street*
+B	120	wav:labimp	Whole bank (impulse x4 + left/right): Garage    *
+B	120	wav:sweepm12	Whole bank (sweep -12 dBFS): Garage    *
+B	121	wav:labimp	Whole bank (impulse x4 + left/right): Industrial  *
+B	121	wav:sweepm12	Whole bank (sweep -12 dBFS): Industrial  *
+Z	1	wav:labimp	Reference (drift): Large Hall 1
+B	122	wav:labimp	Whole bank (impulse x4 + left/right): Reflection  *
+B	122	wav:sweepm12	Whole bank (sweep -12 dBFS): Reflection  *
+B	123	wav:labimp	Whole bank (impulse x4 + left/right): Church    *
+B	123	wav:sweepm12	Whole bank (sweep -12 dBFS): Church    *
+B	124	wav:labimp	Whole bank (impulse x4 + left/right): Metallic Room *
+B	124	wav:sweepm12	Whole bank (sweep -12 dBFS): Metallic Room *
+B	125	wav:labimp	Whole bank (impulse x4 + left/right): Club Stage  *
+B	125	wav:sweepm12	Whole bank (sweep -12 dBFS): Club Stage  *
+B	126	wav:labimp	Whole bank (impulse x4 + left/right): Wood Floor  *
+B	126	wav:sweepm12	Whole bank (sweep -12 dBFS): Wood Floor  *
+Z	1	wav:labimp	Reference (drift): Large Hall 1

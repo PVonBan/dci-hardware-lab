@@ -1,0 +1,407 @@
+{
+ "A101": {
+  "source": 58,
+  "what": "Stereo Delay EQ: all flat (reference)",
+  "kinds": [
+   "std"
+  ]
+ },
+ "A102": {
+  "source": 58,
+  "what": "Stereo Delay EQ: EQ Hi -10 dB",
+  "kinds": [
+   "std"
+  ]
+ },
+ "A103": {
+  "source": 58,
+  "what": "Stereo Delay EQ: EQ Lo -10 dB",
+  "kinds": [
+   "std"
+  ]
+ },
+ "A104": {
+  "source": 58,
+  "what": "Stereo Delay EQ: EQ Hi -3 dB",
+  "kinds": [
+   "std"
+  ]
+ },
+ "A105": {
+  "source": 58,
+  "what": "Stereo Delay EQ: EQ Lo -3 dB",
+  "kinds": [
+   "std"
+  ]
+ },
+ "A106": {
+  "source": 58,
+  "what": "Stereo Delay EQ: EQ Hi -1 dB",
+  "kinds": [
+   "std"
+  ]
+ },
+ "A107": {
+  "source": 58,
+  "what": "Stereo Delay EQ: EQ Lo -1 dB",
+  "kinds": [
+   "std"
+  ]
+ },
+ "A108": {
+  "source": 58,
+  "what": "Stereo Delay EQ: EQ Hi +1 dB",
+  "kinds": [
+   "std"
+  ]
+ },
+ "A109": {
+  "source": 58,
+  "what": "Stereo Delay EQ: EQ Lo +1 dB",
+  "kinds": [
+   "std"
+  ]
+ },
+ "A110": {
+  "source": 58,
+  "what": "Stereo Delay EQ: EQ Hi +3 dB",
+  "kinds": [
+   "std"
+  ]
+ },
+ "A111": {
+  "source": 58,
+  "what": "Stereo Delay EQ: EQ Lo +3 dB",
+  "kinds": [
+   "std"
+  ]
+ },
+ "A112": {
+  "source": 58,
+  "what": "Stereo Delay EQ: EQ Hi +10 dB",
+  "kinds": [
+   "std"
+  ]
+ },
+ "A113": {
+  "source": 58,
+  "what": "Stereo Delay EQ: EQ Lo +10 dB",
+  "kinds": [
+   "std"
+  ]
+ },
+ "A114": {
+  "source": 58,
+  "what": "Stereo Delay EQ: Mid -9 dB at 2000 Hz",
+  "kinds": [
+   "std"
+  ]
+ },
+ "A115": {
+  "source": 58,
+  "what": "Stereo Delay EQ: Mid +9 dB at 2000 Hz",
+  "kinds": [
+   "std"
+  ]
+ },
+ "A116": {
+  "source": 58,
+  "what": "Stereo Delay EQ: EQ Total -6 dB (level law)",
+  "kinds": [
+   "std"
+  ]
+ },
+ "A117": {
+  "source": 58,
+  "what": "Stereo Delay EQ: EQ Total +6 dB (level law)",
+  "kinds": [
+   "std"
+  ]
+ },
+ "A118": {
+  "source": 35,
+  "what": "Ambience effect-only EQ: all flat (reference)",
+  "kinds": [
+   "std"
+  ]
+ },
+ "A119": {
+  "source": 35,
+  "what": "Ambience effect-only EQ: EQ Hi -6 dB",
+  "kinds": [
+   "std"
+  ]
+ },
+ "A120": {
+  "source": 35,
+  "what": "Ambience effect-only EQ: EQ Hi +6 dB",
+  "kinds": [
+   "std"
+  ]
+ },
+ "A121": {
+  "source": 35,
+  "what": "Ambience effect-only EQ: EQ Lo -6 dB",
+  "kinds": [
+   "std"
+  ]
+ },
+ "A122": {
+  "source": 35,
+  "what": "Ambience effect-only EQ: EQ Lo +6 dB",
+  "kinds": [
+   "std"
+  ]
+ },
+ "A123": {
+  "source": 35,
+  "what": "Ambience effect-only EQ: EQ Mid -6 dB at 2000 Hz",
+  "kinds": [
+   "std"
+  ]
+ },
+ "A124": {
+  "source": 35,
+  "what": "Ambience effect-only EQ: EQ Mid +6 dB at 2000 Hz",
+  "kinds": [
+   "std"
+  ]
+ },
+ "A125": {
+  "source": 50,
+  "what": "Wide Chorus effect-only, EQ flat (reference)",
+  "kinds": [
+   "std",
+   "wav:musichi"
+  ]
+ },
+ "A126": {
+  "source": 50,
+  "what": "Wide Chorus effect-only, EQ Hi +10 only",
+  "kinds": [
+   "std",
+   "wav:musichi"
+  ]
+ },
+ "A127": {
+  "source": 50,
+  "what": "Wide Chorus effect-only, EQ Lo +7.5 only",
+  "kinds": [
+   "std",
+   "wav:musichi"
+  ]
+ },
+ "A128": {
+  "source": 50,
+  "what": "Wide Chorus effect-only, EQ Mid -5.5 only (program Mid Frq)",
+  "kinds": [
+   "std",
+   "wav:musichi"
+  ]
+ },
+ "C101": {
+  "source": 1,
+  "what": "Large Hall 1 wet only, Rev PreDly 0 ms",
+  "kinds": [
+   "wav:labimp"
+  ]
+ },
+ "C102": {
+  "source": 1,
+  "what": "Large Hall 1 wet only, Rev PreDly 50 ms",
+  "kinds": [
+   "wav:labimp"
+  ]
+ },
+ "C103": {
+  "source": 1,
+  "what": "Large Hall 1 wet only, Rev PreDly 100 ms",
+  "kinds": [
+   "wav:labimp"
+  ]
+ },
+ "C104": {
+  "source": 1,
+  "what": "Large Hall 1 wet only, ER PreDly 0 ms",
+  "kinds": [
+   "wav:labimp"
+  ]
+ },
+ "C105": {
+  "source": 1,
+  "what": "Large Hall 1 wet only, ER PreDly 50 ms",
+  "kinds": [
+   "wav:labimp"
+  ]
+ },
+ "C106": {
+  "source": 7,
+  "what": "Small Room (Room 2) wet only, Rev Time 0.5 (low)",
+  "kinds": [
+   "wav:labimp",
+   "wav:sweepm12"
+  ]
+ },
+ "C107": {
+  "source": 7,
+  "what": "Small Room (Room 2) wet only, Rev Time 2 (mid)",
+  "kinds": [
+   "wav:labimp",
+   "wav:sweepm12"
+  ]
+ },
+ "C108": {
+  "source": 7,
+  "what": "Small Room (Room 2) wet only, Rev Time 6 (high)",
+  "kinds": [
+   "wav:labimp",
+   "wav:sweepm12"
+  ]
+ },
+ "C109": {
+  "source": 7,
+  "what": "Small Room (Room 2) wet only, Rev PreDly 50 ms",
+  "kinds": [
+   "wav:labimp"
+  ]
+ },
+ "C110": {
+  "source": 7,
+  "what": "Small Room (Room 2) wet only, Damp Lvl at its strongest (code 0)",
+  "kinds": [
+   "wav:sweepm12"
+  ]
+ },
+ "C111": {
+  "source": 9,
+  "what": "Bright Plate (Plate 1) wet only, Rev Time 0.5 (low)",
+  "kinds": [
+   "wav:labimp",
+   "wav:sweepm12"
+  ]
+ },
+ "C112": {
+  "source": 9,
+  "what": "Bright Plate (Plate 1) wet only, Rev Time 2 (mid)",
+  "kinds": [
+   "wav:labimp",
+   "wav:sweepm12"
+  ]
+ },
+ "C113": {
+  "source": 9,
+  "what": "Bright Plate (Plate 1) wet only, Rev Time 6 (high)",
+  "kinds": [
+   "wav:labimp",
+   "wav:sweepm12"
+  ]
+ },
+ "C114": {
+  "source": 9,
+  "what": "Bright Plate (Plate 1) wet only, Rev PreDly 50 ms",
+  "kinds": [
+   "wav:labimp"
+  ]
+ },
+ "C115": {
+  "source": 9,
+  "what": "Bright Plate (Plate 1) wet only, Damp Lvl at its strongest (code 0)",
+  "kinds": [
+   "wav:sweepm12"
+  ]
+ },
+ "C116": {
+  "source": 40,
+  "what": "150msec Gate (gate reverb) wet only, Gate Time 12",
+  "kinds": [
+   "wav:labimp"
+  ]
+ },
+ "C117": {
+  "source": 40,
+  "what": "150msec Gate (gate reverb) wet only, Gate Time 305",
+  "kinds": [
+   "wav:labimp"
+  ]
+ },
+ "C118": {
+  "source": 40,
+  "what": "150msec Gate (gate reverb) wet only, Gate Time 599",
+  "kinds": [
+   "wav:labimp"
+  ]
+ },
+ "C119": {
+  "source": 40,
+  "what": "150msec Gate wet only, the other Gate Mode",
+  "kinds": [
+   "wav:labimp"
+  ]
+ },
+ "C120": {
+  "source": 40,
+  "what": "150msec Gate wet only, Density low",
+  "kinds": [
+   "wav:labimp"
+  ]
+ },
+ "C121": {
+  "source": 53,
+  "what": "Detuned Chorus: PS1 Fine +50, direct off",
+  "kinds": [
+   "wav:sweepm12",
+   "wav:labimp"
+  ]
+ },
+ "C122": {
+  "source": 53,
+  "what": "Detuned Chorus: PS1 PreDly 100 ms, direct off",
+  "kinds": [
+   "wav:labimp"
+  ]
+ },
+ "C123": {
+  "source": 53,
+  "what": "Detuned Chorus: PS1 FB 50, direct off",
+  "kinds": [
+   "wav:labimp"
+  ]
+ },
+ "C124": {
+  "source": 61,
+  "what": "fountain: Tap 1 time doubled, direct off",
+  "kinds": [
+   "wav:labimp"
+  ]
+ },
+ "C125": {
+  "source": 61,
+  "what": "fountain: Tap 1 FB 50, direct off",
+  "kinds": [
+   "wav:labimp"
+  ]
+ },
+ "C126": {
+  "source": 33,
+  "what": "Heaven wet only, Mod Depth 0",
+  "kinds": [
+   "wav:labimp",
+   "wav:sweepm12"
+  ]
+ },
+ "C127": {
+  "source": 33,
+  "what": "Heaven wet only, Rev Time short",
+  "kinds": [
+   "wav:labimp"
+  ]
+ },
+ "C128": {
+  "source": 87,
+  "what": "Soft Rotary at the fast speed (the factory program has no overdrive block)",
+  "kinds": [
+   "wav:tonelv",
+   "wav:musichi"
+  ]
+ }
+}
