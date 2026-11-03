@@ -25,6 +25,6 @@ mkdir -p "$WORK"
   fi
   R4="$LAB/run4"
   [[ -e "$LAB/run9-log.txt" ]] || echo "Note: run 9 has not been run yet (no run9-log.txt). Run 10 works on its own, but run 9 was meant to go first."
-  caffeinate -i "$BIN" run4 "$LAB" "$LAB/RSP550-backup-20261018-041833.syx" "$LAB/run10/plan10.txt" "$R4/restore-101-128.syx" "$LAB/run10/tests10A.syx" "$LAB/run5/empty.syx" "$LAB/run5/empty.syx" 3 4 5 6 run10
+  caffeinate -i "$BIN" run4 "$LAB" "$LAB/RSP550-backup-20261018-041833.syx" "$LAB/run10/plan10.txt" "$R4/restore-101-128.syx" "$LAB/run10/tests10A.syx" "$LAB/run5/empty.syx" "$LAB/run5/empty.syx" 3 4 7 8 run10
   echo "exit $?"
 } 2>&1 | tee "$LOG"

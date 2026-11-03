@@ -202,3 +202,8 @@ Rotary (not in run 10's battery: needs its own rotary tests in a later run).
   (run 6 level 0.84 -> 0.70, tone 0.79 -> 0.73; run 9 1.54 / 1.82 -> 1.17 / 1.08). On music, Large Hall 1 still
   lacks 1-2.4 dB at 100-250 Hz (heard as "brighter") and Warm Plate has 1.5 dB too much at 100-250 Hz and 2 dB too
   little at 1 kHz: run 10 (wet-only decay per band) and round 2 (Mid EQ) address those.
+- 2026-11-03 loop check (`rsplab loopcheck`): the left return was dead on input 5 (floor -113 dBFS, tones 30-50 dB
+  down). The user moved the RSP-550's outputs to interface inputs 7/8 and reseated the output cables at the RSP-550;
+  then LOOP OK (both floors -86/-89 dBFS, no dropouts while the cables were moved). Run 10 and the loop check now read
+  returns 7/8. Loop gain on 7/8 is not yet calibrated: run 10's Z captures (1 and 54, `std`) against run 9's clean
+  B-001/Z captures give the per-channel change (the 5/6 calibration was L +0.9, R -4.6 dB).
