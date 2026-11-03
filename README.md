@@ -22,6 +22,10 @@ Run 4 results, applied in SSP-550 1.5.4 (details in the SSP-550 README and `RSP5
 
 Whole bank after 1.5.4: 12 programs more than 3 dB off (was 14); reverb decay ratio 1.05, interquartile 0.98–1.09 (was 0.99–1.15).
 
+## Next unit
+
+Read `docs/NEXT_UNIT_PROCESS.md` first: a review of the RSP-550 project step by step and the process the next device follows (fixed bench with a calibration loop, one generated battery, one-command pipeline, fits as a table, listening only where the audibility score says so).
+
 ## Folder map
 
 | Path | What |
