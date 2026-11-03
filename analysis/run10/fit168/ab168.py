@@ -28,6 +28,14 @@ for i, (n, nm) in enumerate(names.items(), 1):
     hw = np.zeros((N, 2)); seg = raw[LAT:LAT + N] / G; hw[:len(seg)] = seg
     pl = np.fromfile('v168/abr/%03d.f32' % n, '<f4').reshape(-1, 2)[:N].astype(float)
     lh, lp = lufs(hw), lufs(pl); plm = pl * 10 ** ((lh - lp) / 20)
+    # the unit's own hiss (its quietest quarter second) added to the plug-in file, as the 1.6.6 kit did: without it the
+    # plug-in is dead silent in quiet passages and X can be told by the noise floor (found 2026-11-03 on the first 1.6.8 pairs)
+    w = int(0.25 * 48000); e = np.array([np.mean(hw[i:i + w] ** 2) for i in range(0, N - w, w // 5)]); i0 = int(np.argmin(e)) * (w // 5); seg = hw[i0:i0 + w]
+    rng = np.random.default_rng(550 + n)
+    for c in range(2):
+        f, P = signal.welch(seg[:, c], 48000, nperseg=4096); fq = np.fft.rfftfreq(N, 1 / 48000)
+        h = np.fft.irfft(np.fft.rfft(rng.standard_normal(N)) * np.sqrt(np.interp(fq, f, P)), N)
+        plm[:, c] += h * np.sqrt((seg[:, c] ** 2).mean()) / (np.sqrt((h ** 2).mean()) + 1e-20)
     pk = max(np.abs(hw).max(), np.abs(plm).max()); trim = min(1.0, 0.89 / pk)
     for tag, y in (('A RSP-550 hardware', hw * trim), ('B SSP-550 ' + VER, plm * trim)):
         sf.write('%s/%02d %s - %s.wav' % (OUT, i, nm, tag), np.clip(y, -1, 1), 48000, subtype='PCM_24')

@@ -63,7 +63,10 @@ for run, plans, syx, an in RUNS:
                 guards.check_dropout(raw, '%s %s%d %s' % (run, b, prog, kind))
             except guards.GuardError as e: rows.append((b, prog, kind, desc, None, None, str(e))); continue
             except Exception as e: rows.append((b, prog, kind, desc, None, None, 'missing: %s' % e)); continue
-            m = min(len(yh), len(yp)); d = guards.per_channel(bands, yh[:m], yp[:m])
+            m = min(len(yh), len(yp))
+            # run 9 (inputs 5/6): the left return was intermittently attenuated throughout, not only on the dead takes
+            # (verify/repeat.py, 2026-11-03: R-L median +9 dB after calibration against -0.2 in runs 6, 7, 10b): right only
+            d = guards.per_channel(bands, yh[:m, 1:2].repeat(2, 1), yp[:m, 1:2].repeat(2, 1)) if run == 'run9pr' else guards.per_channel(bands, yh[:m], yp[:m])
             lvl = float(np.median(d[(CENT >= 200) & (CENT <= 5000)])); shape = float(np.median(np.abs(d - lvl)[(CENT >= 100) & (CENT <= 12500)]))
             rows.append((b, prog, kind, desc, lvl, shape, ''))
     with open('replay/%s.txt' % run, 'w') as fo:

@@ -256,3 +256,50 @@ Rotary (not in run 10's battery: needs its own rotary tests in a later run).
   1.6.7 and 1.6.8 alike (`ratechk.py`). Now 8 s rendered, the last 6 s analysed; limit unchanged (worst 0.79 dB).
 - Levels: wet loudness moved with the shape changes; compensating from music alone overshot the run-9 hall EQ tests.
   Each algorithm's wet level is set from the replay's signed level of its own tests (runs 6-9).
+
+## Verification pass and SSP-550 1.6.9 (2026-11-03, afternoon)
+The user asked that the information behind the model be verified before more listening (`analysis/verify/`).
+- **Unit repeatability** (`repeat.py`): the same program and stimulus three days apart agrees to 0.01-0.1 dB in tone
+  and 0.1 dB in level on the healthy channel; within a session 0.01 dB. The unit's gain is level-independent
+  (-24 / -12 / 0 dBFS sweeps). Nothing below that is worth fitting; everything above it is real.
+- **Input 7/8 calibration was anchored to the faulty input 5** (`anchor.py`): the raw right-channel level of every
+  program shared by runs 9 and 10b is identical, so input 8 has input 6's gain (R -4.6 dB, L -4.1), not -0.1. The
+  "uniform +2-4 dB plug-in excess" of run 10 was this error; the plug-in is in fact 1-2 dB quiet on several
+  programs. `lab10.py` and every run-10 script corrected. Run 9's left channel was intermittently attenuated through
+  the whole session (R-L median +9 dB against -0.2 in runs 6, 7, 10b): replay scores run 9 on the right channel only.
+- **Measure sensitivity** (`sens.py`): injected changes (tail shelf -3 dB, reflections +10 ms, onset +20 ms, decay
+  x1.2, modulation on, wet -2 dB) against the unchanged render. The sweep tone missed the 3 dB tail shelf, nothing
+  measured level, and T30 at 125/250 Hz with the direct sound present fired on unrelated changes. `lab10.compare` now
+  has `late tone` (150-600 ms per octave) and `level` (sweep energy; impulses understate the unit by 2 dB) and drops
+  those T30s. NED flags everything (tolerance too tight) and is not informative.
+- **EQ re-derived** (`eqfit.py`, `eqstruct*.py`): exact at +-12 dB (400 / 3.9 kHz, Q 0.47, 0.02 dB) but at +-6 the
+  corners move (high shelf 2789 / 5344 Hz, low 568 / 284) and the mid Q runs 0.59 -> 0.98 (cuts 3 -> 12 dB) and
+  1.20 -> 0.72 (boosts). No fixed structure (symmetric RBJ, feed-forward boost / feed-back cut, additive) fits every
+  gain with one corner: a coefficient table per step. 1.6.9 interpolates the measured points on the Stereo Delay path
+  (0.0-0.1 dB at every captured setting) - but the same shapes put Ambience and the multi-effects 1.7 dB off against
+  runs 7-8, so the EQ differs per path and 1.6.9 applies the new shapes only where measured. Run 11 measures every
+  step on the delay path and +-6 on the Ambience and chorus paths.
+- **Replay of all 189 earlier targeted tests**: 92 are still off by more than 1.5 dB, concentrated in the Phaser
+  (34 of 43) and the Vocoder (14 of 16), then the multi-effect reverbs; none of those were ever in a listening test.
+- **Coverage** (`devices/rsp550/COVERAGE.md`): 97 of 675 controls ever varied (14 %); pitch shifters, tap/tempo
+  delays and the gated reverbs are factory-only.
+- **Listening pairs**: the 1.6.7 and first 1.6.8 pairs had no unit hiss on the plug-in side (the 1.6.6 kit added it);
+  republished with it before the user's 1.6.8 round could be confirmed clean. `ab168.py` adds it now.
+- **Audibility score** (`audib.py`): the band-level difference in the quiet parts of the loudness-matched pairs
+  separated the 1.6.6 results (heard >= 3.3 dB rms, not heard <= 3.2) but predicted Large Hall 1 "not heard" on 1.6.8
+  and the user scored 9/10. Six calibration points; not yet a gate on listening.
+- **1.6.8 listening**: Large Hall 1 9, Warm Plate 7, Wide Chorus 5, Light Flanger 7, Shimmer 4, Soft Rotary 10 of 10.
+- **1.6.9**: reverb wet levels with the corrected calibration (Hall 1 +2.0, Plate 2 +0.6, Plate 1 +0.5, Room 1 -0.3,
+  Heaven -0.8), Hall 1 low-frequency decay ratio 1.021 -> 1.08 (wet-only T30 at 125 / 250 Hz 6 % short), the
+  gain-dependent EQ on the delay path. Output scales for Wide Chorus, Light Flanger and Shimmer were tried and
+  reverted: their direct-only tests in runs 6-7 are right and the effect-only deficit depends on the material (the
+  program EQ on those paths, unmeasured). Soft Rotary: the unit is 5 dB louder relative to ours on the quiet clip
+  (file3lo) and equal on the loud one - a level dependence in the unit's rotary that run 11's tones at three levels
+  will characterise; likely what the user hears at 10/10.
+- **Run 11** (`make_run11.py`): the first unattended run. Runner changes (`Run4.h`): plan lines recorded in file
+  order (references every 20 lines), a return-sag guard (8 dB balance change for 0.5 s while the stimulus is
+  balanced: retake once), a calibration loop capture at the start and end (an interface output patched straight to
+  an input: exact latency and gain), no rate switching. Content: EQ steps on the delay path and +-6 on the Ambience
+  and chorus paths (batch A), the never-varied controls and the wet-only pre-delay (batch C), the rotary, Large Hall 1
+  and Wide Chorus on music and tones at three levels, and the whole bank with labimp + sweepm12 (261 factory lines,
+  no user action). About 3.5 hours; the user is needed for 20 minutes at the start and the restore at the end.

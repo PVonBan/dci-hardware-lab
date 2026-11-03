@@ -120,6 +120,8 @@ Every stimulus is saved next to the captures (`stim-<kind>.wav` and markers). MI
 - **Wet-only level fits overcorrect.** Fit voicing gain against full-output level.
 
 ### Run 4 lessons
+- **Calibrate with a straight loop, not through the unit.** The input 7/8 gain had been anchored to a faulty input and was 4.5 dB off for a whole run (2026-11-03). Since run 11 the runner records an interface output patched to an input at the start and end of every run.
+- **Guard partial attenuation, not only dead returns.** Run 10b lost five captures to a return 1-10 dB down. The runner retakes a capture whose balance moves 8 dB for half a second while the stimulus is balanced.
 - **Let the unit settle after Bulk Load.** It kept playing the previous sound for about 11 s although the edit buffer already showed the new program. The runner now steps to program 1 and waits 15 s.
 - **The manual's address tables can be wrong.** Simple Delay keeps its echo level at 20H and direct level at 21H, not 1FH/20H. Two checks catch this:
   - Compare what you wrote with the edit buffer after selecting the program; the unit silently zeroes bytes it doesn't accept. The runner now reports any difference.

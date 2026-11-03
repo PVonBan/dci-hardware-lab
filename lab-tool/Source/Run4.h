@@ -1,4 +1,11 @@
-// rsplab run4 <labdir> <backup.syx> <plan.txt> <restore.syx> <testsA.syx> <testsB.syx> <testsC.syx> o1 o2 i1 i2 [capture-subfolder]
+// rsplab run4 <labdir> <backup.syx> <plan.txt> <restore.syx> <testsA.syx> <testsB.syx> <testsC.syx> o1 o2 i1 i2 [capture-subfolder [calOut calIn]]
+// Run 11 (2026-11-03): plan lines are recorded in file order (a batch is bulk-loaded when its first line comes, so
+// reference lines (B/Z) can sit between batches and every 20 captures: drift is measured through the run, not only
+// at the end); a capture whose left/right balance sags by more than 8 dB for half a second while the stimulus is
+// symmetric is taken again once ("return sag": run 10b lost five captures to a partly attenuated return that the
+// dead-return check did not see); with calOut/calIn an interface output patched straight to an input is recorded
+// with the std stimulus at the start and the end (capture/cal-start.wav, cal-end.wav): exact loop latency and gain
+// without the unit. No sample-rate switching inside a run (the MHLink stalled after one in run 10).
 //   (an empty tests file skips that batch; later runs reuse this mode with their own plan and sub-folder)
 //
 // The full measurement battery. Each batch writes up to 28 test programs to the "*" copy slots 101-128 (Bulk Load,
@@ -327,6 +334,7 @@ static int runRun4 (int argc, char** argv)
                                                       { "C", loadBank (File { String (CharPointer_UTF8 (argv[8])) }) } };
     const std::vector<int> sends { atoi (argv[9]) - 1, atoi (argv[10]) - 1 }, rets { atoi (argv[11]) - 1, atoi (argv[12]) - 1 };
     const String runName = argc > 13 ? String (CharPointer_UTF8 (argv[13])) : String ("run4");   // capture sub-folder
+    const int calOut = argc > 15 ? atoi (argv[14]) - 1 : -1, calIn = argc > 15 ? atoi (argv[15]) - 1 : -1;   // run 11: calibration loop
     const File capDir = lab.getChildFile ("capture").getChildFile (runName); capDir.createDirectory();
     const double fs = 48000.0;
     const File planDir = File { String (CharPointer_UTF8 (argv[4])) }.getParentDirectory();
@@ -509,6 +517,33 @@ static int runRun4 (int argc, char** argv)
                 }
             }
         }
+        // run 11: partial attenuation of one return (run 10b, C115-C119: left 1-10 dB down). Per 0.25 s block, the
+        // output balance R-L against its median over the capture; a deviation beyond 8 dB for two consecutive blocks,
+        // where both returns carry signal and the stimulus itself is balanced within 3 dB, is a sagging return.
+        {
+            const int blk = (int) (0.25 * rate); std::vector<double> d; std::vector<int> at;
+            for (int i = 0; i + blk <= (int) pr.rec[0].size(); i += blk)
+            {
+                double e[2] = { 0, 0 }, x[2] = { 0, 0 };
+                for (int c = 0; c < 2; ++c) { for (int k = i; k < i + blk; ++k) e[c] += (double) pr.rec[(size_t) c][(size_t) k] * pr.rec[(size_t) c][(size_t) k]; e[c] = 10 * std::log10 (e[c] / blk + 1e-30); }
+                for (int k = i; k < i + blk && k < (int) st.L.size(); ++k) { x[0] += (double) st.L[(size_t) k] * st.L[(size_t) k]; x[1] += (double) st.R[(size_t) k] * st.R[(size_t) k]; }
+                x[0] = 10 * std::log10 (x[0] / blk + 1e-30); x[1] = 10 * std::log10 (x[1] / blk + 1e-30);
+                if (e[0] > -80 && e[1] > -80 && x[0] > -70 && x[1] > -70 && std::abs (x[1] - x[0]) < 3.0) { d.push_back (e[1] - e[0]); at.push_back (i); }
+            }
+            if (d.size() >= 8)
+            {
+                auto sorted = d; std::nth_element (sorted.begin(), sorted.begin() + (long) (sorted.size() / 2), sorted.end()); const double med = sorted[sorted.size() / 2];
+                int sagAt = -1; double sagDb = 0;
+                for (size_t k = 1; k < d.size() && sagAt < 0; ++k)
+                    if (std::abs (d[k] - med) > 8.0 && std::abs (d[k - 1] - med) > 8.0 && at[k] == at[k - 1] + blk) { sagAt = at[k - 1]; sagDb = d[k] - med; }
+                if (sagAt >= 0)
+                {
+                    out ("  *** RETURN SAG: the " + String (sagDb < 0 ? "RIGHT" : "LEFT") + " return dropped " + String (std::abs (sagDb), 1) + " dB at " + String (sagAt / rate, 1) + " s in " + name
+                         + " - check that cable and jack");
+                    if (! desc.contains ("(retake: return sag)")) { Thread::sleep (3000); return record (batch, number, kind, desc + " (retake: return sag)", stimDb); }
+                }
+            }
+        }
         if (peak > 0.99f && stimDb == 0.0f)
         {
             out ("  clipped at the interface: recording it again with the stimulus 10 dB lower");
@@ -519,28 +554,54 @@ static int runRun4 (int argc, char** argv)
 
     auto bulkWrite = [&] (const std::vector<BankProgram>& progs) { for (auto& p : progs) { mo->sendMessageNow (dt1 (dev, 3, p.number - 1, 0, p.payload.data(), 96)); Thread::sleep (200); } };
     const double t0 = Time::getMillisecondCounterHiRes();
-    for (const String batch : { "A", "B", "C", "Z" })   // Z (run 9): program changes only, last - repeat references
+    // run 11: the calibration loop (an interface output patched straight to an input), std stimulus, no unit involved
+    auto calibrate = [&] (const String& tag)
     {
-        const auto& progs = tests[batch];
-        out ("== batch " + batch + ": " + String ((int) progs.size()) + " test programs");
-        if (! progs.empty())
+        if (calOut < 0 || calIn < 0) return;
+        Stim4 st = makeStim4 ("std", fs, dev + 1);
+        pr.setup ((int) st.L.size(), { calOut, calOut }, { calIn, calIn }); pr.play[0] = st.L; pr.play[1] = st.L;
+        pr.pos.store (0); const double tc = Time::getMillisecondCounterHiRes();
+        while (pr.pos.load() < pr.len) { Thread::sleep (2); if (Time::getMillisecondCounterHiRes() - tc > (pr.len / fs + 5.0) * 1000.0) { out ("  calibration capture stalled"); pr.pos.store (-1); return; } }
+        pr.pos.store (-1);
+        writeWav (capDir.getChildFile ("cal-" + tag + ".wav"), pr.rec, fs);
+        // latency from the first impulse (stimulus marker "impulseL <sample>"), gain from the sweep: printed, saved
+        int imp = 12000; for (auto& m : st.markers) if (m.startsWith ("impulseL ")) imp = m.fromFirstOccurrenceOf (" ", false, false).getIntValue();
+        int pk = 0; float pv = 0; const auto& r = pr.rec[0];
+        for (int k = imp; k < std::min ((int) r.size(), imp + 20000); ++k) if (std::abs (r[(size_t) k]) > pv) { pv = std::abs (r[(size_t) k]); pk = k; }
+        double ex = 0, ey = 0; const int lat = pk - imp; int sw0 = 396002, swn = 120000;
+        for (auto& m : st.markers) if (m.startsWith ("sweep ")) { StringArray t; t.addTokens (m, " ", ""); if (t.size() > 2) { sw0 = t[1].getIntValue(); swn = t[2].getIntValue(); } }
+        for (int k = sw0; k < sw0 + swn && k + lat < (int) r.size(); ++k) { ex += (double) st.L[(size_t) k] * st.L[(size_t) k]; ey += (double) r[(size_t) (k + lat)] * r[(size_t) (k + lat)]; }
+        const String line = "calibration " + tag + ": output " + String (calOut + 1) + " -> input " + String (calIn + 1) + ": latency " + String (lat) + " samples, gain " + String (10 * std::log10 (ey / (ex + 1e-30)), 2) + " dB";
+        out (line); capDir.getChildFile ("cal-" + tag + ".txt").replaceWithText (line + "\n");
+    };
+    calibrate ("start");
+    // run 11: plan lines in file order; a batch is bulk-loaded when its first line comes (B and Z need no load)
+    std::set<String> loaded { "B", "Z" };
+    for (auto& line : plan)
+    {
+        StringArray f; f.addTokens (line, "\t", ""); if (f.size() < 4) continue;
+        const String batch = f[0];
+        if (! loaded.count (batch))
         {
-            waitReturn ("Batch " + batch + ": on the RSP-550, start Bulk Load so it shows 'Waiting'.");
-            bulkWrite (progs);
-            waitReturn ("Leave Bulk Load on the RSP-550 (back to the normal play screen).");
-            int ok = 0; for (auto& t : progs) { if (matches (t.number, t.payload)) ++ok; else out ("  slot " + String (t.number) + " did not take its test program"); }
-            out ("  stored " + String (ok) + " of " + String ((int) progs.size()));
-            // run 4: after leaving Bulk Load the unit kept playing its previous sound for ~11 s although the edit
-            // buffer already showed the new program, which spoiled the first recording of each batch
-            out ("  letting the unit settle (15 s)"); selectPC (1); Thread::sleep (15000);
+            loaded.insert (batch);
+            const auto& progs = tests[batch];
+            out ("== batch " + batch + ": " + String ((int) progs.size()) + " test programs");
+            if (! progs.empty())
+            {
+                waitReturn ("Batch " + batch + ": on the RSP-550, start Bulk Load so it shows 'Waiting'.");
+                bulkWrite (progs);
+                waitReturn ("Leave Bulk Load on the RSP-550 (back to the normal play screen).");
+                int ok = 0; for (auto& t : progs) { if (matches (t.number, t.payload)) ++ok; else out ("  slot " + String (t.number) + " did not take its test program"); }
+                out ("  stored " + String (ok) + " of " + String ((int) progs.size()));
+                // run 4: after leaving Bulk Load the unit kept playing its previous sound for ~11 s although the edit
+                // buffer already showed the new program, which spoiled the first recording of each batch
+                out ("  letting the unit settle (15 s)"); selectPC (1); Thread::sleep (15000);
+            }
         }
-        for (auto& line : plan)
-        {
-            StringArray f; f.addTokens (line, "\t", ""); if (f.size() < 4 || f[0] != batch) continue;
-            record (batch, f[1].getIntValue(), f[2], f[3], 0.0f);
-        }
-        out ("  elapsed " + String ((Time::getMillisecondCounterHiRes() - t0) / 60000.0, 1) + " min");
+        record (batch, f[1].getIntValue(), f[2], f[3], 0.0f);
     }
+    out ("  elapsed " + String ((Time::getMillisecondCounterHiRes() - t0) / 60000.0, 1) + " min");
+    calibrate ("end");
     // Follow-up rounds (run 7 on): while the runner waits, Claude analyses the recordings so far and may place
     // round<N>-plan.txt (lines "R<N> <program> <kind> <description>") and, for new test programs, round<N>-tests.syx
     // next to the plan. Same safety as the batches: slots 101-128 only, every slot covered by the restore file.

@@ -69,3 +69,7 @@ Made by `make_run10.py` (stimuli are the reverb lab's own, `dci-effects tools/re
 - 2026-11-03 (SSP-550 1.6.8): SSP550Test's sample-rate check renders 8 s of noise and analyses the last 6 s (was 4 / 2 s;
   long reverbs scattered +-1 dB in the low octaves between noise seeds). The fit loops for the wet-only impulses and
   the rotary are in `analysis/run10/fit168` (targets, run by hand when fitting). All gating tests pass on 1.6.8.
+- 2026-11-03 (SSP-550 1.6.9): verification pass (`analysis/verify/`: repeatability, calibration anchor, measure
+  sensitivity, EQ re-derivation, audibility score). `lab10.compare` gained `level` and `late tone` and lost T30 125/250
+  on programs with direct sound; replay scores run 9 on the right channel only; the run-11 runner records in plan order
+  with a sag guard and a calibration loop. All gating tests pass on 1.6.9.

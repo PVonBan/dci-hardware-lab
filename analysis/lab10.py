@@ -251,8 +251,13 @@ def compare(hwo, ouo, jout=None):
         try:
             def imp(d): return np.vstack([sf.read(os.path.join(d, 'renders', '%s_%s.wav' % (tag, k)))[0] for k in ('impL', 'impR')])
             hi, oi = imp(hwo), imp(ouo); fs_ = 48000
-            lv = lambda y: 10 * np.log10(np.mean(np.sum(y[:int(1.5 * fs_)] ** 2, 1)) + 1e-30)
-            r['level'] = (lv(oi), lv(hi), 1.0, 'dB')
+            # level from the -12 dBFS sweep's raw response (not the impulses: the unit answers a full-scale single sample
+            # 2 dB lower than a sweep, so impulse energy understates its level)
+            try:
+                sw = lambda d: sf.read(os.path.join(d, 'run2', '%s_sweep.wav' % tag))[0]
+                lv = lambda y: 10 * np.log10(np.mean(y ** 2) + 1e-30)
+                r['level'] = (lv(sw(ouo)), lv(sw(hwo)), 1.0, 'dB')
+            except (FileNotFoundError, OSError, RuntimeError): pass
             from scipy import signal as _sg
             def late(y):
                 t = []
@@ -263,7 +268,7 @@ def compare(hwo, ouo, jout=None):
             lh, lo_ = late(hi), late(oi)
             for i, b in enumerate(BANDS):
                 if b not in ('500', '1000'): r['late tone %s' % b] = (lo_[i], lh[i], 1.0, 'dB')
-        except FileNotFoundError: pass
+        except (FileNotFoundError, OSError, RuntimeError): pass   # no stereo impulses for this tag (level series)
         if 'sides' in h and 'sides' in o:
             for s in ('L', 'R'): r['crossfeed %s' % s] = (o['sides'][s]['crossfeed_dB'], h['sides'][s]['crossfeed_dB'], 2.0, 'dB')
             r['mono loss'] = (o['sides']['mono_loss_dB'], h['sides']['mono_loss_dB'], 1.0, 'dB')
