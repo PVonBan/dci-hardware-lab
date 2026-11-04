@@ -1,10 +1,11 @@
 #!/bin/bash
 # DCI RSP-550 lab, run 11 (2026-11-03): loop check first, then the battery with the calibration loop.
 # Patching: interface outputs 3/4 -> RSP-550 inputs; RSP-550 outputs -> interface inputs 7/8;
-# calibration: interface output CAL_OUT patched straight to interface input CAL_IN (set below).
-# Your part: answer the >>> prompts (two batch loads in the first 20 minutes, the restore at the end). About 3.5 hours.
+# calibration: an interface output patched straight to an interface input, numbers in CAL_OUT / CAL_IN below
+# (both empty = no calibration loop this run; Claude fills them in once you say which pair is patched).
+# Your part: answer the >>> prompts (two batch loads in the first 20 minutes, the restore at the end). About 4 hours.
 # Log: ~/Downloads/RSP-550/lab/run11-log.txt
-CAL_OUT=__CAL_OUT__; CAL_IN=__CAL_IN__
+CAL_OUT=""; CAL_IN=""
 set -uo pipefail
 LAB="$HOME/Downloads/RSP-550/lab"
 WORK="$HOME/Library/Caches/DCI-RSP550-lab"
@@ -25,6 +26,6 @@ mkdir -p "$WORK"
   echo "=== loop check (80 s): during the noise, gently move the cables at both ends"
   "$BIN" loopcheck "$LAB" 3 4 7 8 || { echo "LOOP PROBLEM: fix the cable or jack it names and start this again"; exit 5; }
   echo "=== run 11"
-  caffeinate -i "$BIN" run4 "$LAB" "$LAB/RSP550-backup-20261018-041833.syx" "$LAB/run11/plan11.txt" "$LAB/run4/restore-101-128.syx" "$LAB/run11/tests11A.syx" "$LAB/run5/empty.syx" "$LAB/run11/tests11C.syx" 3 4 7 8 run11 "$CAL_OUT" "$CAL_IN"
+  caffeinate -i "$BIN" run4 "$LAB" "$LAB/RSP550-backup-20261018-041833.syx" "$LAB/run11/plan11.txt" "$LAB/run4/restore-101-128.syx" "$LAB/run11/tests11A.syx" "$LAB/run5/empty.syx" "$LAB/run11/tests11C.syx" 3 4 7 8 run11 ${CAL_OUT:+"$CAL_OUT" "$CAL_IN"}
   echo "exit $?"
 } 2>&1 | tee "$LOG"

@@ -20,7 +20,9 @@ Batch C (28 slots): controls never varied (COVERAGE.md) and the wet-only pre-del
   - Mod Reverb (Heaven): Mod Depth 0, Rev Time long
   - Soft Rotary at the fast speed
 Batch B (program changes, unattended): Soft Rotary, Large Hall 1 and Wide Chorus on music at three levels and on
-  tones at three levels (the rotary's 5 dB clip-to-clip level difference); then every factory program 1-126 with
+  tones at three levels (the rotary's 5 dB clip-to-clip level difference); in-phase / anti-phase noise on one program
+  per algorithm (input routing); a 1 kHz level series and bursts on one program per family (gain curve, attack and
+  release); periodic noise on the 12 battery programs (third response method); then every factory program 1-126 with
   labimp + sweepm12 (the first complete battery of the bank: per-program comparison and the audibility ranking).
 Z: Large Hall 1 labimp every 20 lines (drift through the run; the runner records in plan order since run 11).
 No 96 kHz lines (the MHLink stalled on the rate switch in run 10)."""
@@ -59,6 +61,26 @@ for db in (-30, -20, -10):
     for f in (250, 1000):
         parts.append(('tone%d_%d' % (f, -db), 10 ** (db / 20) * np.sin(2 * np.pi * f * t) * fade, 2.0))
 put('tonelv', parts)
+# three tests added 2026-11-03 evening (NOTES.md, "additional tests"):
+#   antiphase  3 s pink noise in phase (L = R) then 3 s anti-phase (L = -R), -20 dBFS: an algorithm that sums its inputs
+#              to mono gives no effect on the second half; one that keeps them apart does. One program per algorithm.
+#   levser     1 kHz, 2 s at each of -50 .. -6 dBFS in 4 dB steps (gain curve: compression or clipping, harmonics tell
+#              which), then a burst series -30 -> -10 -> -30 dBFS (attack and release). One program per family.
+#   pnoise     one 1 s period of pink noise repeated 8 times, -20 dBFS: the same response by synchronous averaging, to
+#              be compared with the sweep and the impulse on the same program (three methods must agree).
+rng = np.random.default_rng(1103)
+def pink(n):
+    w = rng.standard_normal(n); X = np.fft.rfft(w); f = np.fft.rfftfreq(n, 1 / FS); X[1:] /= np.sqrt(f[1:] / f[1]); X[0] = 0
+    y = np.fft.irfft(X, n); return y / np.sqrt(np.mean(y ** 2))
+pk = pink(3 * FS) * 10 ** (-20 / 20); fd = np.minimum(1, np.minimum(np.arange(3 * FS) / (0.02 * FS), (3 * FS - np.arange(3 * FS)) / (0.02 * FS))); pk *= fd
+put('antiphase', [(None, np.zeros((FS // 2, 2)), 0), ('inphase', np.stack([pk, pk], 1), 3.0), ('antiphase', np.stack([pk, -pk], 1), 3.0)])
+parts = [(None, np.zeros((FS // 2, 2)), 0)]; t2 = np.arange(2 * FS) / FS; f2 = np.minimum(1, np.minimum(t2 / 0.01, (2 - t2) / 0.01))
+for db in range(-50, -5, 4): parts.append(('lev%d' % -db, 10 ** (db / 20) * np.sin(2 * np.pi * 1000 * t2) * f2, 0.5))
+tb = np.arange(5 * FS) / FS; env = np.where((tb >= 2) & (tb < 3), 10 ** (-10 / 20), 10 ** (-30 / 20))
+parts.append(('burst', env * np.sin(2 * np.pi * 1000 * tb), 2.0))
+put('levser', parts)
+per = pink(FS) * 10 ** (-20 / 20)
+put('pnoise', [(None, np.zeros((FS // 2, 2)), 0), ('pnoise', np.tile(np.stack([per, per], 1), (8, 1)), 4.0)])
 json.dump(segs, open(os.path.join(STIM, 'segments.json'), 'w'), indent=1)
 
 # programs
@@ -172,6 +194,13 @@ for b, T in (('A', A), ('C', C)):
         for kind in kinds: add((b, 101 + k, kind, desc))
 for n in (RO, LH, WC):
     for kind in ('wav:musichi', 'wav:musiclo', 'wav:tonelv'): add(('B', n, kind, 'Level dependence (%s): %s' % (kind[4:], name(n))))
+firstOf = {}
+for n in sorted(P):
+    if n <= 126: firstOf.setdefault(alg(n), n)
+for a_, n in sorted(firstOf.items()): add(('B', n, 'wav:antiphase', 'Input routing (in-phase then anti-phase noise), algorithm %d: %s' % (a_, name(n))))
+for a_ in (1, 2, 5, 13, 15, 16, 21, 24, 30, 34, 36, 39, 23, 3, 31):
+    if a_ in firstOf: add(('B', firstOf[a_], 'wav:levser', 'Level series and bursts, algorithm %d: %s' % (a_, name(firstOf[a_]))))
+for n in (1, 8, 2, 4, 5, 7, 9, 33, 50, 54, 60, 70): add(('B', n, 'wav:pnoise', 'Periodic noise (third method): %s' % name(n)))
 for n in sorted(P):
     if n > 126: continue
     for kind, what in (('wav:labimp', 'impulse x4 + left/right'), ('wav:sweepm12', 'sweep -12 dBFS')):

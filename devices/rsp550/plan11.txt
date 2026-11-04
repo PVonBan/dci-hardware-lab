@@ -81,9 +81,77 @@ B	1	wav:tonelv	Level dependence (tonelv): Large Hall 1
 B	50	wav:musichi	Level dependence (musichi): Wide Chorus
 B	50	wav:musiclo	Level dependence (musiclo): Wide Chorus
 B	50	wav:tonelv	Level dependence (tonelv): Wide Chorus
+B	70	wav:antiphase	Input routing (in-phase then anti-phase noise), algorithm 1: Light Phaser
+B	54	wav:antiphase	Input routing (in-phase then anti-phase noise), algorithm 2: Light Flanger
+Z	1	wav:labimp	Reference (drift): Large Hall 1
+B	67	wav:antiphase	Input routing (in-phase then anti-phase noise), algorithm 3: Doubling Echo
+B	100	wav:antiphase	Input routing (in-phase then anti-phase noise), algorithm 4: Vocoder S.Tooth
+B	58	wav:antiphase	Input routing (in-phase then anti-phase noise), algorithm 5: Shimmer
+B	84	wav:antiphase	Input routing (in-phase then anti-phase noise), algorithm 6: Flanging Piano
+B	77	wav:antiphase	Input routing (in-phase then anti-phase noise), algorithm 7: Rhodes Chorus
+B	80	wav:antiphase	Input routing (in-phase then anti-phase noise), algorithm 8: Octave Brass
+B	76	wav:antiphase	Input routing (in-phase then anti-phase noise), algorithm 9: Rhodes Phaser
+B	73	wav:antiphase	Input routing (in-phase then anti-phase noise), algorithm 10: Accent Phaser
+B	51	wav:antiphase	Input routing (in-phase then anti-phase noise), algorithm 11: Analog Chorus
+B	45	wav:antiphase	Input routing (in-phase then anti-phase noise), algorithm 12: SDD-320 Mode 3
+B	50	wav:antiphase	Input routing (in-phase then anti-phase noise), algorithm 13: Wide Chorus
+B	46	wav:antiphase	Input routing (in-phase then anti-phase noise), algorithm 14: Vocal Chorus
+B	35	wav:antiphase	Input routing (in-phase then anti-phase noise), algorithm 15: Drum Ambience
+B	40	wav:antiphase	Input routing (in-phase then anti-phase noise), algorithm 16: 150msec Gate
+B	43	wav:antiphase	Input routing (in-phase then anti-phase noise), algorithm 17: Reverse + Accent
+B	47	wav:antiphase	Input routing (in-phase then anti-phase noise), algorithm 18: Guitar Chorus
+B	89	wav:antiphase	Input routing (in-phase then anti-phase noise), algorithm 19: String Ensemble
+B	97	wav:antiphase	Input routing (in-phase then anti-phase noise), algorithm 20: 12 String Guitar
+B	53	wav:antiphase	Input routing (in-phase then anti-phase noise), algorithm 21: Detuned Chorus
+B	94	wav:antiphase	Input routing (in-phase then anti-phase noise), algorithm 22: MIDI NOTE->Chord
+Z	1	wav:labimp	Reference (drift): Large Hall 1
+B	86	wav:antiphase	Input routing (in-phase then anti-phase noise), algorithm 23: Round Rotary
+B	1	wav:antiphase	Input routing (in-phase then anti-phase noise), algorithm 24: Large Hall 1
+B	4	wav:antiphase	Input routing (in-phase then anti-phase noise), algorithm 25: Medium Hall 2
+B	2	wav:antiphase	Input routing (in-phase then anti-phase noise), algorithm 26: Large Hall 2
+B	5	wav:antiphase	Input routing (in-phase then anti-phase noise), algorithm 27: Large Room
+B	7	wav:antiphase	Input routing (in-phase then anti-phase noise), algorithm 28: Small Room
+B	9	wav:antiphase	Input routing (in-phase then anti-phase noise), algorithm 29: Bright Plate
+B	8	wav:antiphase	Input routing (in-phase then anti-phase noise), algorithm 30: Warm Plate
+B	61	wav:antiphase	Input routing (in-phase then anti-phase noise), algorithm 31: fountain
+B	62	wav:antiphase	Input routing (in-phase then anti-phase noise), algorithm 32: Auto Pan Delay
+B	56	wav:antiphase	Input routing (in-phase then anti-phase noise), algorithm 33: Tapping Delay
+B	68	wav:antiphase	Input routing (in-phase then anti-phase noise), algorithm 34: Exciting Male
+B	85	wav:antiphase	Input routing (in-phase then anti-phase noise), algorithm 35: Vibrating Vibe
+B	33	wav:antiphase	Input routing (in-phase then anti-phase noise), algorithm 36: Heaven
+B	91	wav:antiphase	Input routing (in-phase then anti-phase noise), algorithm 38: Mod.Delay Lead
+B	87	wav:antiphase	Input routing (in-phase then anti-phase noise), algorithm 39: Soft Rotary
+B	70	wav:levser	Level series and bursts, algorithm 1: Light Phaser
+B	54	wav:levser	Level series and bursts, algorithm 2: Light Flanger
+B	58	wav:levser	Level series and bursts, algorithm 5: Shimmer
+B	50	wav:levser	Level series and bursts, algorithm 13: Wide Chorus
+Z	1	wav:labimp	Reference (drift): Large Hall 1
+B	35	wav:levser	Level series and bursts, algorithm 15: Drum Ambience
+B	40	wav:levser	Level series and bursts, algorithm 16: 150msec Gate
+B	53	wav:levser	Level series and bursts, algorithm 21: Detuned Chorus
+B	1	wav:levser	Level series and bursts, algorithm 24: Large Hall 1
+B	8	wav:levser	Level series and bursts, algorithm 30: Warm Plate
+B	68	wav:levser	Level series and bursts, algorithm 34: Exciting Male
+B	33	wav:levser	Level series and bursts, algorithm 36: Heaven
+B	87	wav:levser	Level series and bursts, algorithm 39: Soft Rotary
+B	86	wav:levser	Level series and bursts, algorithm 23: Round Rotary
+B	67	wav:levser	Level series and bursts, algorithm 3: Doubling Echo
+B	61	wav:levser	Level series and bursts, algorithm 31: fountain
+B	1	wav:pnoise	Periodic noise (third method): Large Hall 1
+B	8	wav:pnoise	Periodic noise (third method): Warm Plate
+B	2	wav:pnoise	Periodic noise (third method): Large Hall 2
+B	4	wav:pnoise	Periodic noise (third method): Medium Hall 2
+B	5	wav:pnoise	Periodic noise (third method): Large Room
+B	7	wav:pnoise	Periodic noise (third method): Small Room
+B	9	wav:pnoise	Periodic noise (third method): Bright Plate
+B	33	wav:pnoise	Periodic noise (third method): Heaven
+B	50	wav:pnoise	Periodic noise (third method): Wide Chorus
+Z	1	wav:labimp	Reference (drift): Large Hall 1
+B	54	wav:pnoise	Periodic noise (third method): Light Flanger
+B	60	wav:pnoise	Periodic noise (third method): Analog Delay
+B	70	wav:pnoise	Periodic noise (third method): Light Phaser
 B	1	wav:labimp	Whole bank (impulse x4 + left/right): Large Hall 1
 B	1	wav:sweepm12	Whole bank (sweep -12 dBFS): Large Hall 1
-Z	1	wav:labimp	Reference (drift): Large Hall 1
 B	2	wav:labimp	Whole bank (impulse x4 + left/right): Large Hall 2
 B	2	wav:sweepm12	Whole bank (sweep -12 dBFS): Large Hall 2
 B	3	wav:labimp	Whole bank (impulse x4 + left/right): Medium Hall 1
@@ -99,12 +167,12 @@ B	7	wav:sweepm12	Whole bank (sweep -12 dBFS): Small Room
 B	8	wav:labimp	Whole bank (impulse x4 + left/right): Warm Plate
 B	8	wav:sweepm12	Whole bank (sweep -12 dBFS): Warm Plate
 B	9	wav:labimp	Whole bank (impulse x4 + left/right): Bright Plate
+Z	1	wav:labimp	Reference (drift): Large Hall 1
 B	9	wav:sweepm12	Whole bank (sweep -12 dBFS): Bright Plate
 B	10	wav:labimp	Whole bank (impulse x4 + left/right): Vocal Plate 1
 B	10	wav:sweepm12	Whole bank (sweep -12 dBFS): Vocal Plate 1
 B	11	wav:labimp	Whole bank (impulse x4 + left/right): Vocal Plate 2
 B	11	wav:sweepm12	Whole bank (sweep -12 dBFS): Vocal Plate 2
-Z	1	wav:labimp	Reference (drift): Large Hall 1
 B	12	wav:labimp	Whole bank (impulse x4 + left/right): Cathedral
 B	12	wav:sweepm12	Whole bank (sweep -12 dBFS): Cathedral
 B	13	wav:labimp	Whole bank (impulse x4 + left/right): Arena
@@ -120,12 +188,12 @@ B	17	wav:sweepm12	Whole bank (sweep -12 dBFS): String Hall
 B	18	wav:labimp	Whole bank (impulse x4 + left/right): Wide Space
 B	18	wav:sweepm12	Whole bank (sweep -12 dBFS): Wide Space
 B	19	wav:labimp	Whole bank (impulse x4 + left/right): Midnight Street
+Z	1	wav:labimp	Reference (drift): Large Hall 1
 B	19	wav:sweepm12	Whole bank (sweep -12 dBFS): Midnight Street
 B	20	wav:labimp	Whole bank (impulse x4 + left/right): Garage
 B	20	wav:sweepm12	Whole bank (sweep -12 dBFS): Garage
 B	21	wav:labimp	Whole bank (impulse x4 + left/right): Industrial
 B	21	wav:sweepm12	Whole bank (sweep -12 dBFS): Industrial
-Z	1	wav:labimp	Reference (drift): Large Hall 1
 B	22	wav:labimp	Whole bank (impulse x4 + left/right): Reflection
 B	22	wav:sweepm12	Whole bank (sweep -12 dBFS): Reflection
 B	23	wav:labimp	Whole bank (impulse x4 + left/right): Church
@@ -141,12 +209,12 @@ B	27	wav:sweepm12	Whole bank (sweep -12 dBFS): Bright Chamber
 B	28	wav:labimp	Whole bank (impulse x4 + left/right): String Chamber
 B	28	wav:sweepm12	Whole bank (sweep -12 dBFS): String Chamber
 B	29	wav:labimp	Whole bank (impulse x4 + left/right): Tiled Room
+Z	1	wav:labimp	Reference (drift): Large Hall 1
 B	29	wav:sweepm12	Whole bank (sweep -12 dBFS): Tiled Room
 B	30	wav:labimp	Whole bank (impulse x4 + left/right): Bright Room
 B	30	wav:sweepm12	Whole bank (sweep -12 dBFS): Bright Room
 B	31	wav:labimp	Whole bank (impulse x4 + left/right): Warm Room
 B	31	wav:sweepm12	Whole bank (sweep -12 dBFS): Warm Room
-Z	1	wav:labimp	Reference (drift): Large Hall 1
 B	32	wav:labimp	Whole bank (impulse x4 + left/right): Corridor
 B	32	wav:sweepm12	Whole bank (sweep -12 dBFS): Corridor
 B	33	wav:labimp	Whole bank (impulse x4 + left/right): Heaven
@@ -162,12 +230,12 @@ B	37	wav:sweepm12	Whole bank (sweep -12 dBFS): Live Sound
 B	38	wav:labimp	Whole bank (impulse x4 + left/right): Hall + Gate
 B	38	wav:sweepm12	Whole bank (sweep -12 dBFS): Hall + Gate
 B	39	wav:labimp	Whole bank (impulse x4 + left/right): Plate + Gate
+Z	1	wav:labimp	Reference (drift): Large Hall 1
 B	39	wav:sweepm12	Whole bank (sweep -12 dBFS): Plate + Gate
 B	40	wav:labimp	Whole bank (impulse x4 + left/right): 150msec Gate
 B	40	wav:sweepm12	Whole bank (sweep -12 dBFS): 150msec Gate
 B	41	wav:labimp	Whole bank (impulse x4 + left/right): 450msec Gate
 B	41	wav:sweepm12	Whole bank (sweep -12 dBFS): 450msec Gate
-Z	1	wav:labimp	Reference (drift): Large Hall 1
 B	42	wav:labimp	Whole bank (impulse x4 + left/right): Left =>=> Right
 B	42	wav:sweepm12	Whole bank (sweep -12 dBFS): Left =>=> Right
 B	43	wav:labimp	Whole bank (impulse x4 + left/right): Reverse + Accent
@@ -183,12 +251,12 @@ B	47	wav:sweepm12	Whole bank (sweep -12 dBFS): Guitar Chorus
 B	48	wav:labimp	Whole bank (impulse x4 + left/right): Bass Chorus
 B	48	wav:sweepm12	Whole bank (sweep -12 dBFS): Bass Chorus
 B	49	wav:labimp	Whole bank (impulse x4 + left/right): Piano Chorus
+Z	1	wav:labimp	Reference (drift): Large Hall 1
 B	49	wav:sweepm12	Whole bank (sweep -12 dBFS): Piano Chorus
 B	50	wav:labimp	Whole bank (impulse x4 + left/right): Wide Chorus
 B	50	wav:sweepm12	Whole bank (sweep -12 dBFS): Wide Chorus
 B	51	wav:labimp	Whole bank (impulse x4 + left/right): Analog Chorus
 B	51	wav:sweepm12	Whole bank (sweep -12 dBFS): Analog Chorus
-Z	1	wav:labimp	Reference (drift): Large Hall 1
 B	52	wav:labimp	Whole bank (impulse x4 + left/right): Ensemble Chorus
 B	52	wav:sweepm12	Whole bank (sweep -12 dBFS): Ensemble Chorus
 B	53	wav:labimp	Whole bank (impulse x4 + left/right): Detuned Chorus
@@ -204,12 +272,12 @@ B	57	wav:sweepm12	Whole bank (sweep -12 dBFS): Tapping Dot 8th
 B	58	wav:labimp	Whole bank (impulse x4 + left/right): Shimmer
 B	58	wav:sweepm12	Whole bank (sweep -12 dBFS): Shimmer
 B	59	wav:labimp	Whole bank (impulse x4 + left/right): Crazy Echo
+Z	1	wav:labimp	Reference (drift): Large Hall 1
 B	59	wav:sweepm12	Whole bank (sweep -12 dBFS): Crazy Echo
 B	60	wav:labimp	Whole bank (impulse x4 + left/right): Analog Delay
 B	60	wav:sweepm12	Whole bank (sweep -12 dBFS): Analog Delay
 B	61	wav:labimp	Whole bank (impulse x4 + left/right): fountain
 B	61	wav:sweepm12	Whole bank (sweep -12 dBFS): fountain
-Z	1	wav:labimp	Reference (drift): Large Hall 1
 B	62	wav:labimp	Whole bank (impulse x4 + left/right): Auto Pan Delay
 B	62	wav:sweepm12	Whole bank (sweep -12 dBFS): Auto Pan Delay
 B	63	wav:labimp	Whole bank (impulse x4 + left/right): Wave
@@ -225,12 +293,12 @@ B	67	wav:sweepm12	Whole bank (sweep -12 dBFS): Doubling Echo
 B	68	wav:labimp	Whole bank (impulse x4 + left/right): Exciting Male
 B	68	wav:sweepm12	Whole bank (sweep -12 dBFS): Exciting Male
 B	69	wav:labimp	Whole bank (impulse x4 + left/right): Exciting Female
+Z	1	wav:labimp	Reference (drift): Large Hall 1
 B	69	wav:sweepm12	Whole bank (sweep -12 dBFS): Exciting Female
 B	70	wav:labimp	Whole bank (impulse x4 + left/right): Light Phaser
 B	70	wav:sweepm12	Whole bank (sweep -12 dBFS): Light Phaser
 B	71	wav:labimp	Whole bank (impulse x4 + left/right): Round Phaser
 B	71	wav:sweepm12	Whole bank (sweep -12 dBFS): Round Phaser
-Z	1	wav:labimp	Reference (drift): Large Hall 1
 B	72	wav:labimp	Whole bank (impulse x4 + left/right): Jungle Phaser
 B	72	wav:sweepm12	Whole bank (sweep -12 dBFS): Jungle Phaser
 B	73	wav:labimp	Whole bank (impulse x4 + left/right): Accent Phaser
@@ -246,12 +314,12 @@ B	77	wav:sweepm12	Whole bank (sweep -12 dBFS): Rhodes Chorus
 B	78	wav:labimp	Whole bank (impulse x4 + left/right): Rhodes Vibrato
 B	78	wav:sweepm12	Whole bank (sweep -12 dBFS): Rhodes Vibrato
 B	79	wav:labimp	Whole bank (impulse x4 + left/right): Wide Guitar
+Z	1	wav:labimp	Reference (drift): Large Hall 1
 B	79	wav:sweepm12	Whole bank (sweep -12 dBFS): Wide Guitar
 B	80	wav:labimp	Whole bank (impulse x4 + left/right): Octave Brass
 B	80	wav:sweepm12	Whole bank (sweep -12 dBFS): Octave Brass
 B	81	wav:labimp	Whole bank (impulse x4 + left/right): String Phaser
 B	81	wav:sweepm12	Whole bank (sweep -12 dBFS): String Phaser
-Z	1	wav:labimp	Reference (drift): Large Hall 1
 B	82	wav:labimp	Whole bank (impulse x4 + left/right): Wide Piano
 B	82	wav:sweepm12	Whole bank (sweep -12 dBFS): Wide Piano
 B	83	wav:labimp	Whole bank (impulse x4 + left/right): Bright Piano
@@ -267,12 +335,12 @@ B	87	wav:sweepm12	Whole bank (sweep -12 dBFS): Soft Rotary
 B	88	wav:labimp	Whole bank (impulse x4 + left/right): Hardrock Organ
 B	88	wav:sweepm12	Whole bank (sweep -12 dBFS): Hardrock Organ
 B	89	wav:labimp	Whole bank (impulse x4 + left/right): String Ensemble
+Z	1	wav:labimp	Reference (drift): Large Hall 1
 B	89	wav:sweepm12	Whole bank (sweep -12 dBFS): String Ensemble
 B	90	wav:labimp	Whole bank (impulse x4 + left/right): Vibrato Lead
 B	90	wav:sweepm12	Whole bank (sweep -12 dBFS): Vibrato Lead
 B	91	wav:labimp	Whole bank (impulse x4 + left/right): Mod.Delay Lead
 B	91	wav:sweepm12	Whole bank (sweep -12 dBFS): Mod.Delay Lead
-Z	1	wav:labimp	Reference (drift): Large Hall 1
 B	92	wav:labimp	Whole bank (impulse x4 + left/right): Flanging Lead
 B	92	wav:sweepm12	Whole bank (sweep -12 dBFS): Flanging Lead
 B	93	wav:labimp	Whole bank (impulse x4 + left/right): Hitting Saw
@@ -288,12 +356,12 @@ B	97	wav:sweepm12	Whole bank (sweep -12 dBFS): 12 String Guitar
 B	98	wav:labimp	Whole bank (impulse x4 + left/right): 1 Note Arpeggio
 B	98	wav:sweepm12	Whole bank (sweep -12 dBFS): 1 Note Arpeggio
 B	99	wav:labimp	Whole bank (impulse x4 + left/right): Funny BarberPole
+Z	1	wav:labimp	Reference (drift): Large Hall 1
 B	99	wav:sweepm12	Whole bank (sweep -12 dBFS): Funny BarberPole
 B	100	wav:labimp	Whole bank (impulse x4 + left/right): Vocoder S.Tooth
 B	100	wav:sweepm12	Whole bank (sweep -12 dBFS): Vocoder S.Tooth
 B	101	wav:labimp	Whole bank (impulse x4 + left/right): Large Hall 1 *
 B	101	wav:sweepm12	Whole bank (sweep -12 dBFS): Large Hall 1 *
-Z	1	wav:labimp	Reference (drift): Large Hall 1
 B	102	wav:labimp	Whole bank (impulse x4 + left/right): Large Hall 2 *
 B	102	wav:sweepm12	Whole bank (sweep -12 dBFS): Large Hall 2 *
 B	103	wav:labimp	Whole bank (impulse x4 + left/right): Medium Hall 1 *
@@ -309,12 +377,12 @@ B	107	wav:sweepm12	Whole bank (sweep -12 dBFS): Small Room  *
 B	108	wav:labimp	Whole bank (impulse x4 + left/right): Warm Plate  *
 B	108	wav:sweepm12	Whole bank (sweep -12 dBFS): Warm Plate  *
 B	109	wav:labimp	Whole bank (impulse x4 + left/right): Bright Plate *
+Z	1	wav:labimp	Reference (drift): Large Hall 1
 B	109	wav:sweepm12	Whole bank (sweep -12 dBFS): Bright Plate *
 B	110	wav:labimp	Whole bank (impulse x4 + left/right): Vocal Plate 1 *
 B	110	wav:sweepm12	Whole bank (sweep -12 dBFS): Vocal Plate 1 *
 B	111	wav:labimp	Whole bank (impulse x4 + left/right): Vocal Plate 2 *
 B	111	wav:sweepm12	Whole bank (sweep -12 dBFS): Vocal Plate 2 *
-Z	1	wav:labimp	Reference (drift): Large Hall 1
 B	112	wav:labimp	Whole bank (impulse x4 + left/right): Cathedral   *
 B	112	wav:sweepm12	Whole bank (sweep -12 dBFS): Cathedral   *
 B	113	wav:labimp	Whole bank (impulse x4 + left/right): Arena     *
@@ -330,12 +398,12 @@ B	117	wav:sweepm12	Whole bank (sweep -12 dBFS): String Hall  *
 B	118	wav:labimp	Whole bank (impulse x4 + left/right): Wide Space  *
 B	118	wav:sweepm12	Whole bank (sweep -12 dBFS): Wide Space  *
 B	119	wav:labimp	Whole bank (impulse x4 + left/right): Midnight Street*
+Z	1	wav:labimp	Reference (drift): Large Hall 1
 B	119	wav:sweepm12	Whole bank (sweep -12 dBFS): Midnight Street*
 B	120	wav:labimp	Whole bank (impulse x4 + left/right): Garage    *
 B	120	wav:sweepm12	Whole bank (sweep -12 dBFS): Garage    *
 B	121	wav:labimp	Whole bank (impulse x4 + left/right): Industrial  *
 B	121	wav:sweepm12	Whole bank (sweep -12 dBFS): Industrial  *
-Z	1	wav:labimp	Reference (drift): Large Hall 1
 B	122	wav:labimp	Whole bank (impulse x4 + left/right): Reflection  *
 B	122	wav:sweepm12	Whole bank (sweep -12 dBFS): Reflection  *
 B	123	wav:labimp	Whole bank (impulse x4 + left/right): Church    *
