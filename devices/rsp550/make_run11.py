@@ -79,6 +79,12 @@ for db in range(-50, -5, 4): parts.append(('lev%d' % -db, 10 ** (db / 20) * np.s
 tb = np.arange(5 * FS) / FS; env = np.where((tb >= 2) & (tb < 3), 10 ** (-10 / 20), 10 ** (-30 / 20))
 parts.append(('burst', env * np.sin(2 * np.pi * 1000 * tb), 2.0))
 put('levser', parts)
+# 2026-11-04, from the service notes: the converters sit behind a pre-emphasis / de-emphasis pair (about the CD's
+# 50 / 15 us), so the A/D should clip high frequencies up to ~10 dB earlier than 1 kHz. The same level series at 10 kHz,
+# -26 .. -2 dBFS in 2 dB steps, on programs with their direct sound: compare the clip onset with the 1 kHz series.
+parts = [(None, np.zeros((FS // 2, 2)), 0)]
+for db in range(-26, -1, 2): parts.append(('hf%d' % -db, 10 ** (db / 20) * np.sin(2 * np.pi * 10000 * t2) * f2, 0.5))
+put('levserhf', parts)
 per = pink(FS) * 10 ** (-20 / 20)
 put('pnoise', [(None, np.zeros((FS // 2, 2)), 0), ('pnoise', np.tile(np.stack([per, per], 1), (8, 1)), 4.0)])
 json.dump(segs, open(os.path.join(STIM, 'segments.json'), 'w'), indent=1)
@@ -200,6 +206,7 @@ for n in sorted(P):
 for a_, n in sorted(firstOf.items()): add(('B', n, 'wav:antiphase', 'Input routing (in-phase then anti-phase noise), algorithm %d: %s' % (a_, name(n))))
 for a_ in (1, 2, 5, 13, 15, 16, 21, 24, 30, 34, 36, 39, 23, 3, 31):
     if a_ in firstOf: add(('B', firstOf[a_], 'wav:levser', 'Level series and bursts, algorithm %d: %s' % (a_, name(firstOf[a_]))))
+for n in (1, 58, 50): add(('B', n, 'wav:levserhf', '10 kHz level series (A/D clipping behind the pre-emphasis): %s' % name(n)))
 for n in (1, 8, 2, 4, 5, 7, 9, 33, 50, 54, 60, 70): add(('B', n, 'wav:pnoise', 'Periodic noise (third method): %s' % name(n)))
 for n in sorted(P):
     if n > 126: continue

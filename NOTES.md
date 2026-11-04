@@ -323,3 +323,24 @@ Proposed after the verification pass and started at once (the user: "do all that
   programs (third method). Launcher delivered; calibration loop channels still to be named by the user.
 - Owner request logged as dci-effects issue #11: every preset loads with the Mix at 30 % (in 1.7.0; the test app
   keeps the unit's balance for comparisons).
+
+## Service notes (2026-11-04): what Roland's RSP-550 Service Notes (June 1991) settle
+The user supplied the 17-page service manual (not committed; the user's copy).
+- Two DSP LSIs (TC23SC260AF, IC43/IC44), each with its own 4 x 64k DRAM: the two reverb cores seen in the impulse
+  responses (Hall 1 / Hall 3 / Room 1 / Plate 1 / Mod Reverb share loop lengths; Hall 2 / Room 2 / Plate 2 another).
+- Everything, the direct sound included, goes through the converters; only the bypass relays (RL1/RL2) are a wire.
+  The plug-in leaves its dry path untouched - a difference worth deciding on now that presets load at 30 % mix.
+- Pre-emphasis before the A/D (IC15) and de-emphasis after the D/A (IC3): 12k / 1.2 nF = 14.4 us and about 46 us,
+  close to the CD standard 50 / 15 us, about +10 dB at the top. Net flat at normal levels, but the A/D should clip
+  high frequencies up to ~10 dB before 1 kHz. Run 11 now has a 10 kHz level series (-26 .. -2 dBFS) on three programs
+  beside the 1 kHz one.
+- Anti-alias: AFL89F modules, 20000D1 up to serial ZC62949, 22000D1 from ZC62950; output LPF F-V25 fc 21 kHz. The
+  plug-in's fitted response (-3 dB at 21 kHz, -27 at 22 k) fits the later version; the user's serial number will
+  confirm.
+- Spec: 15 Hz - 21 kHz +1 / -3 dB "DSP through", so the unit itself rolls off the low end. The low-frequency phase lead
+  of the null test is consistent with that, but the interface contributes too: only the calibration loop separates them.
+- Test mode (power on holding PROGRAM/PAGE up + PARAM + BYPASS) has a DSP-generated sine test (10 Hz - 21 kHz, -20.5
+  dBm) and an A/D-DSP-D/A "through" state: a converter-only measurement, but it needs front-panel steps and a MIDI
+  loop cable (its MIDI check stops otherwise). Kept in reserve; the calibration loop plus run 11's effect-only delay
+  captures give the same information unattended.
+- ROM version: power on holding PROGRAM/PAGE down + VALUE down + PARM + CONTROL.
