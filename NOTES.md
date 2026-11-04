@@ -303,3 +303,23 @@ The user asked that the information behind the model be verified before more lis
   and chorus paths (batch A), the never-varied controls and the wet-only pre-delay (batch C), the rotary, Large Hall 1
   and Wide Chorus on music and tones at three levels, and the whole bank with labimp + sweepm12 (261 factory lines,
   no user action). About 3.5 hours; the user is needed for 20 minutes at the start and the restore at the end.
+
+## Additional tests (2026-11-03 evening): what they found
+Proposed after the verification pass and started at once (the user: "do all that").
+- **Reflection tables** (`verify/ertaps.py`, `devices/rsp550/reverb_ir_tables.json`): the unit's halls and Room 1 use
+  one five-tap pattern at fixed offsets from the ER pre-delay (0 / 11.0 / 14.8 / 22.2 / 27.3 ms, 0 / -4 / -8 / -11 /
+  -8 dB, both / R / L / L / R); Room 1 adds 70 quieter taps; Room 2 and Plate 2 are the same algorithm (identical taps
+  and loops); Plate 1 and Mod Reverb share Hall 1's loops. Two reverb cores on the unit. Room 1's late field starts at
+  the reverb pre-delay and builds; the others start 47-57 ms after it. The tables are in SSP-550 1.7.0.
+- **Clicks and clock** (`verify/clickcorr.py`): the unit's reverbs are strictly deterministic (1.00) and the direct
+  impulse arrives at the same sub-sample position over 30 s: no clock drift. Withdrawn: "click-to-click variation"
+  and "the sweep's treble bias is clock drift". Run 11's periodic noise will show what the sweep bias is.
+- **Null test** (`verify/nulltest.py`): Stereo Delay path -21..-30 dB over 250 Hz-8 kHz; residuals: 0.7 dB level,
+  low-frequency phase lead on the unit (12-47 degrees below 400 Hz) with flat magnitude (converter coupling?); the
+  unit's delay memory rolls off above 11-12 kHz with a -50 dB floor (ours -108). Reverbs do not null (different
+  structure), as expected.
+- **Run 11 additions**: in-phase / anti-phase noise on one program per algorithm (input routing), a 1 kHz level
+  series and bursts on one program per family (gain curve, attack, release), periodic noise on the 12 battery
+  programs (third method). Launcher delivered; calibration loop channels still to be named by the user.
+- Owner request logged as dci-effects issue #11: every preset loads with the Mix at 30 % (in 1.7.0; the test app
+  keeps the unit's balance for comparisons).
