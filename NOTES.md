@@ -344,3 +344,6 @@ The user supplied the 17-page service manual (not committed; the user's copy).
   loop cable (its MIDI check stops otherwise). Kept in reserve; the calibration loop plus run 11's effect-only delay
   captures give the same information unattended.
 - ROM version: power on holding PROGRAM/PAGE down + VALUE down + PARM + CONTROL.
+- 2026-11-04: SSP-550 1.7.1 adds the user's requested option "dry conv" (dry path through the same converter rate,
+  bit depth and 48 kHz anti-alias response; off by default, bit-identical to 1.7.0 when off; verified aligned to the
+  sample with the converted wet path). Emphasis clipping waits for run 11's 10 kHz level series.
